@@ -2,12 +2,12 @@ import { useTranslations } from 'next-intl';
 import { FadeIn } from './FadeIn';
 
 const galleryItems = [
-  { bg: '#A89C8A', pattern: 'pattern-trama-light',  captionKey: 'item1' as const },
-  { bg: '#6E3B2A', pattern: 'pattern-renda-dark',   captionKey: 'item2' as const },
-  { bg: '#3D4836', pattern: 'pattern-rede-dark',    captionKey: 'item3' as const },
-  { bg: '#C49A6B', pattern: 'pattern-trama-light',  captionKey: 'item4' as const },
-  { bg: '#5C7A8C', pattern: 'pattern-renda-dark',   captionKey: 'item5' as const },
-  { bg: '#1A1F26', pattern: 'pattern-rede-dark',    captionKey: 'item6' as const },
+  { bg: '#E6DECF', pattern: 'pattern-trama-light',  captionKey: 'item1' as const },
+  { bg: '#1A1F26', pattern: 'pattern-trama-dark',   captionKey: 'item2' as const },
+  { bg: '#A89C8A', pattern: 'pattern-renda-light',  captionKey: 'item3' as const },
+  { bg: '#E6DECF', pattern: 'pattern-renda-light',  captionKey: 'item4' as const },
+  { bg: '#1A1F26', pattern: 'pattern-rede-dark',    captionKey: 'item5' as const },
+  { bg: '#A89C8A', pattern: 'pattern-trama-light',  captionKey: 'item6' as const },
 ];
 
 interface GalleryItemProps {
@@ -19,7 +19,7 @@ interface GalleryItemProps {
 }
 
 function GalleryItem({ bg, pattern, caption, index, delay = 0 }: GalleryItemProps) {
-  const isDark = ['#6E3B2A', '#3D4836', '#5C7A8C', '#1A1F26'].includes(bg);
+  const isDark = ['#1A1F26'].includes(bg);
 
   return (
     <FadeIn
@@ -65,7 +65,7 @@ export function Gallery() {
           <h2
             id="gallery-heading"
             className="font-display font-light text-tinta-grauna"
-            style={{ fontSize: 'clamp(28px, 3.2vw, 48px)', letterSpacing: '-0.012em', lineHeight: '1.02' }}
+            style={{ fontSize: 'clamp(28px, 3.2vw, 48px)', letterSpacing: '-0.012em', lineHeight: '1.02', fontVariationSettings: '"SOFT" 30, "opsz" 144' }}
           >
             {t('title')}
           </h2>

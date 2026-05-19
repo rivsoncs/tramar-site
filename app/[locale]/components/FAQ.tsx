@@ -30,7 +30,7 @@ function FAQItem({ question, answer, index, isOpen, onToggle }: FAQItemProps) {
         style={{ cursor: 'pointer' }}
       >
         <span
-          className="font-display font-light text-tinta-grauna group-hover:text-barro-escuro transition-colors duration-200"
+          className="font-display font-light text-tinta-grauna group-hover:text-areia-molhada transition-colors duration-200"
           style={{ fontSize: 'clamp(16px, 1.6vw, 20px)', lineHeight: '1.4', letterSpacing: '-0.004em' }}
         >
           {question}
@@ -86,7 +86,7 @@ export function FAQ() {
           <h2
             id="faq-heading"
             className="font-display font-light text-tinta-grauna"
-            style={{ fontSize: 'clamp(28px, 3.2vw, 48px)', letterSpacing: '-0.012em', lineHeight: '1.02' }}
+            style={{ fontSize: 'clamp(28px, 3.2vw, 48px)', letterSpacing: '-0.012em', lineHeight: '1.02', fontVariationSettings: '"SOFT" 30, "opsz" 144' }}
           >
             {t('title')}
           </h2>

@@ -38,6 +38,7 @@ export function Hero() {
                 fontSize: 'clamp(38px, 5.6vw, 88px)',
                 lineHeight: '0.93',
                 letterSpacing: '-0.02em',
+                fontVariationSettings: '"SOFT" 30, "opsz" 144',
               }}
             >
               {t('tagline')}
@@ -68,24 +69,13 @@ export function Hero() {
           </div>
         </div>
 
-        {/* ── Lado direito — presença de marca ── */}
+        {/* ── Lado direito — presença de marca (modo noturno) ── */}
         <div
-          className="relative flex-1 min-h-[320px] lg:min-h-full overflow-hidden"
-          style={{
-            background: 'linear-gradient(148deg, #EDE5D6 0%, #DDD3C2 55%, #C8BCA8 100%)',
-          }}
+          className="relative flex-1 min-h-[320px] lg:min-h-full overflow-hidden pattern-trama-dark"
+          style={{ backgroundColor: '#1A1F26' }}
           aria-hidden="true"
         >
-          {/* Padrão trama — mais visível */}
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%231A1F26' stroke-width='0.9' stroke-linecap='square' opacity='0.14'%3E%3Cline x1='0' y1='6' x2='12' y2='6'/%3E%3Cline x1='12' y1='18' x2='24' y2='18'/%3E%3Cline x1='6' y1='0' x2='6' y2='12'/%3E%3Cline x1='18' y1='12' x2='18' y2='24'/%3E%3C/g%3E%3C/svg%3E\")",
-              backgroundSize: '48px 48px',
-            }}
-          />
-
-          {/* Monograma T — elemento de marca grande */}
+          {/* Monograma T — cal sobre grauna */}
           <div className="absolute inset-0 flex items-center justify-center">
             <svg
               viewBox="0 0 240 240"
@@ -99,7 +89,7 @@ export function Hero() {
                 fontFamily="Fraunces, Georgia, serif"
                 fontWeight="300"
                 fontSize="260"
-                fill="#1A1F26"
+                fill="#F0E9DC"
               >
                 T
               </text>
@@ -110,14 +100,14 @@ export function Hero() {
           <div className="absolute bottom-8 right-8 hidden lg:flex flex-col items-center gap-3">
             <div
               className="w-px h-16"
-              style={{ backgroundColor: 'rgba(26,31,38,0.2)' }}
+              style={{ backgroundColor: 'rgba(240,233,220,0.2)' }}
             />
             <p
               style={{
                 fontFamily: 'var(--font-dm-sans), DM Sans, system-ui, sans-serif',
                 fontSize: '9px',
                 letterSpacing: '0.3em',
-                color: 'rgba(26,31,38,0.45)',
+                color: 'rgba(240,233,220,0.4)',
                 writingMode: 'vertical-rl',
                 textOrientation: 'mixed',
                 transform: 'rotate(180deg)',
@@ -131,7 +121,7 @@ export function Hero() {
           {/* Linha separadora vertical */}
           <div
             className="absolute left-0 top-10 bottom-10 w-px hidden lg:block"
-            style={{ background: 'rgba(26,31,38,0.08)' }}
+            style={{ background: 'rgba(240,233,220,0.08)' }}
           />
         </div>
       </div>

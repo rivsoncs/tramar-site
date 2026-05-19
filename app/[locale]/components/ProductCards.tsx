@@ -151,7 +151,7 @@ export function ProductCards() {
         <h2
           id="products-heading"
           className="font-display font-light text-tinta-grauna"
-          style={{ fontSize: 'clamp(28px, 3.2vw, 48px)', letterSpacing: '-0.012em', lineHeight: '1.02' }}
+          style={{ fontSize: 'clamp(28px, 3.2vw, 48px)', letterSpacing: '-0.012em', lineHeight: '1.02', fontVariationSettings: '"SOFT" 30, "opsz" 144' }}
         >
           {t('title')}
         </h2>

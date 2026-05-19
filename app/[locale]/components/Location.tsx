@@ -8,7 +8,7 @@ export function Location() {
     <section
       aria-labelledby="location-heading"
       className="relative overflow-hidden"
-      style={{ backgroundColor: '#A89C8A' }}
+      style={{ backgroundColor: '#1A1F26' }}
     >
       {/* Padrão rede como visual de fundo */}
       <div className="absolute inset-0 pattern-rede-dark pointer-events-none" aria-hidden="true" />
@@ -26,6 +26,7 @@ export function Location() {
               fontSize: 'clamp(28px, 3.2vw, 48px)',
               letterSpacing: '-0.012em',
               lineHeight: '1.02',
+              fontVariationSettings: '"SOFT" 30, "opsz" 144',
             }}
           >
             {t('title')}

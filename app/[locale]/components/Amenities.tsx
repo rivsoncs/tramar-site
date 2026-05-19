@@ -47,7 +47,7 @@ export function Amenities() {
           <h2
             id="amenities-heading"
             className="font-display font-light text-tinta-grauna"
-            style={{ fontSize: 'clamp(28px, 3.2vw, 48px)', letterSpacing: '-0.012em', lineHeight: '1.02' }}
+            style={{ fontSize: 'clamp(28px, 3.2vw, 48px)', letterSpacing: '-0.012em', lineHeight: '1.02', fontVariationSettings: '"SOFT" 30, "opsz" 144' }}
           >
             {t('title')}
           </h2>
@@ -65,8 +65,6 @@ export function Amenities() {
         </div>
       </div>
 
-      {/* Divisor padrão trama abaixo */}
-      <div className="pattern-trama-light pattern-divider w-full" aria-hidden="true" />
     </section>
   );
 }

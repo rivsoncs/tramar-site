@@ -127,7 +127,14 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: var(--color-barro-escuro);
+  background-color: var(--color-verde-mato);
+}
+
+/* Editorial italic accent — Fraunces em elementos de destaque */
+.font-display em {
+  font-style: italic;
+  color: var(--color-areia-molhada);
+  font-weight: 300;
 }
 
 .btn-secondary {
