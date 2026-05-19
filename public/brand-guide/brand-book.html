@@ -1,0 +1,2167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tramar — Brand Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,30..100,0..1;1,9..144,300..500,30..100,0..1&family=DM+Sans:opsz,wght@9..40,300..500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* Sistema cromático Tramar */
+    --cal: #F0E9DC;
+    --areia: #A89C8A;
+    --grauna: #1A1F26;
+    --barro: #6E3B2A;
+    --mato: #3D4836;
+    --mascavo: #C49A6B;
+    --olinda: #5C7A8C;
+
+    --cal-soft: #E6DECF;
+    --rule: rgba(26, 31, 38, 0.18);
+    --rule-soft: rgba(26, 31, 38, 0.08);
+    --rule-faint: rgba(26, 31, 38, 0.04);
+
+    --max: 1280px;
+    --nav-w: 260px;
+  }
+
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+  html{ scroll-behavior: smooth; }
+  html, body{ background: var(--cal); color: var(--grauna); }
+  body{
+    font-family: "DM Sans", system-ui, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ——— Typography primitives ——— */
+  .serif{ font-family: "Fraunces", Georgia, serif; font-optical-sizing: auto; font-variation-settings: "SOFT" 30, "opsz" 144; }
+  .sans{ font-family: "DM Sans", system-ui, sans-serif; }
+  .caps{ text-transform: uppercase; letter-spacing: 0.22em; }
+  .micro{ font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400; }
+  .num{ font-variant-numeric: tabular-nums; }
+  .italic{ font-style: italic; }
+
+  /* ——— Layout: side nav + content ——— */
+  .shell{
+    display: grid;
+    grid-template-columns: var(--nav-w) 1fr;
+    min-height: 100vh;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+
+  /* ——— Side nav ——— */
+  aside.nav{
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    padding: 48px 36px 36px;
+    border-right: 1px solid var(--rule-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .brand-mark{
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 0.005em;
+    line-height: 1;
+  }
+  .brand-sub{
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-top: 4px;
+  }
+  .nav-doc{
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 24px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    line-height: 1.8;
+  }
+  .nav-list{
+    list-style: none;
+    display: flex; flex-direction: column;
+    gap: 2px;
+    margin-top: 4px;
+    flex: 1;
+  }
+  .nav-list a{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: baseline;
+    padding: 10px 0;
+    color: var(--grauna);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid var(--rule-faint);
+    transition: padding 220ms ease, color 220ms ease;
+  }
+  .nav-list a:hover{ padding-left: 6px; }
+  .nav-list a .nidx{
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    opacity: 0.45;
+    font-feature-settings: "tnum";
+  }
+  .nav-list a .ntitle{ font-family: "Fraunces", serif; font-weight: 400; }
+  .nav-list a .nsub{
+    grid-column: 2 / 3;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-top: 2px;
+  }
+  .nav-foot{
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 20px;
+  }
+
+  /* ——— Main content ——— */
+  main{
+    padding: 0 72px;
+    min-width: 0;
+  }
+
+  /* ——— Cover / opener ——— */
+  .cover{
+    padding: 96px 0 80px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .cover .doc-meta{
+    display: flex; justify-content: space-between;
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.55;
+    border-bottom: 1px solid var(--rule-soft);
+    padding-bottom: 18px;
+    margin-bottom: 56px;
+  }
+  .cover h1{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: clamp(56px, 8vw, 112px);
+    line-height: 0.92;
+    letter-spacing: -0.018em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+    margin-bottom: 32px;
+  }
+  .cover h1 em{ font-style: italic; color: var(--areia); font-weight: 300; }
+  .cover .lede{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    margin-top: 48px;
+  }
+  .cover .lede p{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.45;
+    letter-spacing: 0.005em;
+  }
+  .cover .lede p.second{
+    font-family: "DM Sans", sans-serif;
+    font-size: 13.5px;
+    line-height: 1.65;
+    opacity: 0.75;
+  }
+
+  /* ——— Section frame ——— */
+  section.block{
+    padding: 112px 0 96px;
+    border-bottom: 1px solid var(--rule-soft);
+    scroll-margin-top: 24px;
+  }
+  .sec-head{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    margin-bottom: 72px;
+    align-items: start;
+  }
+  .sec-num{
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.5;
+    padding-top: 8px;
+  }
+  .sec-head h2{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: clamp(36px, 4.8vw, 56px);
+    line-height: 1.0;
+    letter-spacing: -0.015em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+    max-width: 16ch;
+  }
+  .sec-head h2 em{ font-style: italic; color: var(--areia); font-weight: 300; }
+  .sec-head .deck{
+    max-width: 56ch;
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.65;
+    opacity: 0.78;
+  }
+
+  /* generic subhead */
+  .subhead{
+    font-family: "DM Sans", sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+    margin-bottom: 24px;
+  }
+
+  /* ============================================================
+     SEÇÃO 1 — PALETA
+  ============================================================ */
+  .palette-hero{
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 12px;
+    height: 360px;
+    margin-bottom: 64px;
+    border: 1px solid var(--rule-faint);
+    padding: 12px;
+  }
+  .ph{
+    position: relative;
+    padding: 16px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .ph .pct{
+    font-family: "Fraunces", serif;
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 400;
+  }
+  .ph .nm{
+    font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .ph.cal{ background: var(--cal); color: var(--grauna); border: 1px solid var(--rule-soft); }
+  .ph.areia{ background: var(--areia); color: var(--cal); }
+  .ph.grauna{ background: var(--grauna); color: var(--cal); }
+  .ph.barro{ background: var(--barro); color: var(--cal); }
+  .ph.mato{ background: var(--mato); color: var(--cal); }
+  .ph.mascavo{ background: var(--mascavo); color: var(--grauna); }
+  .ph.olinda{ background: var(--olinda); color: var(--cal); }
+
+  .swatch-row{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: stretch;
+    padding: 36px 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .swatch-row:last-of-type{ border-bottom: 1px solid var(--rule-soft); }
+  .swatch{
+    aspect-ratio: 4 / 5;
+    position: relative;
+    padding: 22px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .swatch.cal{ background: var(--cal); color: var(--grauna); border: 1px solid var(--rule-soft); }
+  .swatch.areia{ background: var(--areia); color: var(--cal); }
+  .swatch.grauna{ background: var(--grauna); color: var(--cal); }
+  .swatch.barro{ background: var(--barro); color: var(--cal); }
+  .swatch.mato{ background: var(--mato); color: var(--cal); }
+  .swatch.mascavo{ background: var(--mascavo); color: var(--grauna); }
+  .swatch.olinda{ background: var(--olinda); color: var(--cal); }
+  .swatch .name{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 26px;
+    line-height: 1.05;
+  }
+  .swatch .role{
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    opacity: 0.75;
+    margin-top: 6px;
+  }
+  .swatch .codes{
+    font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    line-height: 1.75;
+    font-feature-settings: "tnum";
+  }
+  .swatch-info{
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 18px;
+  }
+  .swatch-info .h{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 22px;
+    letter-spacing: 0.005em;
+  }
+  .swatch-info .desc{
+    font-size: 13px; line-height: 1.6; opacity: 0.78;
+    max-width: 60ch;
+  }
+  .swatch-info dl{
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px 32px;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 18px;
+  }
+  .swatch-info dt{
+    font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.55; margin-bottom: 4px;
+  }
+  .swatch-info dd{ font-size: 13px; line-height: 1.5; }
+  .pairs{
+    display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  .pair-chip{
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid var(--rule);
+    padding: 6px 10px 6px 6px;
+    font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .pair-chip .dot{
+    width: 14px; height: 14px; display: inline-block;
+  }
+  .wcag{
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 4px 8px;
+    border: 1px solid currentColor;
+  }
+  .wcag.pass{ color: var(--mato); }
+  .wcag.fail{ color: var(--barro); }
+
+  /* Application examples row */
+  .apply-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 64px;
+  }
+  .apply{
+    aspect-ratio: 4 / 5;
+    padding: 24px;
+    position: relative;
+    display: flex; flex-direction: column; justify-content: space-between;
+    border: 1px solid var(--rule-faint);
+  }
+  .apply .tag{
+    font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .apply .lk{
+    font-family: "Fraunces", serif; font-weight: 300; font-size: 36px;
+    line-height: 1;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+  }
+  .apply .sub{
+    font-size: 9.5px; letter-spacing: 0.32em; text-transform: uppercase;
+    margin-top: 8px; opacity: 0.85;
+  }
+  .apply.calo{ background: var(--cal); color: var(--grauna); }
+  .apply.dark{ background: var(--grauna); color: var(--cal); }
+  .apply.barr{ background: var(--barro); color: var(--cal); }
+  .apply.mat{ background: var(--mato); color: var(--cal); }
+  .apply.masc{ background: var(--mascavo); color: var(--grauna); }
+  .apply.olin{ background: var(--olinda); color: var(--cal); }
+  .apply.are{ background: var(--areia); color: var(--cal); }
+
+  /* Submark family note */
+  .families{
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+    margin-top: 72px;
+    padding: 48px 0 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .family-card{
+    padding: 32px;
+    position: relative;
+  }
+  .family-card.carua{ background: var(--mato); color: var(--cal); }
+  .family-card.renda{ background: var(--mascavo); color: var(--grauna); }
+  .family-card .ftag{
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 24px;
+  }
+  .family-card h4{
+    font-family: "Fraunces", serif; font-weight: 300; font-size: 36px;
+    line-height: 1; letter-spacing: -0.005em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+  }
+  .family-card p{
+    font-size: 13px; line-height: 1.6;
+    margin-top: 16px; max-width: 38ch;
+    opacity: 0.9;
+  }
+  .family-card .duo{
+    margin-top: 28px;
+    display: flex; gap: 8px;
+  }
+  .family-card .duo span{
+    width: 36px; height: 36px;
+    display: inline-block;
+    border: 1px solid rgba(240,233,220,0.25);
+  }
+
+  /* ============================================================
+     SEÇÃO 2 — TIPOGRAFIA
+  ============================================================ */
+  .type-row{
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    padding: 36px 0;
+    border-top: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+  .type-row:last-of-type{ border-bottom: 1px solid var(--rule-soft); }
+  .type-meta .level{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 22px;
+    margin-bottom: 14px;
+  }
+  .type-meta dl{
+    font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    line-height: 1.9;
+    opacity: 0.75;
+  }
+  .type-meta dt{ display: inline; opacity: 0.55; }
+  .type-meta dd{ display: inline; }
+  .type-meta .ln{ display: block; }
+  .specimen{
+    color: var(--grauna);
+  }
+  .display-xl{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 112px; line-height: 0.95;
+    letter-spacing: -0.018em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+  }
+  .display-xl em{ font-style: italic; color: var(--areia); font-weight: 300; }
+  .h1{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 64px; line-height: 1.02;
+    letter-spacing: -0.012em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+    max-width: 18ch;
+  }
+  .h2{
+    font-family: "Fraunces", serif; font-weight: 400;
+    font-size: 36px; line-height: 1.08;
+    letter-spacing: -0.005em;
+    font-variation-settings: "SOFT" 30, "opsz" 96;
+    max-width: 24ch;
+  }
+  .body-l{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 22px; line-height: 1.5;
+    letter-spacing: 0.005em;
+    max-width: 42ch;
+  }
+  .body{
+    font-family: "DM Sans", sans-serif; font-weight: 400;
+    font-size: 15px; line-height: 1.65;
+    max-width: 60ch;
+  }
+  .caption{
+    font-family: "DM Sans", sans-serif; font-weight: 400;
+    font-size: 12px; line-height: 1.5;
+    color: var(--areia);
+    max-width: 60ch;
+  }
+  .overline{
+    font-family: "DM Sans", sans-serif; font-weight: 500;
+    font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+  }
+
+  /* Editorial example */
+  .editorial-demo{
+    margin-top: 72px;
+    border: 1px solid var(--rule-soft);
+    padding: 64px 56px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+    background: var(--cal-soft);
+  }
+  .editorial-demo .ed-over{
+    grid-column: 1 / -1;
+  }
+  .editorial-demo .ed-display{
+    grid-column: 1 / -1;
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 72px; line-height: 0.95;
+    letter-spacing: -0.014em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+    max-width: 14ch;
+    margin: 8px 0 24px;
+  }
+  .editorial-demo .ed-display em{ font-style: italic; color: var(--areia); font-weight: 300; }
+  .editorial-demo .ed-dropcap{
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px; line-height: 1.7;
+  }
+  .editorial-demo .ed-dropcap::first-letter{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    float: left;
+    font-size: 78px;
+    line-height: 0.85;
+    padding: 8px 12px 0 0;
+    color: var(--barro);
+  }
+  .editorial-demo .ed-aside{
+    font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+    font-size: 22px; line-height: 1.45;
+    color: var(--grauna); opacity: 0.85;
+  }
+  .editorial-demo .ed-cap{
+    margin-top: 16px;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  /* ============================================================
+     SEÇÃO 3 — COMPOSIÇÃO
+  ============================================================ */
+  .grid-demo{
+    position: relative;
+    background: var(--cal);
+    border: 1px solid var(--rule-soft);
+    height: 480px;
+    overflow: hidden;
+    margin-bottom: 48px;
+    background-image:
+      linear-gradient(to right, rgba(26,31,38,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26,31,38,0.04) 1px, transparent 1px);
+    background-size: 8px 8px, 8px 8px;
+  }
+  .grid-demo .cols{
+    position: absolute; inset: 0;
+    display: grid; grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+    padding: 48px;
+  }
+  .grid-demo .col{
+    background: rgba(110,59,42,0.07);
+    border-left: 1px solid rgba(110,59,42,0.18);
+  }
+  .grid-demo .overlay{
+    position: absolute; inset: 48px;
+    display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px;
+    pointer-events: none;
+  }
+  .grid-demo .ov-title{
+    grid-column: 1 / 7;
+    align-self: end;
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 64px; line-height: 0.95;
+    letter-spacing: -0.012em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+  }
+  .grid-demo .ov-title em{ font-style: italic; color: var(--areia); font-weight: 300; }
+  .grid-demo .ov-rule{
+    grid-column: 1 / 13;
+    align-self: start;
+    height: 1px; background: var(--grauna); opacity: 0.4;
+    margin-top: 4px;
+  }
+  .grid-demo .ov-meta{
+    grid-column: 9 / 13;
+    align-self: end;
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    line-height: 1.7;
+    opacity: 0.7;
+  }
+  .grid-demo .ov-ticks{
+    position: absolute; left: 12px; top: 12px;
+    font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+    opacity: 0.55;
+  }
+  .grid-demo .ov-ticks .t{ display: block; }
+
+  /* spacing scale */
+  .spacing{
+    display: grid; grid-template-columns: repeat(8, 1fr);
+    gap: 14px;
+    margin-bottom: 56px;
+  }
+  .sp{
+    display: flex; flex-direction: column; gap: 12px;
+    padding: 18px;
+    border: 1px solid var(--rule-soft);
+    background: var(--cal);
+  }
+  .sp .bar{ background: var(--barro); height: 6px; }
+  .sp .num{ font-family: "Fraunces", serif; font-weight: 400; font-size: 22px; }
+  .sp .nm{ font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.55; }
+
+  /* margins/alignment grid */
+  .comp-rules{
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px;
+    margin-bottom: 56px;
+  }
+  .rules-list{
+    display: grid; gap: 0;
+  }
+  .rule-item{
+    display: grid; grid-template-columns: 90px 1fr; gap: 32px;
+    padding: 22px 0;
+    border-top: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+  .rule-item:last-child{ border-bottom: 1px solid var(--rule-soft); }
+  .rule-item .k{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 22px;
+  }
+  .rule-item .v{
+    font-size: 13px; line-height: 1.6; opacity: 0.82;
+  }
+  .rule-item .v strong{ color: var(--grauna); font-weight: 500; }
+
+  .breath-demo{
+    aspect-ratio: 4/5;
+    background: var(--cal-soft);
+    position: relative;
+    border: 1px solid var(--rule-soft);
+    overflow: hidden;
+  }
+  .breath-demo .quadrants{
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, var(--rule-soft) 1px, transparent 1px);
+    background-size: 50% 100%;
+    background-position: center;
+  }
+  .breath-demo .content{
+    position: absolute;
+    inset: auto auto 36px 36px;
+    width: 56%;
+  }
+  .breath-demo .content .ov{
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 14px;
+  }
+  .breath-demo .content .ttl{
+    font-family: "Fraunces", serif; font-weight: 300; font-size: 38px;
+    line-height: 0.98; letter-spacing: -0.01em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+  }
+  .breath-demo .label{
+    position: absolute; top: 18px; right: 18px;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.5;
+  }
+  .breath-demo .filled{
+    position: absolute;
+    inset: 24px 50% 24px 24px;
+    border: 1px dashed rgba(110,59,42,0.4);
+  }
+  .breath-demo .empty-tag{
+    position: absolute; left: 60%; top: 50%;
+    font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  /* ============================================================
+     SEÇÃO 4 — PADRÕES
+  ============================================================ */
+  .patterns{
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    margin-bottom: 48px;
+  }
+  .pat-card{
+    border: 1px solid var(--rule-soft);
+    overflow: hidden;
+    background: var(--cal);
+  }
+  .pat-stage{
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+  }
+  .pat-meta{
+    padding: 22px;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .pat-meta .pnum{
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    opacity: 0.5;
+  }
+  .pat-meta h4{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 22px;
+    margin: 6px 0 8px;
+  }
+  .pat-meta p{
+    font-size: 12.5px; line-height: 1.55; opacity: 0.75;
+    max-width: 38ch;
+  }
+  .pat-uses{
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  .pat-uses span{
+    font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 4px 8px; border: 1px solid var(--rule);
+    opacity: 0.8;
+  }
+
+  /* Pattern usage examples */
+  .pat-uses-row{
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 18px;
+  }
+  .pat-use{
+    border: 1px solid var(--rule-soft);
+    overflow: hidden;
+    position: relative;
+    min-height: 280px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .pat-use .ll{
+    position: relative; z-index: 2;
+    padding: 24px;
+    background: linear-gradient(to top, var(--cal) 60%, transparent);
+  }
+  .pat-use.dark .ll{ background: linear-gradient(to top, var(--grauna) 60%, transparent); color: var(--cal); }
+  .pat-use .ll .ov{
+    font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase;
+    opacity: 0.65; margin-bottom: 6px;
+  }
+  .pat-use .ll .tt{
+    font-family: "Fraunces", serif; font-weight: 300; font-size: 28px;
+    line-height: 1; letter-spacing: -0.005em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+  }
+  .pat-bg{
+    position: absolute; inset: 0; z-index: 1;
+  }
+
+  /* ============================================================
+     SEÇÃO 5 — ICONOGRAFIA
+  ============================================================ */
+  .icon-system-note{
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+    margin-bottom: 48px;
+  }
+  .icon-system-note .item .k{
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.55; margin-bottom: 8px;
+  }
+  .icon-system-note .item .v{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 17px;
+    line-height: 1.4;
+  }
+  .icons-grid{
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
+    border-top: 1px solid var(--rule-soft);
+    border-left: 1px solid var(--rule-soft);
+  }
+  .icon-cell{
+    aspect-ratio: 1;
+    border-right: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    padding: 28px 16px 16px;
+    position: relative;
+  }
+  .icon-cell svg{
+    width: 44px; height: 44px;
+    color: var(--grauna);
+    stroke: currentColor;
+    stroke-width: 1.25;
+    stroke-linecap: round; stroke-linejoin: round;
+    fill: none;
+  }
+  .icon-cell .name{
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    opacity: 0.65;
+    margin-top: auto;
+  }
+  .icon-cell .idx{
+    position: absolute; top: 10px; left: 12px;
+    font-size: 9px; letter-spacing: 0.18em;
+    opacity: 0.35; font-feature-settings: "tnum";
+  }
+
+  /* icon construction sample */
+  .icon-construction{
+    margin-top: 56px;
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px;
+    align-items: stretch;
+  }
+  .ic-stage{
+    background: var(--cal-soft);
+    border: 1px solid var(--rule-soft);
+    aspect-ratio: 1;
+    display: grid; place-items: center;
+    position: relative;
+  }
+  .ic-stage svg{ width: 60%; height: 60%; }
+  .ic-stage .grid-bg{
+    position: absolute; inset: 12%;
+    background-image:
+      linear-gradient(to right, rgba(26,31,38,0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26,31,38,0.07) 1px, transparent 1px);
+    background-size: 12.5% 12.5%;
+    border: 1px solid rgba(26,31,38,0.18);
+  }
+  .ic-text dl{
+    display: grid; grid-template-columns: 140px 1fr; gap: 18px 24px;
+  }
+  .ic-text dt{
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.55; padding-top: 2px;
+  }
+  .ic-text dd{ font-size: 13.5px; line-height: 1.55; }
+
+  /* ============================================================
+     SEÇÃO 6 — FOTOGRAFIA
+  ============================================================ */
+  .photo-grid{
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px;
+  }
+  .ph-cell{
+    position: relative;
+    overflow: hidden;
+    background: var(--areia);
+    border: 1px solid var(--rule-faint);
+  }
+  .ph-cell .label{
+    position: absolute; left: 18px; bottom: 18px; right: 18px;
+    z-index: 3;
+    color: var(--cal);
+  }
+  .ph-cell .label .ov{
+    font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase;
+    opacity: 0.8; margin-bottom: 4px;
+  }
+  .ph-cell .label .nm{
+    font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+    font-size: 22px; line-height: 1.1;
+    font-variation-settings: "SOFT" 30, "opsz" 96;
+  }
+  .ph-cell::after{
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(26,31,38,0.55) 0%, rgba(26,31,38,0) 50%);
+    z-index: 2;
+  }
+  .ph-1{ grid-column: span 4; aspect-ratio: 16/10; }
+  .ph-2{ grid-column: span 2; aspect-ratio: 4/5; }
+  .ph-3{ grid-column: span 2; aspect-ratio: 4/5; }
+  .ph-4{ grid-column: span 2; aspect-ratio: 4/5; }
+  .ph-5{ grid-column: span 2; aspect-ratio: 4/5; }
+  .ph-6{ grid-column: span 3; aspect-ratio: 3/2; }
+  .ph-7{ grid-column: span 3; aspect-ratio: 3/2; }
+
+  /* Synthesized photo placeholders — color washes with subtle textures */
+  .scene{ position: absolute; inset: 0; z-index: 1; }
+  .scene.morning{
+    background:
+      radial-gradient(ellipse at 70% 30%, rgba(240, 233, 220, 0.55), transparent 60%),
+      linear-gradient(170deg, #C49A6B 0%, #A89C8A 45%, #6E3B2A 100%);
+  }
+  .scene.lateafternoon{
+    background:
+      radial-gradient(ellipse at 30% 70%, rgba(196, 154, 107, 0.7), transparent 60%),
+      linear-gradient(180deg, #5C7A8C 0%, #A89C8A 60%, #C49A6B 100%);
+  }
+  .scene.clay{
+    background:
+      radial-gradient(circle at 50% 50%, rgba(240,233,220,0.18), transparent 60%),
+      linear-gradient(135deg, #6E3B2A 0%, #A89C8A 100%);
+  }
+  .scene.linen{
+    background:
+      repeating-linear-gradient(95deg, rgba(240,233,220,0.08) 0 1px, transparent 1px 3px),
+      linear-gradient(180deg, #E6DECF 0%, #A89C8A 100%);
+  }
+  .scene.mato{
+    background:
+      radial-gradient(ellipse at 70% 70%, rgba(196,154,107,0.35), transparent 60%),
+      linear-gradient(180deg, #3D4836 0%, #1A1F26 100%);
+  }
+  .scene.water{
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(240,233,220,0.4), transparent 60%),
+      linear-gradient(180deg, #A89C8A 0%, #5C7A8C 80%);
+  }
+  .scene.interior{
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(240,233,220,0.65), transparent 60%),
+      linear-gradient(180deg, #E6DECF 0%, #A89C8A 100%);
+  }
+
+  /* photo direction principles list */
+  .photo-principles{
+    margin-top: 64px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+  }
+  .photo-principles .col-l h3{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 36px; line-height: 1.05; letter-spacing: -0.005em;
+    margin-bottom: 24px; max-width: 18ch;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+  }
+  .photo-principles .col-l h3 em{ font-style: italic; color: var(--areia); font-weight: 300; }
+  .photo-principles .col-l p{
+    font-size: 14px; line-height: 1.65; opacity: 0.82;
+    margin-bottom: 14px;
+  }
+  .photo-principles dl{
+    display: grid; gap: 0;
+  }
+  .photo-principles dl > div{
+    display: grid; grid-template-columns: 130px 1fr; gap: 24px;
+    padding: 18px 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .photo-principles dl > div:last-child{ border-bottom: 1px solid var(--rule-soft); }
+  .photo-principles dt{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 17px;
+  }
+  .photo-principles dd{
+    font-size: 13px; line-height: 1.55; opacity: 0.8;
+  }
+
+  /* do / don't lists in photo */
+  .photo-rules{
+    margin-top: 48px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+  .photo-rules .col{
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+  }
+  .photo-rules .col h5{
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    margin-bottom: 18px; opacity: 0.7;
+  }
+  .photo-rules ul{
+    list-style: none;
+  }
+  .photo-rules li{
+    padding: 9px 0;
+    border-bottom: 1px solid var(--rule-faint);
+    font-size: 13px; line-height: 1.5;
+    display: grid; grid-template-columns: 18px 1fr; gap: 12px;
+  }
+  .photo-rules li::before{
+    content: "";
+    width: 8px; height: 1px; background: var(--grauna);
+    align-self: center; margin-top: 1px;
+  }
+  .photo-rules .dont li::before{ background: var(--barro); }
+
+  /* ——— Footer / colophon ——— */
+  footer.colophon{
+    padding: 96px 0 72px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 48px;
+    align-items: end;
+  }
+  footer.colophon .signoff{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 36px; line-height: 1.1;
+    letter-spacing: -0.005em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+    max-width: 14ch;
+  }
+  footer.colophon .signoff em{ font-style: italic; color: var(--areia); font-weight: 300; }
+  footer.colophon .meta{
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.6; line-height: 1.9;
+  }
+  footer.colophon .right{ text-align: right; }
+
+  /* ——— Responsive ——— */
+  @media (max-width: 1024px){
+    .shell{ grid-template-columns: 1fr; }
+    aside.nav{
+      position: static; height: auto;
+      border-right: none; border-bottom: 1px solid var(--rule-soft);
+      padding: 32px 28px;
+    }
+    .nav-list{ display: grid; grid-template-columns: 1fr 1fr 1fr; }
+    main{ padding: 0 28px; }
+    .cover .lede, .palette-hero, .swatch-row, .editorial-demo, .comp-rules,
+    .patterns, .pat-uses-row, .icon-construction, .photo-grid,
+    .photo-principles, .photo-rules, footer.colophon, .icon-system-note,
+    .apply-grid, .families{
+      grid-template-columns: 1fr !important;
+    }
+    .icons-grid{ grid-template-columns: repeat(3, 1fr); }
+    .type-row{ grid-template-columns: 1fr; gap: 18px; }
+    .display-xl{ font-size: 64px; }
+    .h1{ font-size: 44px; }
+    .h2{ font-size: 28px; }
+    .spacing{ grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ============================ SIDE NAV ============================ -->
+  <aside class="nav">
+    <div>
+      <div class="brand-mark">Tramar</div>
+      <div class="brand-sub">Brand Book · 2026</div>
+    </div>
+
+    <div>
+      <div class="nav-doc">Conteúdo</div>
+      <ul class="nav-list">
+        <li><a href="#paleta">
+          <span class="nidx">01</span>
+          <span><span class="ntitle">Cor</span><span class="nsub">Paleta &amp; uso</span></span>
+        </a></li>
+        <li><a href="#tipografia">
+          <span class="nidx">02</span>
+          <span><span class="ntitle">Tipografia</span><span class="nsub">Hierarquia</span></span>
+        </a></li>
+        <li><a href="#composicao">
+          <span class="nidx">03</span>
+          <span><span class="ntitle">Composição</span><span class="nsub">Grid &amp; respiro</span></span>
+        </a></li>
+        <li><a href="#padroes">
+          <span class="nidx">04</span>
+          <span><span class="ntitle">Padrões</span><span class="nsub">Texturas têxteis</span></span>
+        </a></li>
+        <li><a href="#icones">
+          <span class="nidx">05</span>
+          <span><span class="ntitle">Ícones</span><span class="nsub">Sistema funcional</span></span>
+        </a></li>
+        <li><a href="#fotografia">
+          <span class="nidx">06</span>
+          <span><span class="ntitle">Fotografia</span><span class="nsub">Direção visual</span></span>
+        </a></li>
+      </ul>
+    </div>
+
+    <div class="nav-foot">
+      Documento V.01<br />
+      Maio 2026 · Confidencial
+    </div>
+  </aside>
+
+  <!-- ============================ MAIN ============================ -->
+  <main>
+
+    <!-- COVER -->
+    <section class="cover">
+      <div class="doc-meta">
+        <span>Tramar · Muro Alto · Pernambuco</span>
+        <span>Brand Book · V.01 · 2026</span>
+      </div>
+
+      <h1 class="serif">O sistema<br /><em>de uma trama.</em></h1>
+
+      <div class="lede">
+        <p class="serif">Este documento estende o logotipo Tramar para um sistema completo de identidade — cor, tipografia, composição, padrão, ícone e fotografia.</p>
+        <p class="second">A lógica é a mesma da casa: trabalhar com restrição. Pernambucanidade contemporânea bem feita usa pouco com confiança, não muito com timidez. O sistema é generoso onde precisa respirar e exato onde precisa funcionar.</p>
+      </div>
+    </section>
+
+    <!-- ================ SEÇÃO 1 — PALETA ================ -->
+    <section class="block" id="paleta">
+      <div class="sec-head">
+        <div class="sec-num">01 / Cor</div>
+        <div>
+          <h2 class="serif">Sete tons,<br /><em>uma só luz</em>.</h2>
+          <p class="deck">A paleta organiza-se em três neutros base (cal, areia, graúna) e quatro tons de assinatura, divididos em dois pares conceituais — <em>Caruá</em> (barro escuro + verde-mato) e <em>Renda</em> (açúcar-mascavo + azul-Olinda). Cada par evoca um ofício pernambucano sem mostrar o objeto.</p>
+        </div>
+      </div>
+
+      <!-- Proportion bar -->
+      <div class="subhead">Proporção de uso</div>
+      <div class="palette-hero">
+        <div class="ph cal"><span class="nm">Branco-cal</span><span class="pct">55%</span></div>
+        <div class="ph areia"><span class="nm">Areia molhada</span><span class="pct">22%</span></div>
+        <div class="ph grauna"><span class="nm">Tinta-graúna</span><span class="pct">12%</span></div>
+        <div class="ph barro"><span class="nm">Barro</span><span class="pct">4%</span></div>
+        <div class="ph mato"><span class="nm">Mato</span><span class="pct">3%</span></div>
+        <div class="ph mascavo"><span class="nm">Mascavo</span><span class="pct">2%</span></div>
+        <div class="ph olinda"><span class="nm">Olinda</span><span class="pct">2%</span></div>
+      </div>
+
+      <!-- Each color, row by row -->
+      <div class="subhead">Especificação</div>
+
+      <!-- BRANCO-CAL -->
+      <div class="swatch-row">
+        <div class="swatch cal">
+          <div>
+            <div class="name">Branco-cal</div>
+            <div class="role">Base · Fundo principal</div>
+          </div>
+          <div class="codes">
+            HEX&nbsp;F0E9DC<br />
+            RGB&nbsp;240·233·220<br />
+            CMYK&nbsp;4·6·13·0<br />
+            PMS&nbsp;7527 C
+          </div>
+        </div>
+        <div class="swatch-info">
+          <div class="h">Cal — a respiração da página.</div>
+          <div class="desc">Cor de parede caiada de casa pernambucana ao meio-dia. É o silêncio da composição, sempre presente, raramente comentada. Toda peça começa por ela, exceto quando intencionalmente invertida em modo noturno.</div>
+          <dl>
+            <div>
+              <dt>Função na hierarquia</dt>
+              <dd>Fundo primário, papelaria, página web em modo claro, parede de citações.</dd>
+            </div>
+            <div>
+              <dt>Pares aprovados</dt>
+              <dd class="pairs">
+                <span class="pair-chip"><span class="dot" style="background:var(--grauna)"></span>Graúna</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--barro)"></span>Barro</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--mato)"></span>Mato</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--areia)"></span>Areia</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Contraste WCAG</dt>
+              <dd>
+                <span class="wcag pass">vs Graúna · 15.2 · AAA</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Não fazer</dt>
+              <dd>Empregar puro branco (#FFF) no lugar — perde o calor que define a marca.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- AREIA MOLHADA -->
+      <div class="swatch-row">
+        <div class="swatch areia">
+          <div>
+            <div class="name">Areia molhada</div>
+            <div class="role">Neutro de apoio</div>
+          </div>
+          <div class="codes">
+            HEX&nbsp;A89C8A<br />
+            RGB&nbsp;168·156·138<br />
+            CMYK&nbsp;36·37·47·5<br />
+            PMS&nbsp;Warm Gray 6
+          </div>
+        </div>
+        <div class="swatch-info">
+          <div class="h">Areia — pausa entre títulos.</div>
+          <div class="desc">A cor da faixa de praia depois da onda recuar. Usada em texto secundário, legendas, regras, ilustrações monocromáticas e estados desativados. Calor suficiente para não soar cinza corporativo.</div>
+          <dl>
+            <div>
+              <dt>Função na hierarquia</dt>
+              <dd>Texto secundário, legendas, regras divisórias, monocromático auxiliar.</dd>
+            </div>
+            <div>
+              <dt>Pares aprovados</dt>
+              <dd class="pairs">
+                <span class="pair-chip"><span class="dot" style="background:var(--cal)"></span>Cal</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--grauna)"></span>Graúna</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Contraste WCAG</dt>
+              <dd>
+                <span class="wcag pass">vs Graúna · 5.6 · AA</span>
+                &nbsp;
+                <span class="wcag fail">vs Cal · 1.8 · texto evitar</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Uso preferencial</dt>
+              <dd>Itálicos editoriais, microcopy, números de seção, marcas em arquivo monocromático.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- TINTA-GRAÚNA -->
+      <div class="swatch-row">
+        <div class="swatch grauna">
+          <div>
+            <div class="name">Tinta-graúna</div>
+            <div class="role">Contraste · Tipografia</div>
+          </div>
+          <div class="codes">
+            HEX&nbsp;1A1F26<br />
+            RGB&nbsp;26·31·38<br />
+            CMYK&nbsp;85·76·61·85<br />
+            PMS&nbsp;Black 6 C
+          </div>
+        </div>
+        <div class="swatch-info">
+          <div class="h">Graúna — o pássaro escuro do sertão.</div>
+          <div class="desc">Preto que não é preto. Tem azul de noite cerrada, suficiente para não brigar com a fotografia. É a cor da tipografia de leitura, do contraste de capas, do modo noturno completo.</div>
+          <dl>
+            <div>
+              <dt>Função na hierarquia</dt>
+              <dd>Tipografia principal, contraste alto, fundo de modo noturno, vinhetas.</dd>
+            </div>
+            <div>
+              <dt>Pares aprovados</dt>
+              <dd class="pairs">
+                <span class="pair-chip"><span class="dot" style="background:var(--cal)"></span>Cal</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--areia)"></span>Areia</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--mascavo)"></span>Mascavo</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--olinda)"></span>Olinda</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Contraste WCAG</dt>
+              <dd>
+                <span class="wcag pass">vs Cal · 15.2 · AAA</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Não fazer</dt>
+              <dd>Substituir por #000 puro. A vibração das outras cores cai.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- BARRO ESCURO -->
+      <div class="swatch-row">
+        <div class="swatch barro">
+          <div>
+            <div class="name">Barro escuro</div>
+            <div class="role">Assinatura · Família Caruá</div>
+          </div>
+          <div class="codes">
+            HEX&nbsp;6E3B2A<br />
+            RGB&nbsp;110·59·42<br />
+            CMYK&nbsp;38·75·82·45<br />
+            PMS&nbsp;7596 C
+          </div>
+        </div>
+        <div class="swatch-info">
+          <div class="h">Barro — terra cozida do Alto do Moura.</div>
+          <div class="desc">Tom que cita a cerâmica de Caruaru sem precisar mostrá-la. Reservado para superfícies de assinatura: capa de uma estação, lacre, etiqueta de amenidade, página dedicada a uma narrativa.</div>
+          <dl>
+            <div>
+              <dt>Função na hierarquia</dt>
+              <dd>Acento principal da família Caruá. Faixas de assinatura, dropcaps, papelaria de série.</dd>
+            </div>
+            <div>
+              <dt>Pares aprovados</dt>
+              <dd class="pairs">
+                <span class="pair-chip"><span class="dot" style="background:var(--cal)"></span>Cal</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--mato)"></span>Mato</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--areia)"></span>Areia</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Contraste WCAG</dt>
+              <dd>
+                <span class="wcag pass">vs Cal · 8.4 · AAA</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Não fazer</dt>
+              <dd>Empregar como cor de UI funcional (botões, links). Reserva-se ao gesto editorial.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- VERDE-MATO -->
+      <div class="swatch-row">
+        <div class="swatch mato">
+          <div>
+            <div class="name">Verde-mato</div>
+            <div class="role">Apoio · Família Caruá</div>
+          </div>
+          <div class="codes">
+            HEX&nbsp;3D4836<br />
+            RGB&nbsp;61·72·54<br />
+            CMYK&nbsp;67·48·76·56<br />
+            PMS&nbsp;5743 C
+          </div>
+        </div>
+        <div class="swatch-info">
+          <div class="h">Mato — a Zona da Mata vista de longe.</div>
+          <div class="desc">Verde escurecido, com tom de coqueiral à sombra. Acompanha o barro como contraponto frio, e funciona sozinho em superfícies pequenas (capas internas, identificação de blocos).</div>
+          <dl>
+            <div>
+              <dt>Função na hierarquia</dt>
+              <dd>Apoio frio da família Caruá. Bloquinhos de identidade, capas internas, etiquetas.</dd>
+            </div>
+            <div>
+              <dt>Pares aprovados</dt>
+              <dd class="pairs">
+                <span class="pair-chip"><span class="dot" style="background:var(--cal)"></span>Cal</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--barro)"></span>Barro</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--mascavo)"></span>Mascavo</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Contraste WCAG</dt>
+              <dd>
+                <span class="wcag pass">vs Cal · 8.2 · AAA</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Não fazer</dt>
+              <dd>Saturar para verde-bandeira. O mato é apagado, não festivo.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- AÇÚCAR-MASCAVO -->
+      <div class="swatch-row">
+        <div class="swatch mascavo">
+          <div>
+            <div class="name">Açúcar-mascavo</div>
+            <div class="role">Assinatura · Família Renda</div>
+          </div>
+          <div class="codes">
+            HEX&nbsp;C49A6B<br />
+            RGB&nbsp;196·154·107<br />
+            CMYK&nbsp;22·40·60·5<br />
+            PMS&nbsp;7510 C
+          </div>
+        </div>
+        <div class="swatch-info">
+          <div class="h">Mascavo — sol da tarde sobre a renda.</div>
+          <div class="desc">Quente, doce, sem virar laranja. É a cor do açúcar-mascavo encharcado de melado: lembra o engenho, lembra a luz das cinco. Reservado a peças que celebram a renda renascença e o linho.</div>
+          <dl>
+            <div>
+              <dt>Função na hierarquia</dt>
+              <dd>Acento principal da família Renda. Capas, lacres, etiquetas de têxteis.</dd>
+            </div>
+            <div>
+              <dt>Pares aprovados</dt>
+              <dd class="pairs">
+                <span class="pair-chip"><span class="dot" style="background:var(--grauna)"></span>Graúna</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--olinda)"></span>Olinda</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--cal)"></span>Cal</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Contraste WCAG</dt>
+              <dd>
+                <span class="wcag pass">vs Graúna · 7.1 · AAA</span>
+                &nbsp;
+                <span class="wcag fail">vs Cal · 1.6 · texto evitar</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Não fazer</dt>
+              <dd>Aproximar do laranja saturado. Sempre passar pelo equilíbrio do barro.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- AZUL-OLINDA -->
+      <div class="swatch-row">
+        <div class="swatch olinda">
+          <div>
+            <div class="name">Azul-Olinda</div>
+            <div class="role">Apoio · Família Renda</div>
+          </div>
+          <div class="codes">
+            HEX&nbsp;5C7A8C<br />
+            RGB&nbsp;92·122·140<br />
+            CMYK&nbsp;65·43·33·11<br />
+            PMS&nbsp;5415 C
+          </div>
+        </div>
+        <div class="swatch-info">
+          <div class="h">Olinda — janela de igreja ao entardecer.</div>
+          <div class="desc">Azul fumê, fechado, com referência aos azulejos pintados à mão de igreja barroca pernambucana. Equilibra o mascavo em peças da família Renda; é também a cor mais próxima do mar visto de cima do morro.</div>
+          <dl>
+            <div>
+              <dt>Função na hierarquia</dt>
+              <dd>Apoio da família Renda. Capas internas, ilustrações monocromáticas, links em superfícies claras.</dd>
+            </div>
+            <div>
+              <dt>Pares aprovados</dt>
+              <dd class="pairs">
+                <span class="pair-chip"><span class="dot" style="background:var(--cal)"></span>Cal</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--mascavo)"></span>Mascavo</span>
+                <span class="pair-chip"><span class="dot" style="background:var(--grauna)"></span>Graúna</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Contraste WCAG</dt>
+              <dd>
+                <span class="wcag pass">vs Cal · 4.9 · AA</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Não fazer</dt>
+              <dd>Aproximar de azul-marinho corporativo. Sempre acinzentado, nunca brilhante.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Family cards -->
+      <div class="families">
+        <div class="family-card carua">
+          <div class="ftag">Família · Caruá</div>
+          <h4>Barro &amp; mato.</h4>
+          <p>A família dedicada ao ofício do barro e à paisagem da Zona da Mata. Usada em peças que falam de cerâmica, cozinha, fogo, terra.</p>
+          <div class="duo">
+            <span style="background:var(--barro)"></span>
+            <span style="background:var(--mato)"></span>
+          </div>
+        </div>
+        <div class="family-card renda">
+          <div class="ftag">Família · Renda</div>
+          <h4>Mascavo &amp; Olinda.</h4>
+          <p>A família dedicada à renda renascença, ao linho cru, à parede de azulejo. Usada em peças que falam de têxtil, descanso, luz.</p>
+          <div class="duo">
+            <span style="background:var(--mascavo)"></span>
+            <span style="background:var(--olinda)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Application: lockup em cada cor -->
+      <div class="subhead" style="margin-top: 80px;">Aplicação · marca em cada superfície</div>
+      <div class="apply-grid">
+        <div class="apply calo">
+          <span class="tag">Calo · positivo</span>
+          <div>
+            <div class="lk">Tramar</div>
+            <div class="sub">Muro Alto</div>
+          </div>
+        </div>
+        <div class="apply dark">
+          <span class="tag">Graúna · negativo</span>
+          <div>
+            <div class="lk">Tramar</div>
+            <div class="sub">Muro Alto</div>
+          </div>
+        </div>
+        <div class="apply barr">
+          <span class="tag">Barro · Caruá</span>
+          <div>
+            <div class="lk">Tramar</div>
+            <div class="sub">Muro Alto</div>
+          </div>
+        </div>
+        <div class="apply mat">
+          <span class="tag">Mato · Caruá</span>
+          <div>
+            <div class="lk">Tramar</div>
+            <div class="sub">Muro Alto</div>
+          </div>
+        </div>
+        <div class="apply masc">
+          <span class="tag">Mascavo · Renda</span>
+          <div>
+            <div class="lk">Tramar</div>
+            <div class="sub">Muro Alto</div>
+          </div>
+        </div>
+        <div class="apply olin">
+          <span class="tag">Olinda · Renda</span>
+          <div>
+            <div class="lk">Tramar</div>
+            <div class="sub">Muro Alto</div>
+          </div>
+        </div>
+        <div class="apply are">
+          <span class="tag">Areia · apoio</span>
+          <div>
+            <div class="lk">Tramar</div>
+            <div class="sub">Muro Alto</div>
+          </div>
+        </div>
+        <div class="apply calo">
+          <span class="tag">Calo · monograma</span>
+          <div style="display:flex; align-items:center; height:100%;">
+            <div class="lk" style="font-size: 96px; line-height: 0.8;">T</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================ SEÇÃO 2 — TIPOGRAFIA ================ -->
+    <section class="block" id="tipografia">
+      <div class="sec-head">
+        <div class="sec-num">02 / Tipografia</div>
+        <div>
+          <h2 class="serif">Uma serifada que <em>respira</em>,<br />uma sans que <em>recolhe</em>.</h2>
+          <p class="deck">A serifada (Fraunces) carrega o gesto da marca — terminais suaves, eixo levemente humanista, contraste contido. A sans (DM Sans) entra como legenda, microcopy e overline, sempre em peso leve com tracking aberto. Sete níveis cobrem todo o sistema.</p>
+        </div>
+      </div>
+
+      <!-- Display -->
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="level">Display</div>
+          <dl>
+            <span class="ln"><dt>Fonte —</dt><dd> Fraunces</dd></span>
+            <span class="ln"><dt>Peso —</dt><dd> 300 Light</dd></span>
+            <span class="ln"><dt>Tamanho —</dt><dd> 96–128px</dd></span>
+            <span class="ln"><dt>Tracking —</dt><dd> −1.8%</dd></span>
+            <span class="ln"><dt>Leading —</dt><dd> 0.92</dd></span>
+            <span class="ln"><dt>Uso —</dt><dd> Capa, hero, manifesto</dd></span>
+          </dl>
+        </div>
+        <div class="specimen">
+          <div class="display-xl">Uma trama pernambucana, <em>à beira-mar</em>.</div>
+        </div>
+      </div>
+
+      <!-- H1 -->
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="level">H1 — Título de seção</div>
+          <dl>
+            <span class="ln"><dt>Fonte —</dt><dd> Fraunces</dd></span>
+            <span class="ln"><dt>Peso —</dt><dd> 300 Light</dd></span>
+            <span class="ln"><dt>Tamanho —</dt><dd> 56–72px</dd></span>
+            <span class="ln"><dt>Tracking —</dt><dd> −1.2%</dd></span>
+            <span class="ln"><dt>Leading —</dt><dd> 1.02</dd></span>
+            <span class="ln"><dt>Uso —</dt><dd> Aberturas de capítulo, hero secundário</dd></span>
+          </dl>
+        </div>
+        <div class="specimen">
+          <div class="h1 serif">Casa de praia tecida com Pernambuco contemporâneo.</div>
+        </div>
+      </div>
+
+      <!-- H2 -->
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="level">H2 — Subtítulo</div>
+          <dl>
+            <span class="ln"><dt>Fonte —</dt><dd> Fraunces</dd></span>
+            <span class="ln"><dt>Peso —</dt><dd> 400 Regular</dd></span>
+            <span class="ln"><dt>Tamanho —</dt><dd> 32–40px</dd></span>
+            <span class="ln"><dt>Tracking —</dt><dd> −0.5%</dd></span>
+            <span class="ln"><dt>Leading —</dt><dd> 1.08</dd></span>
+            <span class="ln"><dt>Uso —</dt><dd> Subseções, blocos editoriais internos</dd></span>
+          </dl>
+        </div>
+        <div class="specimen">
+          <div class="h2 serif">Dois flats studio, curadoria material, descanso atento.</div>
+        </div>
+      </div>
+
+      <!-- Body large -->
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="level">Body large — Lead</div>
+          <dl>
+            <span class="ln"><dt>Fonte —</dt><dd> Fraunces</dd></span>
+            <span class="ln"><dt>Peso —</dt><dd> 300 Light</dd></span>
+            <span class="ln"><dt>Tamanho —</dt><dd> 20–22px</dd></span>
+            <span class="ln"><dt>Tracking —</dt><dd> +0.5%</dd></span>
+            <span class="ln"><dt>Leading —</dt><dd> 1.5</dd></span>
+            <span class="ln"><dt>Uso —</dt><dd> Parágrafos de destaque, leads de seção</dd></span>
+          </dl>
+        </div>
+        <div class="specimen">
+          <p class="body-l serif">A Tramar é um lugar para hóspedes que valorizam o ofício — a cerâmica que esfria devagar, a renda que se ensaia ponto a ponto, o linho que muda com a luz da tarde.</p>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="level">Body — Corpo padrão</div>
+          <dl>
+            <span class="ln"><dt>Fonte —</dt><dd> DM Sans</dd></span>
+            <span class="ln"><dt>Peso —</dt><dd> 400 Regular</dd></span>
+            <span class="ln"><dt>Tamanho —</dt><dd> 15px</dd></span>
+            <span class="ln"><dt>Tracking —</dt><dd> 0</dd></span>
+            <span class="ln"><dt>Leading —</dt><dd> 1.65</dd></span>
+            <span class="ln"><dt>Uso —</dt><dd> Texto corrido, descrições, e-mail</dd></span>
+          </dl>
+        </div>
+        <div class="specimen">
+          <p class="body sans">A casa fica em Muro Alto, recuada da praia em uma travessa silenciosa. Os studios foram pensados para estadias longas — dois, três, sete dias — em que o hóspede entra na rotina da casa em vez de visitá-la. A cozinha é simples e tem o necessário; o resto é tecido, barro e a luz que vem do leste.</p>
+        </div>
+      </div>
+
+      <!-- Caption -->
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="level">Caption — Legenda</div>
+          <dl>
+            <span class="ln"><dt>Fonte —</dt><dd> DM Sans</dd></span>
+            <span class="ln"><dt>Peso —</dt><dd> 400 Regular</dd></span>
+            <span class="ln"><dt>Tamanho —</dt><dd> 12px</dd></span>
+            <span class="ln"><dt>Tracking —</dt><dd> 0</dd></span>
+            <span class="ln"><dt>Leading —</dt><dd> 1.5</dd></span>
+            <span class="ln"><dt>Cor —</dt><dd> Areia molhada</dd></span>
+            <span class="ln"><dt>Uso —</dt><dd> Microcopy, legendas, créditos</dd></span>
+          </dl>
+        </div>
+        <div class="specimen">
+          <p class="caption">Renda renascença de Pesqueira, parede caiada, cerâmica do Alto do Moura. Fotografia Luana Bezerra para Tramar, fevereiro de 2026.</p>
+        </div>
+      </div>
+
+      <!-- Overline -->
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="level">Overline — Rótulo</div>
+          <dl>
+            <span class="ln"><dt>Fonte —</dt><dd> DM Sans</dd></span>
+            <span class="ln"><dt>Peso —</dt><dd> 500 Medium</dd></span>
+            <span class="ln"><dt>Tamanho —</dt><dd> 11px</dd></span>
+            <span class="ln"><dt>Tracking —</dt><dd> +28%</dd></span>
+            <span class="ln"><dt>Caixa —</dt><dd> Alta</dd></span>
+            <span class="ln"><dt>Uso —</dt><dd> Categorias, seções, eyebrows</dd></span>
+          </dl>
+        </div>
+        <div class="specimen">
+          <div class="overline">Ofício · Materialidade · Muro Alto</div>
+        </div>
+      </div>
+
+      <!-- Editorial demo -->
+      <div class="editorial-demo">
+        <div class="ed-over"><div class="overline">Aplicação · página de revista</div></div>
+        <div class="ed-display serif">Tecer<br />é <em>juntar</em><br />o lugar.</div>
+        <div class="ed-dropcap">Muro Alto não foi escolhido por proximidade da praia, mas por proximidade do barro. A trinta minutos dali está Caruaru. A uma hora, Pesqueira. A meia hora, o Alto do Moura. A geografia da casa começa antes da praia — começa no interior do estado, e desce até o mar.</div>
+        <div>
+          <div class="ed-aside">"Um lugar é uma trama de ofícios feitos por mão presente. Quando tudo é máquina, o que sobra é a fadiga."</div>
+          <div class="ed-cap">— Caderno de notas Tramar, 2026.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================ SEÇÃO 3 — COMPOSIÇÃO ================ -->
+    <section class="block" id="composicao">
+      <div class="sec-head">
+        <div class="sec-num">03 / Composição</div>
+        <div>
+          <h2 class="serif">Grid de oito.<br /><em>Respiro de quarenta.</em></h2>
+          <p class="deck">Toda composição parte de uma grade base de 8&nbsp;pt e uma coluna editorial de 12 colunas. Pelo menos quarenta por cento da superfície deve permanecer vazia — o espaço em branco é parte do trabalho, não sua sobra. Alinhamento à esquerda predomina; centralizado é exceção reservada a selos e capas.</p>
+        </div>
+      </div>
+
+      <!-- 12 col grid demo -->
+      <div class="subhead">Grade editorial · 12 colunas sobre malha de 8&nbsp;pt</div>
+      <div class="grid-demo">
+        <div class="cols">
+          <div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div>
+          <div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div>
+          <div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div>
+        </div>
+        <div class="overlay">
+          <div class="ov-rule"></div>
+          <div class="ov-title serif">Trama,<br />à <em>beira-mar</em>.</div>
+          <div class="ov-meta">
+            Coluna 1–6<br />
+            Display · Fraunces 300<br />
+            72 / 70 pt
+          </div>
+        </div>
+        <div class="ov-ticks">
+          <span class="t">— 8 pt</span>
+          <span class="t">— Coluna ×12</span>
+          <span class="t">— Calha 16 pt</span>
+        </div>
+      </div>
+
+      <!-- spacing scale -->
+      <div class="subhead">Escala de espaçamento</div>
+      <div class="spacing">
+        <div class="sp"><div class="bar" style="width: 4px;"></div><div class="num">04</div><div class="nm">XS · grain</div></div>
+        <div class="sp"><div class="bar" style="width: 8px;"></div><div class="num">08</div><div class="nm">S · base</div></div>
+        <div class="sp"><div class="bar" style="width: 16px;"></div><div class="num">16</div><div class="nm">M · gutter</div></div>
+        <div class="sp"><div class="bar" style="width: 24px;"></div><div class="num">24</div><div class="nm">L · block</div></div>
+        <div class="sp"><div class="bar" style="width: 40px;"></div><div class="num">40</div><div class="nm">XL · section</div></div>
+        <div class="sp"><div class="bar" style="width: 64px;"></div><div class="num">64</div><div class="nm">2XL · spread</div></div>
+        <div class="sp"><div class="bar" style="width: 96px;"></div><div class="num">96</div><div class="nm">3XL · cover</div></div>
+        <div class="sp"><div class="bar" style="width: 100%;"></div><div class="num">128</div><div class="nm">4XL · breath</div></div>
+      </div>
+
+      <!-- composition rules + breath demo -->
+      <div class="comp-rules">
+        <div class="rules-list">
+          <div class="subhead" style="border-top: none; padding-top: 0;">Regras de composição</div>
+          <div class="rule-item">
+            <div class="k">Grade</div>
+            <div class="v">Malha base de <strong>8&nbsp;pt</strong>. Toda métrica do sistema (padding, leading, ícone, ilustração) é múltiplo de 8. Subunidade de 4&nbsp;pt apenas para detalhes ópticos.</div>
+          </div>
+          <div class="rule-item">
+            <div class="k">Coluna</div>
+            <div class="v"><strong>12 colunas</strong> em layouts editoriais; <strong>6 colunas</strong> em peças mais íntimas; calha (gutter) sempre de 16 ou 24&nbsp;pt.</div>
+          </div>
+          <div class="rule-item">
+            <div class="k">Margens</div>
+            <div class="v">Mínima de <strong>64&nbsp;pt</strong> em desktop, <strong>32&nbsp;pt</strong> em mobile, <strong>20&nbsp;mm</strong> em impressos A4 e A5.</div>
+          </div>
+          <div class="rule-item">
+            <div class="k">Alinhamento</div>
+            <div class="v">Alinhamento <strong>à esquerda</strong> em 90% dos casos. Centralizado reservado a selos, lacres e capas. Justificado é proibido.</div>
+          </div>
+          <div class="rule-item">
+            <div class="k">Respiração</div>
+            <div class="v">Pelo menos <strong>40% de espaço vazio</strong> em qualquer composição final. Conta-se a área não pintada, não impressa, sem texto nem imagem.</div>
+          </div>
+          <div class="rule-item">
+            <div class="k">Hierarquia</div>
+            <div class="v">Uma e apenas uma <strong>peça dominante</strong> por superfície — texto, fotografia ou padrão. Coabitação produz ruído.</div>
+          </div>
+        </div>
+        <div class="breath-demo">
+          <span class="label">Composição · regra dos 40%</span>
+          <div class="filled"></div>
+          <span class="empty-tag">60% vazio</span>
+          <div class="content">
+            <div class="ov">Estação 02 · Renda</div>
+            <div class="ttl serif">Linho cru,<br />parede caiada.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================ SEÇÃO 4 — PADRÕES ================ -->
+    <section class="block" id="padroes">
+      <div class="sec-head">
+        <div class="sec-num">04 / Padrões</div>
+        <div>
+          <h2 class="serif">Têxtil em <em>geometria seca</em>.</h2>
+          <p class="deck">Três padrões gráficos abstraem ofícios pernambucanos sem reproduzi-los. Linhas finas, repetição contida, ritmo claro. Pensados como <em>Bauhaus encontra renda</em> — sem estampa étnica literal, sem decoração tropical. Aplicam-se em superfícies grandes (capas, bandeiras, divisórias) e nunca por trás de texto corrido.</p>
+        </div>
+      </div>
+
+      <div class="patterns">
+
+        <!-- Pattern 01 — Trama (weave) -->
+        <div class="pat-card">
+          <div class="pat-stage">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="200" height="200" fill="#F0E9DC" />
+              <defs>
+                <pattern id="trama" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <line x1="0" y1="6" x2="14" y2="6" stroke="#1A1F26" stroke-width="0.6"/>
+                  <line x1="6" y1="0" x2="6" y2="14" stroke="#1A1F26" stroke-width="0.6"/>
+                  <line x1="10" y1="16" x2="20" y2="16" stroke="#1A1F26" stroke-width="0.6"/>
+                  <line x1="16" y1="10" x2="16" y2="20" stroke="#1A1F26" stroke-width="0.6"/>
+                </pattern>
+              </defs>
+              <rect width="200" height="200" fill="url(#trama)" />
+            </svg>
+          </div>
+          <div class="pat-meta">
+            <div class="pnum">P · 01</div>
+            <h4>Trama</h4>
+            <p>Riscos curtos perpendiculares em malha decalada — eco abstrato do tear sem desenhar fio. Funciona como fundo em superfícies grandes.</p>
+            <div class="pat-uses">
+              <span>Bandeira</span><span>Capa</span><span>Forro</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pattern 02 — Renda (lace) -->
+        <div class="pat-card">
+          <div class="pat-stage">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="200" height="200" fill="#F0E9DC" />
+              <defs>
+                <pattern id="renda" width="32" height="32" patternUnits="userSpaceOnUse">
+                  <circle cx="16" cy="16" r="9" fill="none" stroke="#6E3B2A" stroke-width="0.5" />
+                  <circle cx="0" cy="0" r="9" fill="none" stroke="#6E3B2A" stroke-width="0.5" />
+                  <circle cx="32" cy="0" r="9" fill="none" stroke="#6E3B2A" stroke-width="0.5" />
+                  <circle cx="0" cy="32" r="9" fill="none" stroke="#6E3B2A" stroke-width="0.5" />
+                  <circle cx="32" cy="32" r="9" fill="none" stroke="#6E3B2A" stroke-width="0.5" />
+                  <line x1="16" y1="0" x2="16" y2="32" stroke="#6E3B2A" stroke-width="0.4" />
+                  <line x1="0" y1="16" x2="32" y2="16" stroke="#6E3B2A" stroke-width="0.4" />
+                </pattern>
+              </defs>
+              <rect width="200" height="200" fill="url(#renda)" />
+            </svg>
+          </div>
+          <div class="pat-meta">
+            <div class="pnum">P · 02</div>
+            <h4>Renda</h4>
+            <p>Círculos atravessados por dois eixos formam uma malha de pétalas — abstração estrutural da renda renascença. Usa-se em barro ou mascavo sobre cal.</p>
+            <div class="pat-uses">
+              <span>Página interna</span><span>Lacre</span><span>Embalagem</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pattern 03 — Rede (fishing net) -->
+        <div class="pat-card">
+          <div class="pat-stage">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="200" height="200" fill="#F0E9DC" />
+              <defs>
+                <pattern id="rede" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <rect width="24" height="24" fill="transparent" />
+                  <line x1="0" y1="0" x2="0" y2="24" stroke="#3D4836" stroke-width="0.5" />
+                  <line x1="0" y1="0" x2="24" y2="0" stroke="#3D4836" stroke-width="0.5" />
+                  <circle cx="12" cy="12" r="0.8" fill="#3D4836" />
+                </pattern>
+              </defs>
+              <rect width="200" height="200" fill="url(#rede)" />
+            </svg>
+          </div>
+          <div class="pat-meta">
+            <div class="pnum">P · 03</div>
+            <h4>Rede</h4>
+            <p>Quadriculado em diagonal com nó pontuado — eco da rede de pescador estendida no sol. O nó marca o ritmo; a linha é silenciosa.</p>
+            <div class="pat-uses">
+              <span>Divisória</span><span>Faixa</span><span>Carimbo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pattern usage examples -->
+      <div class="subhead">Aplicação em superfície</div>
+      <div class="pat-uses-row">
+
+        <!-- Use 1 — Cover applied with Renda pattern -->
+        <div class="pat-use">
+          <div class="pat-bg">
+            <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="280" fill="#F0E9DC"/>
+              <g opacity="0.45">
+                <use href="#renda" />
+              </g>
+              <rect x="0" y="0" width="400" height="280" fill="url(#renda)" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="ll">
+            <div class="ov">Estação 02 · Renda</div>
+            <div class="tt">Linho cru e parede caiada.</div>
+          </div>
+        </div>
+
+        <!-- Use 2 — Trama on dark -->
+        <div class="pat-use dark">
+          <div class="pat-bg">
+            <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="280" fill="#1A1F26"/>
+              <defs>
+                <pattern id="tramaLight" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <line x1="0" y1="6" x2="14" y2="6" stroke="#A89C8A" stroke-width="0.6"/>
+                  <line x1="6" y1="0" x2="6" y2="14" stroke="#A89C8A" stroke-width="0.6"/>
+                  <line x1="10" y1="16" x2="20" y2="16" stroke="#A89C8A" stroke-width="0.6"/>
+                  <line x1="16" y1="10" x2="16" y2="20" stroke="#A89C8A" stroke-width="0.6"/>
+                </pattern>
+              </defs>
+              <rect width="400" height="280" fill="url(#tramaLight)"/>
+            </svg>
+          </div>
+          <div class="ll">
+            <div class="ov">Estação 01 · Caruá</div>
+            <div class="tt">Barro do Alto do Moura.</div>
+          </div>
+        </div>
+
+        <!-- Use 3 — Rede as divider -->
+        <div class="pat-use">
+          <div class="pat-bg" style="display: flex; flex-direction: column; justify-content: center;">
+            <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="280" fill="#F0E9DC"/>
+              <defs>
+                <pattern id="redeBig" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="28" stroke="#3D4836" stroke-width="0.5"/>
+                  <line x1="0" y1="0" x2="28" y2="0" stroke="#3D4836" stroke-width="0.5"/>
+                  <circle cx="14" cy="14" r="1" fill="#3D4836"/>
+                </pattern>
+              </defs>
+              <rect x="0" y="0" width="400" height="80" fill="url(#redeBig)"/>
+              <rect x="0" y="200" width="400" height="80" fill="url(#redeBig)"/>
+            </svg>
+          </div>
+          <div class="ll" style="background: transparent; color: var(--grauna); padding: 0 24px 24px;">
+            <div class="ov">Notícia · 03</div>
+            <div class="tt">Rede como divisória.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================ SEÇÃO 5 — ICONOGRAFIA ================ -->
+    <section class="block" id="icones">
+      <div class="sec-head">
+        <div class="sec-num">05 / Ícones</div>
+        <div>
+          <h2 class="serif">Doze pictogramas <em>funcionais</em>.</h2>
+          <p class="deck">O sistema funcional do flat usa apenas pictogramas que comunicam serviço — wifi, café, ar-condicionado, varanda. Linha de 1,25&nbsp;pt sobre malha de 24&nbsp;pt, terminais arredondados, sem preenchimento. Família discreta, pensada para conviver com a tipografia sem competir.</p>
+        </div>
+      </div>
+
+      <div class="icon-system-note">
+        <div class="item">
+          <div class="k">Grade</div>
+          <div class="v">24 × 24 pt, área útil 20 × 20 pt</div>
+        </div>
+        <div class="item">
+          <div class="k">Traço</div>
+          <div class="v">1,25 pt, terminais redondos, ângulos vivos</div>
+        </div>
+        <div class="item">
+          <div class="k">Cor</div>
+          <div class="v">Graúna · 1 cor por aplicação · sem preenchimento</div>
+        </div>
+      </div>
+
+      <div class="icons-grid">
+        <!-- 01 wifi -->
+        <div class="icon-cell"><span class="idx">01</span>
+          <svg viewBox="0 0 24 24"><path d="M3 9c5-4.5 13-4.5 18 0"/><path d="M6 13c3.5-3 8.5-3 12 0"/><path d="M9 17c2-1.5 4-1.5 6 0"/><circle cx="12" cy="20" r="0.6" fill="currentColor"/></svg>
+          <span class="name">Wifi</span>
+        </div>
+        <!-- 02 café -->
+        <div class="icon-cell"><span class="idx">02</span>
+          <svg viewBox="0 0 24 24"><path d="M5 9h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2"/><path d="M9 5c0-1 1-1 1-2M12 5c0-1 1-1 1-2M15 5c0-1 1-1 1-2"/></svg>
+          <span class="name">Café</span>
+        </div>
+        <!-- 03 ar-condicionado -->
+        <div class="icon-cell"><span class="idx">03</span>
+          <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="6" rx="1"/><path d="M6 12v2M9 12v2M12 12v2M15 12v2M18 12v2"/><path d="M7 18l-1 2M12 18l0 2M17 18l1 2"/></svg>
+          <span class="name">Ar-condicionado</span>
+        </div>
+        <!-- 04 varanda -->
+        <div class="icon-cell"><span class="idx">04</span>
+          <svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M5 20V10M9 20V10M13 20V10M17 20V10"/><path d="M3 10h18"/><path d="M5 10c0-3 3-5 7-5s7 2 7 5"/></svg>
+          <span class="name">Varanda</span>
+        </div>
+        <!-- 05 piscina -->
+        <div class="icon-cell"><span class="idx">05</span>
+          <svg viewBox="0 0 24 24"><path d="M3 17c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0"/><path d="M3 20c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0"/><path d="M7 14V6a2 2 0 0 1 2-2"/><path d="M17 14V6a2 2 0 0 0-2-2"/><path d="M7 10h10"/></svg>
+          <span class="name">Piscina</span>
+        </div>
+        <!-- 06 beach tennis -->
+        <div class="icon-cell"><span class="idx">06</span>
+          <svg viewBox="0 0 24 24"><ellipse cx="10" cy="10" rx="6" ry="6.5"/><path d="M10 4.5v11M4.2 9.2l11.6 1.6M5.2 6.5l9.6 7M5.2 13.5l9.6-7"/><path d="M14 14l4 5"/><path d="M17 17l2.5 2.5"/></svg>
+          <span class="name">Beach tennis</span>
+        </div>
+        <!-- 07 chave -->
+        <div class="icon-cell"><span class="idx">07</span>
+          <svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="3.5"/><path d="M11.5 12h9"/><path d="M17 12v3M20 12v2.5"/></svg>
+          <span class="name">Chave</span>
+        </div>
+        <!-- 08 mapa/local -->
+        <div class="icon-cell"><span class="idx">08</span>
+          <svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <span class="name">Local</span>
+        </div>
+        <!-- 09 livro -->
+        <div class="icon-cell"><span class="idx">09</span>
+          <svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 5v16"/><path d="M8 7h7M8 11h7"/></svg>
+          <span class="name">Biblioteca</span>
+        </div>
+        <!-- 10 ducha -->
+        <div class="icon-cell"><span class="idx">10</span>
+          <svg viewBox="0 0 24 24"><path d="M6 3v6"/><path d="M3 9h12"/><path d="M9 13v2M12 13v3M15 13v2M6 13v3M18 13v2"/><circle cx="20" cy="6" r="2"/><path d="M18 6h-3"/></svg>
+          <span class="name">Ducha</span>
+        </div>
+        <!-- 11 bicicleta -->
+        <div class="icon-cell"><span class="idx">11</span>
+          <svg viewBox="0 0 24 24"><circle cx="6" cy="16" r="4"/><circle cx="18" cy="16" r="4"/><path d="M6 16l5-8h4l3 8"/><path d="M11 8h2"/><path d="M15 8l-2 8"/></svg>
+          <span class="name">Bicicleta</span>
+        </div>
+        <!-- 12 sol/luz -->
+        <div class="icon-cell"><span class="idx">12</span>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg>
+          <span class="name">Luz natural</span>
+        </div>
+      </div>
+
+      <!-- Icon construction -->
+      <div class="icon-construction">
+        <div class="ic-stage">
+          <div class="grid-bg"></div>
+          <svg viewBox="0 0 24 24" style="stroke: var(--grauna); stroke-width: 1.25; fill: none; stroke-linecap: round; stroke-linejoin: round;">
+            <path d="M5 9h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/>
+            <path d="M17 11h2a2 2 0 0 1 0 4h-2"/>
+            <path d="M9 5c0-1 1-1 1-2M12 5c0-1 1-1 1-2M15 5c0-1 1-1 1-2"/>
+          </svg>
+        </div>
+        <div class="ic-text">
+          <div class="subhead">Construção do pictograma</div>
+          <dl>
+            <dt>Frame</dt><dd>24 × 24 pt, área útil 20 × 20 pt (margem óptica 2 pt em cada borda).</dd>
+            <dt>Traço</dt><dd>1,25 pt em superfícies pequenas; 1,5 pt acima de 64 pt; nunca abaixo de 1 pt.</dd>
+            <dt>Terminais</dt><dd>Sempre arredondados (<em>round caps</em>). Esquinas internas vivas (<em>sharp joins</em>).</dd>
+            <dt>Geometria</dt><dd>Construído sobre malha de 1 pt; raios sempre múltiplos de 1 pt.</dd>
+            <dt>Cor</dt><dd>Apenas uma cor por ícone — graúna, areia (modo discreto), ou cal (modo noturno).</dd>
+            <dt>Não fazer</dt><dd>Preenchimento sólido; sombras; ornamento; mascote; cor dupla; gradient.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================ SEÇÃO 6 — FOTOGRAFIA ================ -->
+    <section class="block" id="fotografia">
+      <div class="sec-head">
+        <div class="sec-num">06 / Fotografia</div>
+        <div>
+          <h2 class="serif">Luz <em>de cinco</em>,<br />textura <em>na frente</em>.</h2>
+          <p class="deck">A imagem da Tramar trabalha em três planos. Luz natural sempre, em janelas de manhã cedo ou fim de tarde. Textura no primeiro plano — barro, linho, palha, parede. Pessoa quase nunca em foco — implícita pela mão, pelo pé, pela copa virada na mesa.</p>
+        </div>
+      </div>
+
+      <div class="subhead">Frames de direção · biblioteca de referência</div>
+
+      <div class="photo-grid">
+        <div class="ph-cell ph-1">
+          <div class="scene morning"></div>
+          <div class="label">
+            <div class="ov">Frame · 01 · Manhã</div>
+            <div class="nm">Sala vazia, luz de leste atravessando a renda.</div>
+          </div>
+        </div>
+
+        <div class="ph-cell ph-2">
+          <div class="scene clay"></div>
+          <div class="label">
+            <div class="ov">Frame · 02 · Material</div>
+            <div class="nm">Mão no barro do Alto do Moura.</div>
+          </div>
+        </div>
+
+        <div class="ph-cell ph-3">
+          <div class="scene linen"></div>
+          <div class="label">
+            <div class="ov">Frame · 03 · Têxtil</div>
+            <div class="nm">Linho cru sobre cadeira de varanda.</div>
+          </div>
+        </div>
+
+        <div class="ph-cell ph-4">
+          <div class="scene lateafternoon"></div>
+          <div class="label">
+            <div class="ov">Frame · 04 · Fim de tarde</div>
+            <div class="nm">Janela aberta para o Olinda escurecendo.</div>
+          </div>
+        </div>
+
+        <div class="ph-cell ph-5">
+          <div class="scene water"></div>
+          <div class="label">
+            <div class="ov">Frame · 05 · Mar</div>
+            <div class="nm">Piscina natural, água parada.</div>
+          </div>
+        </div>
+
+        <div class="ph-cell ph-6">
+          <div class="scene interior"></div>
+          <div class="label">
+            <div class="ov">Frame · 06 · Interior</div>
+            <div class="nm">Mesa servida sem ninguém em volta — café, jarra, livro fechado.</div>
+          </div>
+        </div>
+
+        <div class="ph-cell ph-7">
+          <div class="scene mato"></div>
+          <div class="label">
+            <div class="ov">Frame · 07 · Mato</div>
+            <div class="nm">Sombra de coqueiral, fim de tarde, sem horizonte de praia.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-principles">
+        <div class="col-l">
+          <h3 class="serif">A foto é parte do <em>silêncio</em> da casa.</h3>
+          <p>A fotografia da Tramar não vende; ela hospeda. Não há promessa de paraíso, há descrição de matéria — barro frio, linho seco, parede caiada, mar visto pela janela. O hóspede não aparece como personagem; ele aparece como hipótese.</p>
+          <p>A direção foge do clichê turístico de Pernambuco: nenhum coqueiro em primeiro plano, nenhum pôr-do-sol em silhueta, nenhum drone de praia. A câmera respeita o nível dos olhos.</p>
+        </div>
+        <dl>
+          <div>
+            <dt>Luz</dt>
+            <dd>Sempre natural, entre 6h–9h ou 16h–18h. Sem flash, sem soft-box. Sombra é parte do desenho.</dd>
+          </div>
+          <div>
+            <dt>Composição</dt>
+            <dd>Quadro com vazio dominante; o sujeito ocupa um terço inferior ou lateral, raramente o centro.</dd>
+          </div>
+          <div>
+            <dt>Primeiro plano</dt>
+            <dd>Textura — trama, linho, barro, palha, madeira. A pele do objeto é tão importante quanto sua silhueta.</dd>
+          </div>
+          <div>
+            <dt>Pessoas</dt>
+            <dd>Quase nunca explícitas. Quando aparecem, é parte do corpo (mão, pé, ombro) ou costas, sem foco no rosto.</dd>
+          </div>
+          <div>
+            <dt>Cor</dt>
+            <dd>Fiel, com calor. Leve desaturação geral, sem efeito de filtro. Branco-cal preservado.</dd>
+          </div>
+          <div>
+            <dt>Lente</dt>
+            <dd>35mm e 50mm preferenciais. Grande-angular evitar. Macro permitido para detalhes de matéria.</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="photo-rules">
+        <div class="col">
+          <h5>Fazer</h5>
+          <ul>
+            <li>Janela aberta como moldura, parede como fundo.</li>
+            <li>Objeto isolado em mesa caiada, em close honesto.</li>
+            <li>Mão entrando no quadro, terminando o gesto.</li>
+            <li>Sombra projetada do coqueiral, sem o coqueiro.</li>
+            <li>Renda em luz contra, vendo a trama do avesso.</li>
+            <li>Cozinha vista do canto, mesa servida sem ninguém.</li>
+          </ul>
+        </div>
+        <div class="col dont">
+          <h5>Não fazer</h5>
+          <ul>
+            <li>Drone de praia com gradiente turquesa.</li>
+            <li>Pôr-do-sol em silhueta com coqueiro centralizado.</li>
+            <li>Casal de costas correndo na areia.</li>
+            <li>Coquetel em primeiro plano com piscina ao fundo.</li>
+            <li>Sorriso para a câmera, em qualquer ambiente.</li>
+            <li>Lente fish-eye ou grande-angular agressiva.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLOPHON -->
+    <footer class="colophon">
+      <div class="signoff">Tramar é um <em>ofício</em><br />de hospedar.</div>
+      <div class="meta">
+        Brand Book V.01<br />
+        Maio 2026<br />
+        Confidencial
+      </div>
+      <div class="meta right">
+        Fraunces · DM Sans<br />
+        F0E9DC · A89C8A · 1A1F26<br />
+        6E3B2A · 3D4836 · C49A6B · 5C7A8C
+      </div>
+    </footer>
+
+  </main>
+
+</div>
+
+</body>
+</html>

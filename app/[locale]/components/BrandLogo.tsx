@@ -3,6 +3,8 @@ interface BrandLogoHorizontalProps {
   color?: string;
 }
 
+// viewBox 900×260: "Tramar" em 180px ocupa ~475px (x=40→515), cabe com folga.
+// "PERNAMBUCO" em 22px a partir de x=620 ocupa ~190px → x=810. Cabe em 900px.
 export function BrandLogoHorizontal({
   className = '',
   color = '#1A1F26',
@@ -17,7 +19,7 @@ export function BrandLogoHorizontal({
     >
       <text
         x="40"
-        y="180"
+        y="195"
         fontFamily="var(--font-fraunces), Fraunces, Georgia, serif"
         fontWeight="300"
         fontSize="180"
@@ -27,17 +29,17 @@ export function BrandLogoHorizontal({
         Tramar
       </text>
       <line
-        x1="595"
-        y1="100"
-        x2="595"
-        y2="190"
+        x1="596"
+        y1="110"
+        x2="596"
+        y2="200"
         stroke={color}
         strokeWidth="1.5"
-        opacity="0.45"
+        opacity="0.35"
       />
       <text
-        x="620"
-        y="148"
+        x="622"
+        y="152"
         fontFamily="var(--font-dm-sans), DM Sans, system-ui, sans-serif"
         fontWeight="300"
         fontSize="22"
@@ -47,13 +49,14 @@ export function BrandLogoHorizontal({
         MURO ALTO
       </text>
       <text
-        x="620"
-        y="178"
+        x="622"
+        y="182"
         fontFamily="var(--font-dm-sans), DM Sans, system-ui, sans-serif"
         fontWeight="300"
         fontSize="22"
         letterSpacing="6"
         fill={color}
+        opacity="0.65"
       >
         PERNAMBUCO
       </text>
@@ -66,6 +69,8 @@ interface BrandLogoReduzidaProps {
   color?: string;
 }
 
+// viewBox expandido para 600×200 para dar folga ao "Tramar" em fontSize=130
+// (largura estimada ~450px centrado em 300, margem de ~75px de cada lado)
 export function BrandLogoReduzida({
   className = '',
   color = '#1A1F26',
@@ -73,18 +78,18 @@ export function BrandLogoReduzida({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 500 200"
+      viewBox="0 0 600 200"
       className={className}
       aria-label="Tramar"
       role="img"
     >
       <text
-        x="250"
-        y="140"
+        x="300"
+        y="148"
         textAnchor="middle"
         fontFamily="var(--font-fraunces), Fraunces, Georgia, serif"
         fontWeight="300"
-        fontSize="140"
+        fontSize="130"
         fill={color}
         letterSpacing="1"
       >

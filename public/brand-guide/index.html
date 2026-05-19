@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tramar — Guias de identidade visual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --cal: #F0E9DC; --grauna: #1A1F26; --areia: #A89C8A; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      font-weight: 300;
+      background: var(--cal);
+      color: var(--grauna);
+      min-height: 100vh;
+      padding: 48px 24px 64px;
+    }
+    main { max-width: 640px; margin: 0 auto; }
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+    p.lead { font-size: 15px; line-height: 1.65; color: var(--areia); margin-bottom: 40px; }
+    ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    a {
+      display: block;
+      padding: 18px 20px;
+      border: 1px solid rgba(26, 31, 38, 0.12);
+      color: var(--grauna);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      transition: border-color 200ms ease, background 200ms ease;
+    }
+    a:hover { border-color: rgba(26, 31, 38, 0.28); background: rgba(26, 31, 38, 0.03); }
+    a span { display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--areia); margin-bottom: 6px; }
+    .back { margin-top: 48px; font-size: 12px; }
+    .back a { display: inline; padding: 0; border: none; color: var(--areia); }
+    .back a:hover { background: none; color: var(--grauna); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Identidade visual Tramar</h1>
+    <p class="lead">Documentação editorial da marca — brand book, arquitetura, aplicações e brand sheet.</p>
+    <ul>
+      <li><a href="brand-book.html"><span>01</span>Brand Book</a></li>
+      <li><a href="arquitetura-de-marca.html"><span>02</span>Arquitetura de Marca</a></li>
+      <li><a href="aplicacoes-comerciais.html"><span>03</span>Aplicações Comerciais</a></li>
+      <li><a href="brand-sheet.html"><span>04</span>Brand Sheet</a></li>
+    </ul>
+    <p class="back"><a href="/">← Voltar ao site</a></p>
+  </main>
+</body>
+</html>

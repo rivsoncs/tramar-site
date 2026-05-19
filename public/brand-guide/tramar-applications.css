@@ -1,0 +1,1669 @@
+/* ============================================================
+   TRAMAR — Aplicações Comerciais
+   Stylesheet único para o documento de peças aplicadas
+   ============================================================ */
+:root{
+  --cal: #F0E9DC;
+  --cal-soft: #E6DECF;
+  --cal-deep: #DBD2C0;
+  --areia: #A89C8A;
+  --areia-light: #C0B5A3;
+  --grauna: #1A1F26;
+  --barro: #6E3B2A;
+  --barro-deep: #56291C;
+  --mato: #3D4836;
+  --mascavo: #C49A6B;
+  --mascavo-soft: #D6B186;
+  --olinda: #5C7A8C;
+
+  --rule: rgba(26,31,38,0.18);
+  --rule-soft: rgba(26,31,38,0.08);
+  --rule-faint: rgba(26,31,38,0.04);
+
+  --max: 1320px;
+  --nav-w: 260px;
+
+  --shadow-paper: 0 1px 1px rgba(26,31,38,0.05), 0 4px 12px rgba(26,31,38,0.06), 0 24px 56px rgba(26,31,38,0.12);
+  --shadow-card: 0 1px 2px rgba(26,31,38,0.04), 0 8px 24px rgba(26,31,38,0.08);
+}
+
+*,*::before,*::after{ box-sizing: border-box; margin: 0; padding: 0; }
+html{ scroll-behavior: smooth; }
+html, body{ background: var(--cal); color: var(--grauna); }
+body{
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif{ font-family: "Fraunces", Georgia, serif; font-optical-sizing: auto; font-variation-settings: "SOFT" 30, "opsz" 144; }
+.sans{ font-family: "DM Sans", system-ui, sans-serif; }
+.num{ font-variant-numeric: tabular-nums; }
+.italic{ font-style: italic; }
+
+/* ============================================================
+   Shell + Side Nav
+   ============================================================ */
+.shell{
+  display: grid;
+  grid-template-columns: var(--nav-w) 1fr;
+  min-height: 100vh;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+aside.nav{
+  position: sticky; top: 0; align-self: start;
+  height: 100vh;
+  padding: 48px 36px 36px;
+  border-right: 1px solid var(--rule-soft);
+  display: flex; flex-direction: column; gap: 28px;
+  background: var(--cal);
+}
+.brand-mark{
+  font-family: "Fraunces", serif; font-weight: 400; font-size: 28px;
+  letter-spacing: 0.005em; line-height: 1;
+}
+.brand-sub{
+  font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  opacity: 0.55; margin-top: 4px;
+}
+.nav-doc{
+  border-top: 1px solid var(--rule-soft); padding-top: 24px;
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.55; line-height: 1.8;
+}
+.nav-list{
+  list-style: none; display: flex; flex-direction: column; gap: 2px;
+  margin-top: 4px; flex: 1;
+}
+.nav-list a{
+  display: grid; grid-template-columns: 30px 1fr; align-items: baseline;
+  padding: 12px 0; color: var(--grauna); text-decoration: none;
+  font-size: 13px; border-bottom: 1px solid var(--rule-faint);
+  transition: padding 220ms ease;
+}
+.nav-list a:hover{ padding-left: 6px; }
+.nav-list a .nidx{
+  font-size: 10px; letter-spacing: 0.18em; opacity: 0.45;
+  font-feature-settings: "tnum";
+}
+.nav-list a .ntitle{ font-family: "Fraunces", serif; font-weight: 400; }
+.nav-list a .nsub{
+  grid-column: 2 / 3;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  opacity: 0.5; margin-top: 2px;
+}
+.nav-foot{
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.45;
+  border-top: 1px solid var(--rule-soft); padding-top: 20px;
+}
+
+/* ============================================================
+   Main + sections
+   ============================================================ */
+main{ padding: 0 64px; min-width: 0; }
+
+.cover{
+  padding: 96px 0 80px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.cover .doc-meta{
+  display: flex; justify-content: space-between;
+  font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.55;
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 18px; margin-bottom: 56px;
+}
+.cover h1{
+  font-family: "Fraunces", serif; font-weight: 300;
+  font-size: clamp(56px, 8vw, 104px);
+  line-height: 0.92; letter-spacing: -0.018em;
+  margin-bottom: 32px;
+}
+.cover h1 em{ font-style: italic; color: var(--areia); font-weight: 300; }
+.cover .lede{
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  margin-top: 48px;
+}
+.cover .lede p.first{
+  font-family: "Fraunces", serif; font-weight: 300;
+  font-size: 19px; line-height: 1.45;
+}
+.cover .lede p.second{
+  font-size: 13.5px; line-height: 1.65; opacity: 0.75;
+}
+
+section.piece{
+  padding: 96px 0;
+  border-bottom: 1px solid var(--rule-soft);
+  scroll-margin-top: 16px;
+}
+.piece-head{
+  display: grid; grid-template-columns: 80px 1fr 280px;
+  gap: 40px; margin-bottom: 56px;
+  align-items: start;
+}
+.piece-head .sec-num{
+  font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.5; padding-top: 8px;
+}
+.piece-head h2{
+  font-family: "Fraunces", serif; font-weight: 300;
+  font-size: clamp(36px, 4.4vw, 48px);
+  line-height: 1; letter-spacing: -0.012em; max-width: 16ch;
+}
+.piece-head h2 em{ font-style: italic; color: var(--areia); font-weight: 300; }
+.piece-head .deck{
+  font-size: 13px; line-height: 1.6; opacity: 0.78;
+}
+.piece-head .deck dl{
+  margin-top: 18px;
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 14px;
+}
+.piece-head .deck dl > div{
+  display: grid; grid-template-columns: 110px 1fr; gap: 14px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--rule-faint);
+}
+.piece-head .deck dt{
+  font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.55;
+}
+.piece-head .deck dd{
+  font-size: 12px; line-height: 1.5;
+}
+
+.subhead{
+  font-family: "DM Sans", sans-serif;
+  font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase;
+  opacity: 0.55;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+  margin: 40px 0 24px;
+}
+.subhead.first{ margin-top: 0; }
+
+/* ============================================================
+   P1 — AIRBNB CARDS
+   ============================================================ */
+.airbnb{
+  background: #fff;
+  border: 1px solid var(--rule-soft);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.airbnb-bar{
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 28px;
+  border-bottom: 1px solid #EBEBEB;
+}
+.airbnb-bar .logo{
+  display: flex; align-items: center; gap: 6px;
+  font-family: "DM Sans", sans-serif; font-weight: 500;
+  font-size: 18px; color: #FF385C;
+  letter-spacing: -0.02em;
+}
+.airbnb-bar .logo svg{ width: 22px; height: 22px; }
+.airbnb-bar nav{
+  display: flex; gap: 28px;
+  font-size: 13px; color: #222;
+}
+.airbnb-bar nav .active{ font-weight: 500; border-bottom: 2px solid #222; padding-bottom: 4px; }
+.airbnb-bar .right{
+  display: flex; align-items: center; gap: 14px;
+}
+.airbnb-bar .right .lang{
+  width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center;
+  color: #222;
+}
+.airbnb-bar .right .menu{
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 8px 6px 14px;
+  border: 1px solid #DDD; border-radius: 999px;
+  font-size: 13px;
+}
+.airbnb-bar .right .menu .avatar{
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #717171; color: #fff;
+  display: grid; place-items: center;
+  font-size: 11px;
+}
+
+.airbnb-search{
+  display: flex; align-items: center; justify-content: center;
+  padding: 18px 28px 22px;
+  border-bottom: 1px solid #EBEBEB;
+}
+.airbnb-search .search-pill{
+  display: grid; grid-template-columns: 1.2fr 1fr 1fr auto;
+  align-items: center;
+  border: 1px solid #DDD; border-radius: 999px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  font-size: 13px;
+  min-width: 520px;
+}
+.airbnb-search .search-pill > div{
+  padding: 12px 22px;
+  border-right: 1px solid #EBEBEB;
+}
+.airbnb-search .search-pill > div:last-child{ border-right: none; padding-right: 10px; padding-left: 10px; }
+.airbnb-search .search-pill .l{
+  font-weight: 500; color: #222; font-size: 12px;
+}
+.airbnb-search .search-pill .s{
+  color: #717171; font-size: 12px;
+}
+.airbnb-search .search-pill .btn{
+  background: #FF385C; color: #fff;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 14px;
+}
+
+.airbnb-categories{
+  display: flex; gap: 36px; padding: 12px 28px 0;
+  border-bottom: 1px solid #EBEBEB;
+  overflow-x: auto;
+}
+.airbnb-categories .cat{
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 10px 0; min-width: 60px;
+  font-size: 11px; color: #717171;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+.airbnb-categories .cat.is-active{ color: #222; border-bottom-color: #222; }
+.airbnb-categories .cat svg{ width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.5; fill: none; }
+
+.airbnb-grid{
+  padding: 24px 28px 40px;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px 20px;
+}
+
+.bnb-card{
+  display: flex; flex-direction: column;
+}
+.bnb-photo{
+  position: relative;
+  aspect-ratio: 20/19;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--cal);
+}
+.bnb-photo .heart{
+  position: absolute; top: 12px; right: 14px;
+  z-index: 4;
+  color: rgba(255,255,255,0.85);
+}
+.bnb-photo .heart svg{
+  width: 22px; height: 22px;
+  fill: rgba(0,0,0,0.4); stroke: rgba(255,255,255,0.95); stroke-width: 1.5;
+}
+.bnb-photo .badge{
+  position: absolute; top: 12px; left: 14px;
+  background: #fff; color: #222;
+  border-radius: 999px; padding: 4px 10px;
+  font-size: 11px; font-weight: 500;
+  z-index: 4;
+}
+.bnb-photo .dots{
+  position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 4px; z-index: 4;
+}
+.bnb-photo .dots span{
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,0.55);
+}
+.bnb-photo .dots span.on{ background: #fff; }
+.bnb-photo .arrow{
+  position: absolute; top: 50%; right: 14px; transform: translateY(-50%);
+  width: 26px; height: 26px; border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  display: grid; place-items: center;
+  z-index: 4; opacity: 0.9;
+}
+
+/* Photo scene — synthesized placeholders with Tramar palette */
+.bnb-scene{
+  position: absolute; inset: 0; z-index: 1;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.bnb-scene .brandmark{
+  position: absolute; top: 18px; right: 50px;
+  z-index: 3;
+  font-family: "Fraunces", serif; font-weight: 400;
+  font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cal); opacity: 0.9;
+}
+.bnb-scene .word{
+  position: absolute; left: 22px; bottom: 22px;
+  z-index: 3;
+  color: var(--cal);
+}
+.bnb-scene .word .pre{
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px; letter-spacing: 0.42em; text-transform: uppercase;
+  opacity: 0.75; margin-bottom: 6px;
+}
+.bnb-scene .word .nm{
+  font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+  font-size: 38px; line-height: 0.9;
+  letter-spacing: -0.015em;
+}
+.bnb-scene::after{
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(26,31,38,0.0) 50%, rgba(26,31,38,0.55) 100%);
+  z-index: 2;
+}
+
+/* Scene variants per sub-brand */
+.scene-carua{
+  background:
+    radial-gradient(ellipse 70% 50% at 80% 20%, rgba(240,233,220,0.35), transparent 70%),
+    radial-gradient(ellipse 80% 60% at 20% 90%, rgba(61,72,54,0.55), transparent 70%),
+    linear-gradient(165deg, #8a4d36 0%, #6E3B2A 45%, #3D2820 100%);
+}
+.scene-carua .grain{
+  position: absolute; inset: 0; z-index: 1;
+  opacity: 0.55;
+  background-image:
+    repeating-linear-gradient(85deg, rgba(240,233,220,0.06) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(175deg, rgba(0,0,0,0.05) 0 1px, transparent 1px 6px);
+}
+.scene-renda{
+  background:
+    radial-gradient(ellipse 60% 40% at 30% 30%, rgba(240,233,220,0.7), transparent 70%),
+    radial-gradient(ellipse 100% 60% at 70% 100%, rgba(196,154,107,0.85), transparent 80%),
+    linear-gradient(180deg, #E6DECF 0%, #C49A6B 60%, #A87D52 100%);
+}
+.scene-renda .grain{
+  position: absolute; inset: 0; z-index: 1;
+  opacity: 0.5;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(240,233,220,0.15) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(0deg, rgba(110,59,42,0.05) 0 1px, transparent 1px 8px);
+}
+.scene-renda .brandmark, .scene-renda .word{ color: var(--grauna); }
+.scene-renda::after{ background: linear-gradient(180deg, rgba(26,31,38,0) 50%, rgba(26,31,38,0.18) 100%); }
+
+.scene-inteira{
+  background:
+    radial-gradient(ellipse 50% 40% at 70% 20%, rgba(240,233,220,0.25), transparent 70%),
+    linear-gradient(135deg, #6E3B2A 0%, #1A1F26 45%, #5C7A8C 100%);
+}
+.scene-inteira .grain{
+  position: absolute; inset: 0; z-index: 1;
+  opacity: 0.4;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(240,233,220,0.04) 0 1px, transparent 1px 8px);
+}
+
+.bnb-info{
+  padding: 10px 0 0;
+}
+.bnb-info .row1{
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 14px; color: #222;
+}
+.bnb-info .row1 .title{ font-weight: 500; }
+.bnb-info .row1 .rating{
+  display: flex; align-items: center; gap: 3px; font-weight: 400;
+}
+.bnb-info .row1 .rating svg{ width: 12px; height: 12px; fill: #222; }
+.bnb-info .row2{
+  font-size: 14px; color: #717171; margin-top: 2px;
+}
+.bnb-info .row3{ font-size: 14px; color: #717171; margin-top: 2px; }
+.bnb-info .row4{ font-size: 14px; color: #222; margin-top: 8px; }
+.bnb-info .row4 strong{ font-weight: 500; }
+
+/* P1 — Specs card */
+.specs-block{
+  display: grid; grid-template-columns: 2fr 1fr; gap: 36px;
+  margin-top: 56px;
+}
+.specs-block .specs{
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
+}
+.specs-block .specs h4{
+  font-family: "Fraunces", serif; font-weight: 400; font-size: 22px;
+  line-height: 1.15; margin-bottom: 16px;
+}
+.specs-block .specs dl{
+  display: grid; grid-template-columns: 120px 1fr; gap: 14px 28px;
+  font-size: 13px; line-height: 1.55;
+}
+.specs-block .specs dt{
+  font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.55; padding-top: 3px;
+}
+
+/* ============================================================
+   P2 — INSTAGRAM PROFILE
+   ============================================================ */
+.ig-frame{
+  background: #fff;
+  border-radius: 0;
+  overflow: hidden;
+  border: 1px solid var(--rule-soft);
+  box-shadow: var(--shadow-card);
+  max-width: 880px;
+  margin: 0 auto;
+}
+.ig-top{
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #DBDBDB;
+  font-size: 14px;
+}
+.ig-top .title{
+  display: flex; align-items: center; gap: 6px;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+}
+.ig-top .title svg{ width: 14px; height: 14px; }
+.ig-top .icons{
+  display: flex; gap: 18px;
+}
+.ig-top .icons svg{ width: 22px; height: 22px; stroke: #262626; stroke-width: 1.5; fill: none; }
+
+.ig-header{
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 48px;
+  padding: 32px 28px;
+  align-items: start;
+}
+.ig-avatar{
+  width: 150px; height: 150px; border-radius: 50%;
+  background: var(--cal);
+  display: grid; place-items: center;
+  font-family: "Fraunces", serif; font-weight: 300;
+  font-size: 72px; color: var(--grauna);
+  border: 2px solid var(--cal-soft);
+  line-height: 0.8;
+  justify-self: center;
+}
+.ig-profile-info{
+  padding-top: 8px;
+}
+.ig-profile-row{
+  display: flex; align-items: center; gap: 18px; margin-bottom: 22px;
+}
+.ig-username{
+  font-size: 22px; font-weight: 300; color: #262626;
+}
+.ig-btn{
+  padding: 6px 16px;
+  background: #EFEFEF; border-radius: 8px;
+  font-size: 13px; font-weight: 600;
+}
+.ig-btn.primary{ background: #0095F6; color: #fff; }
+.ig-stats{
+  display: flex; gap: 36px; margin-bottom: 18px;
+  font-size: 14px;
+}
+.ig-stats strong{ font-weight: 600; }
+.ig-bio{
+  font-size: 14px; line-height: 1.55;
+  max-width: 480px;
+}
+.ig-bio .name{ font-weight: 600; }
+.ig-bio .tag{ color: #00376B; }
+
+.ig-highlights{
+  padding: 16px 28px 24px;
+  display: flex; gap: 28px;
+  border-bottom: 1px solid #DBDBDB;
+}
+.ig-hl{
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-size: 12px; color: #262626;
+}
+.ig-hl .circle{
+  width: 84px; height: 84px; border-radius: 50%;
+  border: 1px solid #DBDBDB;
+  display: grid; place-items: center;
+  background: var(--cal-soft);
+  font-family: "Fraunces", serif; font-weight: 400;
+  font-size: 24px;
+  color: var(--grauna);
+}
+.ig-hl .circle.dark{ background: var(--grauna); color: var(--cal); border-color: var(--grauna); }
+.ig-hl .circle.barro{ background: var(--barro); color: var(--cal); border-color: var(--barro); }
+.ig-hl .circle.mascavo{ background: var(--mascavo); color: var(--grauna); border-color: var(--mascavo); }
+.ig-hl .circle.mato{ background: var(--mato); color: var(--cal); border-color: var(--mato); }
+
+.ig-tabs{
+  display: flex; justify-content: center; gap: 56px;
+  border-top: 1px solid #DBDBDB;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: #8E8E8E;
+  font-weight: 600;
+}
+.ig-tabs .t{
+  padding: 12px 4px;
+  display: flex; align-items: center; gap: 6px;
+}
+.ig-tabs .t.active{
+  color: #262626;
+  border-top: 1px solid #262626; margin-top: -1px;
+}
+.ig-tabs .t svg{ width: 12px; height: 12px; stroke: currentColor; stroke-width: 1.5; fill: none; }
+
+.ig-grid{
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: #fff;
+  padding: 0;
+}
+.ig-post{
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  padding: 14px;
+}
+
+/* IG post variants */
+.post-photo-carua{
+  background:
+    radial-gradient(ellipse at 30% 70%, rgba(196,154,107,0.4), transparent 60%),
+    linear-gradient(150deg, #8a4d36 0%, #6E3B2A 60%, #3D2820 100%);
+}
+.post-photo-carua .label{
+  position: absolute; left: 14px; bottom: 14px;
+  font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+  font-size: 22px; color: var(--cal);
+  line-height: 0.95;
+}
+.post-photo-carua .ov{
+  position: absolute; right: 14px; top: 14px;
+  font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: rgba(240,233,220,0.7);
+}
+
+.post-photo-renda{
+  background:
+    radial-gradient(ellipse at 70% 20%, rgba(240,233,220,0.6), transparent 65%),
+    linear-gradient(180deg, #E6DECF 0%, #C49A6B 80%);
+  color: var(--grauna);
+}
+.post-photo-renda .label{
+  position: absolute; left: 14px; bottom: 14px;
+  font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+  font-size: 22px;
+  line-height: 0.95;
+}
+.post-photo-renda .ov{
+  position: absolute; right: 14px; top: 14px;
+  font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* Text post (typography-centric) */
+.post-text{
+  background: var(--cal);
+  color: var(--grauna);
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.post-text.dark{ background: var(--grauna); color: var(--cal); }
+.post-text.barro{ background: var(--barro); color: var(--cal); }
+.post-text.mato{ background: var(--mato); color: var(--cal); }
+.post-text.mascavo{ background: var(--mascavo); color: var(--grauna); }
+.post-text .ov{
+  font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
+  opacity: 0.6;
+}
+.post-text .quote{
+  font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+  font-size: 18px; line-height: 1.15;
+  letter-spacing: -0.005em;
+}
+.post-text .quote em{ font-style: normal; }
+.post-text .author{
+  font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* Texture pattern posts */
+.post-pattern{
+  background: var(--cal);
+  overflow: hidden;
+  align-items: stretch;
+  padding: 0;
+}
+.post-pattern svg{ width: 100%; height: 100%; display: block; }
+.post-pattern .ov{
+  position: absolute; left: 14px; bottom: 14px;
+  font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--grauna); opacity: 0.65;
+}
+
+.post-detail{
+  background: var(--cal-soft);
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px;
+  position: relative;
+}
+.post-detail.barro-bg{
+  background: radial-gradient(circle at 30% 30%, rgba(240,233,220,0.5), transparent 60%), var(--barro);
+  color: var(--cal);
+}
+.post-detail.olinda-bg{
+  background: radial-gradient(circle at 50% 40%, rgba(240,233,220,0.45), transparent 60%), var(--olinda);
+  color: var(--cal);
+}
+.post-detail .obj{
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+}
+.post-detail .obj svg{ width: 65%; height: 65%; opacity: 0.9; }
+.post-detail .label{
+  position: relative; z-index: 2;
+  font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+  font-size: 14px;
+  line-height: 1.1;
+  background: linear-gradient(to top, currentColor 100%, currentColor);
+  background: linear-gradient(180deg, transparent, transparent);
+}
+.post-detail .label .nm{
+  display: block;
+  font-style: italic;
+}
+.post-detail .label .meta{
+  display: block;
+  font-family: "DM Sans", sans-serif; font-style: normal;
+  font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
+  opacity: 0.75;
+  margin-top: 4px;
+}
+
+/* ============================================================
+   P3 — STORIES (phone frames)
+   ============================================================ */
+.phones-row{
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.phone{
+  position: relative;
+  background: #000;
+  border-radius: 38px;
+  padding: 8px;
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,0.05),
+    0 1px 1px rgba(26,31,38,0.06),
+    0 12px 32px rgba(26,31,38,0.18),
+    0 36px 80px rgba(26,31,38,0.18);
+  aspect-ratio: 9/19.5;
+  overflow: hidden;
+}
+.phone .screen{
+  width: 100%; height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  background: var(--grauna);
+}
+.phone .notch{
+  position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
+  z-index: 10;
+  width: 95px; height: 28px; border-radius: 999px;
+  background: #000;
+}
+.story-bars{
+  position: absolute; top: 10px; left: 12px; right: 12px;
+  z-index: 8;
+  display: flex; gap: 4px;
+}
+.story-bars span{
+  flex: 1; height: 3px; background: rgba(255,255,255,0.35);
+  border-radius: 2px;
+}
+.story-bars span.active{
+  background: rgba(255,255,255,0.95);
+}
+.story-bars span.partial{
+  background: linear-gradient(to right, rgba(255,255,255,0.95) 40%, rgba(255,255,255,0.35) 40%);
+}
+.story-head{
+  position: absolute; top: 56px; left: 14px; right: 14px;
+  display: flex; align-items: center; gap: 10px;
+  z-index: 7;
+  color: #fff;
+}
+.story-head .av{
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cal);
+  display: grid; place-items: center;
+  font-family: "Fraunces", serif; font-size: 14px; color: var(--grauna);
+  line-height: 0.8;
+  border: 1.5px solid #fff;
+}
+.story-head .un{
+  font-size: 13px; font-weight: 500;
+}
+.story-head .time{
+  font-size: 12px; opacity: 0.8; margin-left: 4px;
+}
+.story-head .more{
+  margin-left: auto; opacity: 0.85;
+  font-size: 18px; line-height: 1;
+}
+.story-foot{
+  position: absolute; left: 14px; right: 14px; bottom: 18px;
+  z-index: 7;
+  display: flex; align-items: center; gap: 10px;
+}
+.story-foot .reply{
+  flex: 1; padding: 10px 16px;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 999px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.8);
+}
+.story-foot .icons{
+  display: flex; gap: 14px;
+  color: rgba(255,255,255,0.95);
+}
+
+.story-body{
+  position: absolute; inset: 0;
+  padding: 100px 24px 90px;
+  display: flex; flex-direction: column;
+  z-index: 5;
+}
+
+/* Story 1 — Reserva aberta — barro */
+.story.reserva .story-body{
+  background: var(--barro);
+  color: var(--cal);
+  justify-content: space-between;
+}
+.story.reserva .eyebrow{
+  font-size: 10px; letter-spacing: 0.36em; text-transform: uppercase;
+  opacity: 0.8;
+}
+.story.reserva .head-art{
+  font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+  font-size: 56px; line-height: 0.95;
+  letter-spacing: -0.012em;
+}
+.story.reserva .head-art .pre{
+  font-style: normal; font-family: "DM Sans"; font-size: 10px;
+  letter-spacing: 0.42em; text-transform: uppercase; opacity: 0.85;
+  display: block; margin-bottom: 14px;
+}
+.story.reserva .dates{
+  display: flex; align-items: center; gap: 14px;
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 12px 0;
+  border-top: 1px solid rgba(240,233,220,0.4);
+  border-bottom: 1px solid rgba(240,233,220,0.4);
+}
+.story.reserva .dates .d{
+  font-family: "Fraunces", serif; font-style: italic; font-weight: 300;
+  font-size: 22px; letter-spacing: -0.005em;
+  text-transform: none;
+}
+.story.reserva .cta-row{
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase;
+  opacity: 0.92;
+}
+
+/* Story 2 — Curadoria — cal */
+.story.curadoria .story-body{
+  background: var(--cal);
+  color: var(--grauna);
+  justify-content: space-between;
+  align-items: stretch;
+}
+.story.curadoria .eyebrow{
+  font-size: 10px; letter-spacing: 0.36em; text-transform: uppercase;
+  opacity: 0.65;
+}
+.story.curadoria .scene{
+  flex: 1;
+  display: grid; place-items: center;
+  margin: 24px -10px;
+  position: relative;
+}
+.story.curadoria .scene .obj{
+  width: 78%; aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(240,233,220,0.6), transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(0,0,0,0.15), transparent 60%),
+    var(--barro);
+  position: relative;
+  box-shadow: 0 30px 40px rgba(26,31,38,0.18);
+}
+.story.curadoria .scene .obj::after{
+  content: ""; position: absolute;
+  inset: 38% 36% auto auto;
+  width: 18%; height: 18%; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(240,233,220,0.4), transparent 70%), var(--mascavo);
+  transform: translate(50%, -30%);
+}
+.story.curadoria .caption{
+  font-family: "Fraunces", serif; font-weight: 300;
+  font-size: 22px; line-height: 1.15; letter-spacing: -0.005em;
+}
+.story.curadoria .caption em{ font-style: italic; }
+.story.curadoria .meta{
+  display: flex; justify-content: space-between;
+  font-size: 9.5px; letter-spacing: 0.28em; text-transform: uppercase;
+  opacity: 0.65;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule-soft);
+}
+
+/* Story 3 — Frase — graúna */
+.story.frase .story-body{
+  background: var(--grauna);
+  color: var(--cal);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.story.frase .stamp{
+  font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase;
+  opacity: 0.7; margin-bottom: 40px;
+}
+.story.frase .quote{
+  font-family: "Fraunces", serif; font-weight: 300;
+  font-size: 36px; line-height: 1.1; letter-spacing: -0.012em;
+  font-style: italic;
+}
+.story.frase .quote em{ font-style: normal; }
+.story.frase .author{
+  margin-top: 36px;
+  font-size: 9.5px; letter-spacing: 0.36em; text-transform: uppercase;
+  opacity: 0.65;
+}
+.story.frase .rule{
+  width: 36px; height: 1px; background: var(--cal); opacity: 0.5;
+  margin: 32px auto;
+}
+
+/* Story 4 — Bastidores — mascavo */
+.story.bastidores .story-body{
+  background: var(--mascavo);
+  color: var(--grauna);
+  padding-top: 100px;
+  justify-content: space-between;
+}
+.story.bastidores .eyebrow{
+  font-size: 10px; letter-spacing: 0.36em; text-transform: uppercase;
+  opacity: 0.75;
+}
+.story.bastidores .scene{
+  flex: 1;
+  position: relative;
+  margin: 28px -10px;
+  display: grid; place-items: center;
+}
+.story.bastidores .scene .obj{
+  width: 90%; aspect-ratio: 4/3;
+  background:
+    repeating-linear-gradient(95deg, rgba(240,233,220,0.5) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg, #F0E9DC 0%, #C49A6B 100%);
+  box-shadow: 0 20px 36px rgba(26,31,38,0.2);
+  position: relative;
+}
+.story.bastidores .scene .obj::before{
+  content: ""; position: absolute;
+  inset: auto 10% 10% 10%;
+  height: 28%;
+  background: linear-gradient(180deg, transparent, rgba(110,59,42,0.25));
+}
+.story.bastidores .caption{
+  font-family: "Fraunces", serif; font-weight: 300;
+  font-size: 20px; line-height: 1.2; letter-spacing: -0.005em;
+}
+.story.bastidores .caption em{ font-style: italic; }
+.story.bastidores .meta{
+  display: flex; justify-content: space-between;
+  font-size: 9.5px; letter-spacing: 0.28em; text-transform: uppercase;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(26,31,38,0.18);
+}
+
+/* Story labels under each phone */
+.story-label{
+  margin-top: 18px;
+  text-align: center;
+}
+.story-label .n{
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.55; margin-bottom: 4px;
+}
+.story-label .nm{
+  font-family: "Fraunces", serif; font-weight: 400; font-size: 17px;
+}
+.story-label .desc{
+  font-size: 11px; opacity: 0.65; margin-top: 4px; line-height: 1.4;
+}
+
+/* ============================================================
+   P4 — WELCOME KIT (top-down table scene)
+   ============================================================ */
+.scene-table{
+  position: relative;
+  padding: 80px;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.0) 30%, rgba(26,31,38,0.18) 100%),
+    repeating-linear-gradient(92deg, rgba(110,59,42,0.05) 0 1px, transparent 1px 22px),
+    repeating-linear-gradient(91deg, rgba(110,59,42,0.08) 0 0.5px, transparent 0.5px 7px),
+    linear-gradient(170deg, #D1B998 0%, #C0A579 40%, #B89972 80%, #A88560 100%);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(26,31,38,0.06), 0 40px 80px rgba(26,31,38,0.25);
+  min-height: 720px;
+}
+.scene-table::before{
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 800px 400px at 30% 30%, rgba(240,233,220,0.1), transparent),
+    radial-gradient(ellipse 600px 300px at 80% 80%, rgba(26,31,38,0.15), transparent);
+  pointer-events: none;
+}
+
+/* Welcome card (A6 sized) */
+.kit-card{
+  position: absolute;
+  width: 360px; aspect-ratio: 4/5;
+  background: var(--cal);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(168,156,138,0.06) 0 2px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(110,59,42,0.04) 0 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(168,156,138,0.04) 0 2px, transparent 2px);
+  background-size: 9px 9px, 7px 7px, 11px 11px;
+  box-shadow: var(--shadow-paper);
+  padding: 36px 32px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  transform: rotate(-2.5deg);
+  top: 60px; left: 100px;
+  z-index: 5;
+}
+.kit-card .top{
+  display: flex; flex-direction: column; gap: 6px;
+}
+.kit-card .top .pre{
+  font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase;
+  opacity: 0.7;
+}
+.kit-card .top .nm{
+  font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+  font-size: 72px; line-height: 0.88; letter-spacing: -0.015em;
+  color: var(--barro);
+}
+.kit-card .top .place{
+  font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase;
+  opacity: 0.7;
+  margin-top: 10px;
+  border-top: 1px solid var(--rule);
+  padding-top: 12px;
+}
+.kit-card .bottom .ornament{
+  width: 36px; height: 1px; background: var(--areia); margin-bottom: 14px;
+}
+.kit-card .bottom .num{
+  font-family: "Fraunces", serif; font-weight: 400;
+  font-size: 24px; color: var(--grauna);
+}
+.kit-card .bottom .meta{
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.6;
+  margin-top: 8px;
+}
+
+/* Welcome card variant — Renda (other rotation/position) */
+.kit-card.renda{
+  top: 70px; left: 460px;
+  transform: rotate(2deg);
+}
+.kit-card.renda .top .nm{ color: var(--barro); }
+.kit-card.renda .bottom .num{ color: var(--grauna); }
+
+/* Open card with copy on back side, leaning slightly */
+.kit-back{
+  position: absolute;
+  width: 380px; aspect-ratio: 4/5;
+  background: var(--cal-soft);
+  box-shadow: var(--shadow-paper);
+  padding: 36px 36px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  transform: rotate(1.5deg);
+  top: 380px; left: 220px;
+  z-index: 4;
+}
+.kit-back .ov{
+  font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 22px;
+}
+.kit-back .greeting{
+  font-family: "Fraunces", serif; font-weight: 300;
+  font-size: 22px; line-height: 1.4; letter-spacing: -0.005em;
+}
+.kit-back .greeting em{ font-style: italic; color: var(--barro); }
+.kit-back .sign{
+  margin-top: 18px;
+  font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+  font-size: 18px;
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 14px;
+  opacity: 0.85;
+}
+.kit-back .sign .role{
+  display: block;
+  font-family: "DM Sans", sans-serif; font-style: normal;
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  opacity: 0.7; margin-top: 4px;
+}
+
+/* Props: a key, a ceramic mug edge, dried leaf */
+.prop-key{
+  position: absolute;
+  top: 200px; right: 140px;
+  z-index: 3;
+  filter: drop-shadow(0 10px 14px rgba(26,31,38,0.25));
+  transform: rotate(-18deg);
+}
+.prop-leaf{
+  position: absolute;
+  top: 580px; left: 80px;
+  z-index: 6;
+  filter: drop-shadow(0 8px 12px rgba(26,31,38,0.2));
+  transform: rotate(-10deg);
+}
+.prop-mug{
+  position: absolute;
+  top: 460px; right: 90px;
+  width: 200px; height: 200px;
+  z-index: 3;
+}
+.prop-mug .body{
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(240,233,220,0.35), transparent 60%),
+    radial-gradient(ellipse at 50% 50%, var(--grauna) 0 22%, transparent 22%),
+    var(--barro);
+  box-shadow: 0 22px 40px rgba(26,31,38,0.3), inset 0 -10px 24px rgba(0,0,0,0.18);
+}
+.prop-mug .handle{
+  position: absolute;
+  top: 50%; right: -22px; transform: translateY(-50%);
+  width: 40px; height: 70px;
+  border: 14px solid var(--barro);
+  border-left: none;
+  border-radius: 0 40px 40px 0;
+  box-shadow: 4px 6px 10px rgba(26,31,38,0.2);
+}
+.prop-mug .steam{
+  position: absolute;
+  top: -42px; left: 50%; transform: translateX(-50%);
+  width: 24px; height: 60px;
+  background:
+    radial-gradient(ellipse at 30% 70%, rgba(240,233,220,0.5), transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(240,233,220,0.4), transparent 60%);
+  opacity: 0.8;
+  filter: blur(6px);
+}
+
+/* ============================================================
+   P5 — CURATION LABELS (hanging tags)
+   ============================================================ */
+.tag-scene{
+  position: relative;
+  padding: 80px 60px;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(26,31,38,0.15), transparent 60%),
+    linear-gradient(180deg, var(--cal-soft) 0%, #DBCEB6 100%);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(26,31,38,0.18);
+  min-height: 540px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+}
+.tag-unit{
+  position: relative;
+  display: flex; flex-direction: column; align-items: center;
+}
+.tag-host{
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 30px 36px rgba(26,31,38,0.18);
+}
+.tag-host.ceramic{
+  background:
+    radial-gradient(circle at 35% 30%, rgba(240,233,220,0.4), transparent 65%),
+    radial-gradient(ellipse at 50% 95%, rgba(0,0,0,0.4), transparent 60%),
+    var(--barro);
+}
+.tag-host.linen{
+  width: 100%; aspect-ratio: 1.3; border-radius: 8px;
+  background:
+    repeating-linear-gradient(96deg, rgba(110,59,42,0.05) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(6deg, rgba(168,156,138,0.18) 0 1px, transparent 1px 5px),
+    linear-gradient(180deg, var(--cal) 0%, #DCCBB0 100%);
+}
+.tag-host.book{
+  width: 100%; aspect-ratio: 1.3; border-radius: 4px;
+  background:
+    repeating-linear-gradient(180deg, rgba(110,59,42,0.06) 0 2px, transparent 2px 10px),
+    linear-gradient(110deg, var(--mato) 0%, #2c3327 100%);
+  position: relative;
+}
+.tag-host.book::after{
+  content: "";
+  position: absolute; left: 12%; right: 60%; top: 30%;
+  height: 28%;
+  background:
+    repeating-linear-gradient(0deg, rgba(240,233,220,0.6) 0 1px, transparent 1px 4px);
+  opacity: 0.85;
+}
+
+.string{
+  position: absolute;
+  width: 1px; height: 80px;
+  background: var(--areia);
+  top: -80px; left: 50%; transform: translateX(-50%);
+  opacity: 0.85;
+}
+.string.angle-l{ transform: translateX(-50%) rotate(8deg); transform-origin: bottom; }
+.string.angle-r{ transform: translateX(-50%) rotate(-8deg); transform-origin: bottom; }
+
+.label-tag{
+  position: absolute;
+  top: -180px; left: 50%; transform: translateX(-50%) rotate(-3deg);
+  width: 168px; height: 100px;
+  background: var(--cal-soft);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(168,156,138,0.18) 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 60%, rgba(110,59,42,0.1) 0 1px, transparent 1px);
+  background-size: 7px 7px, 9px 9px;
+  padding: 14px 14px 14px 22px;
+  box-shadow: 0 8px 16px rgba(26,31,38,0.2);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.label-tag::before{
+  content: "";
+  position: absolute;
+  left: 8px; top: 14px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--cal-soft);
+  box-shadow: inset 0 0 0 1px rgba(26,31,38,0.3);
+}
+.label-tag .ov{
+  font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 4px;
+}
+.label-tag .nm{
+  font-family: "Fraunces", serif; font-weight: 400; font-style: italic;
+  font-size: 18px; line-height: 1; letter-spacing: -0.005em;
+  color: var(--barro);
+  margin-bottom: 8px;
+}
+.label-tag .maker{
+  font-size: 9px; line-height: 1.4;
+  opacity: 0.75;
+}
+.label-tag .maker .place{
+  display: block;
+  font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+.label-tag.angle-l{ transform: translateX(-58%) rotate(-6deg); top: -190px; }
+.label-tag.angle-r{ transform: translateX(-44%) rotate(4deg); top: -180px; }
+
+.tag-unit .desc{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.55;
+}
+
+/* ============================================================
+   P6 — DOOR PLAQUE
+   ============================================================ */
+.door-scene{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  height: 660px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(26,31,38,0.2);
+}
+
+/* Wall */
+.wall{
+  position: relative;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(240,233,220,0.4), transparent 60%),
+    repeating-linear-gradient(89deg, rgba(168,156,138,0.04) 0 2px, transparent 2px 5px),
+    linear-gradient(180deg, #E6DECF 0%, #D1C3A5 100%);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.wall::after{
+  content: "";
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 60px;
+  background: linear-gradient(to right, transparent, rgba(26,31,38,0.18));
+}
+.wall::before{
+  content: "";
+  position: absolute;
+  left: 25%; top: 35%;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240,233,220,0.7), transparent 60%);
+  filter: blur(20px);
+}
+
+.plaque{
+  position: relative;
+  width: 220px; aspect-ratio: 1/2.2;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(240,233,220,0.25), transparent 50%),
+    linear-gradient(160deg, #c49a6b 0%, #b08653 40%, #8B6A40 100%);
+  box-shadow:
+    0 1px 1px rgba(255,255,255,0.4) inset,
+    0 -1px 1px rgba(0,0,0,0.3) inset,
+    2px 2px 6px rgba(0,0,0,0.15),
+    16px 18px 28px rgba(0,0,0,0.22),
+    24px 26px 60px rgba(0,0,0,0.16);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: space-between;
+  padding: 36px 18px 28px;
+  color: var(--grauna);
+  z-index: 2;
+}
+.plaque::before, .plaque::after{
+  content: "";
+  position: absolute;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #5B4220, #2e210e 80%);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.25);
+}
+.plaque::before{ top: 14px; left: 14px; }
+.plaque::after{ bottom: 14px; right: 14px; }
+.plaque .pre{
+  font-size: 9px; letter-spacing: 0.42em; text-transform: uppercase;
+  opacity: 0.75;
+}
+.plaque .nm{
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+  font-size: 64px; line-height: 0.9; letter-spacing: -0.015em;
+  margin: 12px 0;
+}
+.plaque .rule{
+  width: 16px; height: 1px; background: var(--grauna); opacity: 0.5;
+  margin: 8px 0;
+}
+.plaque .meta{
+  font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
+  opacity: 0.75;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* Door panel */
+.door{
+  position: relative;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(240,233,220,0.06), transparent 60%),
+    linear-gradient(110deg, #2c2017 0%, #1B130A 100%);
+  display: flex; align-items: center;
+}
+.door::before{
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 40px;
+  background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
+}
+.door .frame{
+  position: absolute;
+  inset: 8% 12% 8% 18%;
+  border: 2px solid rgba(0,0,0,0.5);
+  background:
+    repeating-linear-gradient(91deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 8px),
+    linear-gradient(160deg, #3d2c1d 0%, #261a10 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), inset 0 30px 50px rgba(0,0,0,0.5);
+}
+.door .frame .panel{
+  position: absolute;
+  inset: 12% 16%;
+  border: 1px solid rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 0 4px rgba(255,255,255,0.025), inset 0 0 0 5px rgba(0,0,0,0.4);
+}
+.door .knob{
+  position: absolute;
+  right: 38%; top: 50%; transform: translateY(-50%);
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--mascavo-soft), var(--mascavo) 60%, #8b6a40 100%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.4);
+}
+
+/* Plaque variant — Renda (Olinda blue glaze) */
+.plaque.renda{
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(240,233,220,0.35), transparent 50%),
+    linear-gradient(160deg, #8aa3b3 0%, #5C7A8C 50%, #3F5A6A 100%);
+  color: var(--cal);
+}
+.plaque.renda::before, .plaque.renda::after{
+  background: radial-gradient(circle at 30% 30%, #C0B5A3, #6E5E45 80%);
+}
+.plaque.renda .rule{ background: var(--cal); }
+
+/* ============================================================
+   P7 — E-MAIL HEADER
+   ============================================================ */
+.mail-window{
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--rule-soft);
+}
+.mail-titlebar{
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 16px;
+  background: var(--cal-soft);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.mail-titlebar .dot{ width: 12px; height: 12px; border-radius: 50%; }
+.mail-titlebar .dot:nth-child(1){ background: #FF6058; }
+.mail-titlebar .dot:nth-child(2){ background: #FFBD2F; }
+.mail-titlebar .dot:nth-child(3){ background: #27CA40; }
+.mail-titlebar .title{
+  margin-left: 16px;
+  font-size: 12px; opacity: 0.6;
+  flex: 1; text-align: center;
+}
+.mail-layout{
+  display: grid;
+  grid-template-columns: 220px 280px 1fr;
+}
+.mail-sidebar{
+  border-right: 1px solid var(--rule-soft);
+  padding: 16px 14px;
+  background: #FAFAF7;
+  min-height: 720px;
+}
+.mail-sidebar .compose{
+  padding: 10px 12px;
+  background: var(--grauna); color: var(--cal);
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.mail-sidebar ul{
+  list-style: none;
+}
+.mail-sidebar li{
+  padding: 8px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  display: flex; justify-content: space-between;
+  color: #555;
+}
+.mail-sidebar li.active{ background: #ECE5D6; color: var(--grauna); font-weight: 500; }
+.mail-sidebar li .ct{ font-size: 11px; opacity: 0.6; }
+
+.mail-list{
+  border-right: 1px solid var(--rule-soft);
+  padding: 0;
+}
+.mail-list .ml-head{
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  opacity: 0.6;
+}
+.mail-list .ml-item{
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: 12px;
+}
+.mail-list .ml-item.active{ background: var(--cal-soft); border-left: 3px solid var(--barro); padding-left: 13px; }
+.mail-list .ml-item .from{
+  font-size: 13px; font-weight: 500;
+  margin-bottom: 4px; color: var(--grauna);
+}
+.mail-list .ml-item .subj{
+  font-weight: 500; color: var(--grauna); margin-bottom: 3px;
+}
+.mail-list .ml-item .snip{ color: #777; }
+.mail-list .ml-item .time{ font-size: 10px; opacity: 0.55; margin-top: 4px; }
+
+.mail-open{
+  padding: 0;
+  background: #fff;
+}
+.mail-toolbar{
+  display: flex; gap: 14px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: #666;
+}
+.mail-open .subject{
+  padding: 22px 32px 8px;
+  font-family: "Fraunces", serif; font-weight: 400;
+  font-size: 22px; letter-spacing: -0.005em;
+}
+.mail-open .from-row{
+  padding: 4px 32px 18px;
+  display: flex; align-items: center; gap: 12px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.mail-open .from-row .avatar{
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--barro);
+  color: var(--cal);
+  font-family: "Fraunces", serif;
+  font-size: 18px;
+  display: grid; place-items: center;
+}
+.mail-open .from-row .who .nm{ font-size: 13px; font-weight: 500; }
+.mail-open .from-row .who .to{ font-size: 11px; opacity: 0.6; }
+.mail-open .from-row .stamp{ margin-left: auto; font-size: 11px; opacity: 0.55; }
+
+/* ——— the actual newsletter content ——— */
+.nl{
+  background: var(--cal);
+  margin: 24px 32px;
+  border: 1px solid var(--rule-soft);
+}
+.nl-head{
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 32px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.nl-head .lk{
+  font-family: "Fraunces", serif; font-weight: 400; font-size: 22px;
+  display: flex; align-items: baseline; gap: 12px;
+}
+.nl-head .lk .div{
+  width: 1px; height: 18px; background: var(--grauna); opacity: 0.4;
+}
+.nl-head .lk .sub{
+  font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  font-family: "DM Sans", sans-serif;
+  opacity: 0.75;
+}
+.nl-head .meta{
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.55;
+}
+.nl-hero{
+  padding: 48px 32px 36px;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(240,233,220,0.4), transparent 60%),
+    linear-gradient(165deg, var(--barro) 0%, var(--barro-deep) 100%);
+  color: var(--cal);
+}
+.nl-hero .ov{
+  font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 14px;
+}
+.nl-hero h3{
+  font-family: "Fraunces", serif; font-weight: 300;
+  font-size: 36px; line-height: 1; letter-spacing: -0.012em;
+  max-width: 14ch;
+}
+.nl-hero h3 em{ font-style: italic; color: var(--mascavo); font-weight: 300; }
+.nl-body{
+  padding: 36px 32px 8px;
+}
+.nl-body p{
+  font-size: 14px; line-height: 1.65;
+  margin-bottom: 16px;
+  max-width: 56ch;
+}
+.nl-body p.lead{
+  font-family: "Fraunces", serif; font-weight: 300;
+  font-size: 17px; line-height: 1.55;
+}
+.nl-info{
+  margin: 8px 0 24px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: repeat(3, 1fr);
+}
+.nl-info .cell{
+  padding: 18px 0;
+  border-right: 1px solid var(--rule-soft);
+  padding-left: 16px;
+}
+.nl-info .cell:last-child{ border-right: none; }
+.nl-info .cell:first-child{ padding-left: 0; }
+.nl-info .cell .l{
+  font-size: 9.5px; letter-spacing: 0.28em; text-transform: uppercase;
+  opacity: 0.55; margin-bottom: 4px;
+}
+.nl-info .cell .v{
+  font-family: "Fraunces", serif; font-weight: 400; font-size: 17px;
+}
+.nl-cta{
+  margin-top: 14px;
+  display: inline-block;
+  padding: 14px 26px;
+  background: var(--grauna);
+  color: var(--cal);
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+}
+.nl-foot{
+  padding: 32px;
+  border-top: 1px solid var(--rule-soft);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  background: var(--cal-soft);
+}
+.nl-foot .col h5{
+  font-family: "Fraunces", serif; font-weight: 400; font-size: 14px;
+  margin-bottom: 8px;
+}
+.nl-foot .col p{
+  font-size: 11px; line-height: 1.55; opacity: 0.7;
+}
+.nl-foot .col a{
+  font-size: 11px; opacity: 0.7; display: block;
+}
+.nl-tail{
+  padding: 18px 32px 24px;
+  text-align: center;
+  font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.5;
+  border-top: 1px solid var(--rule-soft);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer.colophon{
+  padding: 96px 0 72px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px; align-items: end;
+}
+footer.colophon .signoff{
+  font-family: "Fraunces", serif; font-weight: 300;
+  font-size: 32px; line-height: 1.1; letter-spacing: -0.005em;
+  max-width: 16ch;
+}
+footer.colophon .signoff em{ font-style: italic; color: var(--areia); font-weight: 300; }
+footer.colophon .meta{
+  font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.6; line-height: 1.9;
+}
+footer.colophon .right{ text-align: right; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1100px){
+  .shell{ grid-template-columns: 1fr; }
+  aside.nav{ position: static; height: auto; border-right: none; border-bottom: 1px solid var(--rule-soft); padding: 28px; }
+  .nav-list{ display: grid; grid-template-columns: 1fr 1fr; }
+  main{ padding: 0 28px; }
+  .piece-head{ grid-template-columns: 1fr; }
+  .specs-block{ grid-template-columns: 1fr; }
+  .airbnb-grid{ grid-template-columns: 1fr 1fr; }
+  .ig-header{ grid-template-columns: 1fr; gap: 24px; }
+  .ig-avatar{ width: 96px; height: 96px; font-size: 44px; }
+  .phones-row{ grid-template-columns: 1fr 1fr; gap: 24px; }
+  .scene-table{ padding: 40px; min-height: 540px; }
+  .kit-card, .kit-card.renda, .kit-back{
+    position: relative; top: 0 !important; left: 0 !important;
+    transform: none !important; margin-bottom: 24px;
+    width: 100%; max-width: 360px;
+  }
+  .prop-key, .prop-mug, .prop-leaf{ display: none; }
+  .tag-scene{ grid-template-columns: 1fr; gap: 220px; padding-top: 220px; padding-bottom: 60px; }
+  .door-scene{ grid-template-columns: 1fr; height: 760px; }
+  .mail-layout{ grid-template-columns: 1fr; }
+  .mail-sidebar, .mail-list{ display: none; }
+  footer.colophon{ grid-template-columns: 1fr; }
+  footer.colophon .right{ text-align: left; }
+  .airbnb-bar nav{ display: none; }
+  .airbnb-categories{ gap: 18px; }
+}

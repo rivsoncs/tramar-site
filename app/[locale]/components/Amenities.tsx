@@ -10,9 +10,9 @@ interface AmenityProps {
 function Amenity({ iconPath, label, delay = 0 }: AmenityProps) {
   return (
     <FadeIn delay={delay} className="flex flex-col items-center gap-3 text-center">
-      <div className="w-11 h-11 flex items-center justify-center text-tinta-grauna" aria-hidden="true">
+      <div className="w-12 h-12 flex items-center justify-center" aria-hidden="true">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={iconPath} alt="" width={24} height={24} className="w-6 h-6 opacity-80" />
+        <img src={iconPath} alt="" width={32} height={32} className="w-8 h-8 opacity-75" />
       </div>
       <span className="overline text-areia-molhada tracking-widest">{label}</span>
     </FadeIn>

@@ -1,0 +1,1629 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tramar — Arquitetura de Marca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,30..100;1,9..144,300..500,30..100&family=DM+Sans:opsz,wght@9..40,300..500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cal: #F0E9DC;
+    --cal-soft: #E6DECF;
+    --areia: #A89C8A;
+    --grauna: #1A1F26;
+    --barro: #6E3B2A;
+    --mato: #3D4836;
+    --mascavo: #C49A6B;
+    --olinda: #5C7A8C;
+
+    --rule: rgba(26,31,38,0.18);
+    --rule-soft: rgba(26,31,38,0.08);
+    --rule-faint: rgba(26,31,38,0.04);
+
+    --max: 1280px;
+    --nav-w: 260px;
+  }
+
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+  html{ scroll-behavior: smooth; }
+  html, body{ background: var(--cal); color: var(--grauna); }
+  body{
+    font-family: "DM Sans", system-ui, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ——— Type primitives ——— */
+  .serif{ font-family: "Fraunces", Georgia, serif; font-optical-sizing: auto; font-variation-settings: "SOFT" 30, "opsz" 144; }
+  .sans{ font-family: "DM Sans", system-ui, sans-serif; }
+  .micro{ font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400; }
+  .num{ font-variant-numeric: tabular-nums; }
+
+  /* ——— Shell ——— */
+  .shell{
+    display: grid;
+    grid-template-columns: var(--nav-w) 1fr;
+    min-height: 100vh;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+
+  /* ——— Side nav (reused tone from brand book) ——— */
+  aside.nav{
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    padding: 48px 36px 36px;
+    border-right: 1px solid var(--rule-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    background: var(--cal);
+  }
+  .brand-mark{
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 0.005em;
+    line-height: 1;
+  }
+  .brand-sub{
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-top: 4px;
+  }
+  .nav-doc{
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 24px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    line-height: 1.8;
+  }
+  .nav-list{
+    list-style: none;
+    display: flex; flex-direction: column;
+    gap: 2px;
+    margin-top: 4px;
+    flex: 1;
+  }
+  .nav-list a{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: baseline;
+    padding: 10px 0;
+    color: var(--grauna);
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid var(--rule-faint);
+    transition: padding 220ms ease;
+  }
+  .nav-list a:hover{ padding-left: 6px; }
+  .nav-list a .nidx{
+    font-size: 10px; letter-spacing: 0.18em; opacity: 0.45;
+    font-feature-settings: "tnum";
+  }
+  .nav-list a .ntitle{ font-family: "Fraunces", serif; font-weight: 400; }
+  .nav-list a .nsub{
+    grid-column: 2 / 3;
+    font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    opacity: 0.5;
+    margin-top: 2px;
+  }
+  .nav-list a .swatch{
+    width: 8px; height: 8px; display: inline-block; margin-right: 6px; vertical-align: middle;
+  }
+  .nav-foot{
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.45;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 20px;
+  }
+
+  /* ——— Main column ——— */
+  main{
+    padding: 0 72px;
+    min-width: 0;
+  }
+
+  /* ——— Cover ——— */
+  .cover{
+    padding: 96px 0 80px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .cover .doc-meta{
+    display: flex; justify-content: space-between;
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.55;
+    border-bottom: 1px solid var(--rule-soft);
+    padding-bottom: 18px;
+    margin-bottom: 56px;
+  }
+  .cover h1{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: clamp(56px, 8vw, 112px);
+    line-height: 0.92;
+    letter-spacing: -0.018em;
+    margin-bottom: 32px;
+  }
+  .cover h1 em{ font-style: italic; color: var(--areia); font-weight: 300; }
+  .cover .lede{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    margin-top: 48px;
+  }
+  .cover .lede p.first{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.45;
+  }
+  .cover .lede p.second{
+    font-size: 13.5px;
+    line-height: 1.65;
+    opacity: 0.75;
+  }
+
+  /* Architecture diagram */
+  .arch{
+    margin-top: 64px;
+    border: 1px solid var(--rule-soft);
+    padding: 56px 48px;
+    background: var(--cal-soft);
+  }
+  .arch .row{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .arch .row + .row{
+    border-top: 1px dashed var(--rule);
+    margin-top: 36px; padding-top: 36px;
+  }
+  .arch .label{
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.6;
+  }
+  .arch .mother{
+    display: flex; align-items: baseline; gap: 14px;
+    font-family: "Fraunces", serif; font-weight: 300; font-size: 56px;
+    line-height: 1; letter-spacing: -0.012em;
+  }
+  .arch .mother .sub{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300; font-size: 13px;
+    letter-spacing: 0.32em; text-transform: uppercase;
+  }
+  .arch .children{
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  .child{
+    padding: 22px 24px;
+    border: 1px solid var(--rule-soft);
+    display: flex; flex-direction: column; gap: 12px;
+    background: var(--cal);
+    position: relative;
+  }
+  .child .swatch{
+    height: 8px; width: 28px;
+  }
+  .child .nm{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 26px;
+    line-height: 1;
+  }
+  .child .desc{
+    font-size: 12.5px; line-height: 1.5; opacity: 0.75;
+  }
+  .child .tag{
+    font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  /* ——— Section frame ——— */
+  section.block{
+    padding: 112px 0 96px;
+    border-bottom: 1px solid var(--rule-soft);
+    scroll-margin-top: 24px;
+  }
+  .sec-head{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    margin-bottom: 56px;
+    align-items: start;
+  }
+  .sec-num{
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.5;
+    padding-top: 8px;
+  }
+  .sec-head h2{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: clamp(36px, 4.8vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.015em;
+    max-width: 16ch;
+  }
+  .sec-head h2 em{ font-style: italic; font-weight: 300; }
+  .sec-head .deck{
+    max-width: 56ch;
+    margin-top: 22px;
+    font-size: 14px; line-height: 1.65; opacity: 0.78;
+  }
+
+  .subhead{
+    font-family: "DM Sans", sans-serif;
+    font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase;
+    opacity: 0.55;
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+    margin: 56px 0 28px;
+  }
+  .subhead.first{ margin-top: 0; }
+
+  /* ============================================================
+     SUB-BRAND HERO BAND
+  ============================================================ */
+  .subbrand-band{
+    padding: 80px 64px;
+    margin: 0 -72px 56px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+  }
+  .subbrand-band .meta-tag{
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 24px;
+  }
+  .subbrand-band .hero-lockup{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: clamp(80px, 11vw, 152px);
+    line-height: 0.88;
+    letter-spacing: -0.022em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+  }
+  .subbrand-band .hero-lockup .small{
+    display: block;
+    font-size: 0.22em;
+    letter-spacing: 0.4em;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 18px;
+  }
+  .subbrand-band .copy{
+    padding-bottom: 16px;
+  }
+  .subbrand-band .copy p{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 18px; line-height: 1.55;
+    max-width: 38ch;
+    margin-bottom: 14px;
+  }
+  .subbrand-band .copy p.alt{
+    font-family: "DM Sans", sans-serif; font-size: 12.5px; line-height: 1.65;
+    opacity: 0.7;
+  }
+  .subbrand-band .palette-strip{
+    grid-column: 1 / -1;
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .subbrand-band .ps-item{
+    padding: 14px 18px;
+    border: 1px solid currentColor;
+    display: flex; justify-content: space-between; align-items: baseline;
+    opacity: 0.85;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  }
+  .subbrand-band .ps-item .hex{
+    font-feature-settings: "tnum";
+    letter-spacing: 0.14em;
+  }
+
+  /* Caruá hero band */
+  .band-carua{
+    background: var(--barro);
+    color: var(--cal);
+  }
+  /* Renda hero band */
+  .band-renda{
+    background: var(--mascavo);
+    color: var(--grauna);
+  }
+  /* Inteira hero band */
+  .band-inteira{
+    background: var(--grauna);
+    color: var(--cal);
+  }
+
+  /* ============================================================
+     LOCKUPS GRID
+  ============================================================ */
+  .lockups{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+  }
+  .lock-card{
+    border: 1px solid var(--rule-soft);
+    display: flex; flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .lock-stage{
+    flex: 1;
+    display: grid; place-items: center;
+    padding: 48px 28px;
+    min-height: 260px;
+  }
+  .lock-stage.tall{ min-height: 320px; }
+  .lock-info{
+    border-top: 1px solid var(--rule-soft);
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 24px 1fr auto;
+    align-items: baseline;
+    gap: 14px;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .lock-info .idx{
+    font-feature-settings: "tnum";
+    opacity: 0.55;
+  }
+  .lock-info .name{ opacity: 0.8; }
+  .lock-info .use{ opacity: 0.5; }
+
+  /* Lockup card variants */
+  .lk-on-cal{ background: var(--cal); }
+  .lk-on-cal .lock-info{ border-top-color: var(--rule-soft); color: var(--grauna); }
+
+  .lk-on-grauna{ background: var(--grauna); color: var(--cal); border-color: transparent; }
+  .lk-on-grauna .lock-info{ border-top-color: rgba(240,233,220,0.15); color: var(--cal); }
+  .lk-on-grauna .lock-info .idx{ color: var(--areia); }
+
+  .lk-on-barro{ background: var(--barro); color: var(--cal); border-color: transparent; }
+  .lk-on-barro .lock-info{ border-top-color: rgba(240,233,220,0.18); color: var(--cal); }
+  .lk-on-barro .lock-info .idx{ color: var(--mascavo); }
+
+  .lk-on-mato{ background: var(--mato); color: var(--cal); border-color: transparent; }
+  .lk-on-mato .lock-info{ border-top-color: rgba(240,233,220,0.18); color: var(--cal); }
+  .lk-on-mato .lock-info .idx{ color: var(--mascavo); }
+
+  .lk-on-mascavo{ background: var(--mascavo); color: var(--grauna); border-color: transparent; }
+  .lk-on-mascavo .lock-info{ border-top-color: rgba(26,31,38,0.18); color: var(--grauna); }
+
+  .lk-on-olinda{ background: var(--olinda); color: var(--cal); border-color: transparent; }
+  .lk-on-olinda .lock-info{ border-top-color: rgba(240,233,220,0.18); color: var(--cal); }
+  .lk-on-olinda .lock-info .idx{ color: var(--mascavo); }
+
+  .lk-mono-areia{ background: var(--cal); color: var(--areia); }
+  .lk-mono-areia .lock-info{ color: var(--grauna); }
+
+  /* Lockup typographic forms */
+  .lk-word{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: 0.005em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+    display: inline-block;
+  }
+  .lk-sub{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  /* Horizontal lockup: "Tramar | Caruá" */
+  .lock-h{
+    display: flex; align-items: baseline; gap: 24px;
+  }
+  .lock-h .lk-tramar{
+    font-size: 52px;
+    opacity: 0.92;
+  }
+  .lock-h .divider{
+    width: 1px; align-self: stretch;
+    background: currentColor; opacity: 0.4;
+  }
+  .lock-h .sub-name{
+    font-size: 52px;
+    font-style: italic;
+  }
+
+  /* Vertical lockup: stacked */
+  .lock-v{
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 8px;
+  }
+  .lock-v .lk-tramar{
+    font-size: 13px; letter-spacing: 0.42em; text-transform: uppercase;
+    font-family: "DM Sans", sans-serif; font-weight: 300;
+    opacity: 0.85;
+    margin-bottom: 4px;
+  }
+  .lock-v .sub-name{
+    font-size: 72px;
+    line-height: 0.85;
+    font-style: italic;
+  }
+  .lock-v .place{
+    font-size: 10.5px; letter-spacing: 0.36em; text-transform: uppercase;
+    font-family: "DM Sans", sans-serif; font-weight: 300;
+    opacity: 0.75;
+    margin-top: 14px;
+  }
+
+  /* Reduced lockup: small TRAMAR over big sub-name */
+  .lock-r{
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 4px;
+  }
+  .lock-r .lk-tramar{
+    font-size: 11px; letter-spacing: 0.42em; text-transform: uppercase;
+    font-family: "DM Sans", sans-serif; font-weight: 400;
+    opacity: 0.8;
+    margin-bottom: 4px;
+  }
+  .lock-r .sub-name{
+    font-size: 80px;
+    line-height: 0.85;
+    font-style: italic;
+  }
+  .lock-r.centered{ align-items: center; text-align: center; }
+
+  /* Stamp / circular usage on signature ground */
+  .lock-stamp{
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 10px;
+  }
+  .lock-stamp .lk-tramar{
+    font-size: 11px; letter-spacing: 0.42em; text-transform: uppercase;
+    font-family: "DM Sans", sans-serif; opacity: 0.85;
+  }
+  .lock-stamp .sub-name{
+    font-size: 56px; font-style: italic; line-height: 0.85;
+  }
+  .lock-stamp .place{
+    font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase;
+    font-family: "DM Sans", sans-serif; opacity: 0.75;
+    border-top: 1px solid currentColor;
+    padding-top: 10px;
+    margin-top: 6px;
+  }
+
+  /* Span helpers */
+  .col-6{ grid-column: span 6; }
+  .col-4{ grid-column: span 4; }
+  .col-3{ grid-column: span 3; }
+  .col-2{ grid-column: span 2; }
+
+  /* ============================================================
+     PERSONALIDADE PANELS — texto editorial entre lockups
+  ============================================================ */
+  .personality{
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    padding: 56px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 56px;
+  }
+  .personality .pq{
+    font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+    font-size: 32px; line-height: 1.2; letter-spacing: -0.005em;
+    max-width: 18ch;
+  }
+  .personality dl{
+    display: grid; gap: 0;
+  }
+  .personality dl > div{
+    display: grid; grid-template-columns: 120px 1fr; gap: 22px;
+    padding: 14px 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .personality dl > div:last-child{ border-bottom: 1px solid var(--rule-soft); }
+  .personality dt{
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.55; padding-top: 3px;
+  }
+  .personality dd{
+    font-size: 13.5px; line-height: 1.55;
+  }
+
+  /* ============================================================
+     CONVIVÊNCIA — decision tree + rules + composite website mock
+  ============================================================ */
+  .rules-grid{
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    margin-bottom: 56px;
+  }
+  .rule-card{
+    border: 1px solid var(--rule-soft);
+    padding: 28px 28px 32px;
+    background: var(--cal);
+  }
+  .rule-card .when{
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 14px;
+  }
+  .rule-card h4{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 24px;
+    line-height: 1.15; margin-bottom: 16px;
+  }
+  .rule-card p{
+    font-size: 13px; line-height: 1.55; opacity: 0.82;
+  }
+  .rule-card .mini-lock{
+    margin-top: 22px;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 22px;
+  }
+  .rule-card .mini-lock .label{
+    font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.55; margin-bottom: 10px;
+  }
+  .rule-card .mini-lock .form{
+    font-family: "Fraunces", serif; font-weight: 300; font-size: 22px;
+    line-height: 1;
+  }
+  .rule-card .mini-lock .form .it{ font-style: italic; }
+  .rule-card .mini-lock .form .sm{
+    font-family: "DM Sans", sans-serif; font-size: 9.5px; letter-spacing: 0.4em;
+    text-transform: uppercase; display: block; margin-bottom: 6px; opacity: 0.7;
+  }
+
+  /* Hierarchy table */
+  .hierarchy-table{
+    width: 100%; border-collapse: collapse;
+    font-size: 13px;
+  }
+  .hierarchy-table th, .hierarchy-table td{
+    text-align: left;
+    padding: 16px 16px;
+    border-bottom: 1px solid var(--rule-soft);
+    vertical-align: top;
+  }
+  .hierarchy-table th{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.6;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .hierarchy-table td.context{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 17px;
+    width: 28%;
+  }
+  .hierarchy-table td.lockup{
+    width: 32%;
+    font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+    font-size: 18px;
+  }
+  .hierarchy-table td.lockup .pre{
+    font-family: "DM Sans", sans-serif; font-size: 9.5px; letter-spacing: 0.4em;
+    text-transform: uppercase; font-style: normal;
+    display: block; opacity: 0.7; margin-bottom: 4px;
+  }
+  .hierarchy-table td.note{
+    opacity: 0.78; line-height: 1.55;
+  }
+
+  /* ============================================================
+     WEBSITE MOCK — composite of three sub-brands
+  ============================================================ */
+  .site-mock{
+    border: 1px solid var(--rule-soft);
+    overflow: hidden;
+    background: var(--cal);
+    margin-top: 56px;
+  }
+  .site-mock .mock-bar{
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 16px;
+    background: var(--cal-soft);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .site-mock .mock-bar .dot{
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--areia); opacity: 0.5;
+  }
+  .site-mock .mock-bar .url{
+    margin-left: 16px;
+    font-size: 11px; letter-spacing: 0.04em; opacity: 0.6;
+  }
+  .site-nav{
+    display: grid; grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .site-nav .logo{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 22px;
+  }
+  .site-nav .links{
+    display: flex; gap: 36px;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.75;
+  }
+  .site-nav .cta{
+    justify-self: end;
+    border: 1px solid var(--grauna);
+    padding: 10px 18px;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  }
+  .site-hero{
+    padding: 96px 48px 80px;
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: end;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .site-hero .h{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: clamp(56px, 7vw, 96px);
+    line-height: 0.94;
+    letter-spacing: -0.018em;
+  }
+  .site-hero .h em{ font-style: italic; color: var(--areia); font-weight: 300; }
+  .site-hero .h-eyebrow{
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .site-hero .h-eyebrow .rule{
+    width: 56px; height: 1px; background: var(--grauna); opacity: 0.5;
+  }
+  .site-hero .h-eyebrow span{
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.65;
+  }
+  .site-hero .copy{
+    padding-bottom: 16px;
+  }
+  .site-hero .copy p{
+    font-size: 15px; line-height: 1.6; opacity: 0.82;
+    max-width: 38ch;
+  }
+
+  .site-products{
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .prod{
+    padding: 56px 40px 56px;
+    border-right: 1px solid var(--rule-soft);
+    position: relative;
+    min-height: 460px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .prod:last-child{ border-right: none; }
+  .prod .p-head{
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .prod .p-head .num{
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.55;
+  }
+  .prod .p-head .badge{
+    font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    padding: 4px 8px;
+    border: 1px solid currentColor;
+    opacity: 0.7;
+  }
+  .prod .p-name{
+    margin-top: 40px;
+  }
+  .prod .p-name .small{
+    font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase;
+    opacity: 0.7; margin-bottom: 8px;
+  }
+  .prod .p-name .big{
+    font-family: "Fraunces", serif; font-weight: 300; font-style: italic;
+    font-size: 80px; line-height: 0.88;
+    letter-spacing: -0.012em;
+  }
+  .prod .p-desc{
+    margin-top: 32px;
+    font-size: 13px; line-height: 1.6;
+    max-width: 30ch;
+    opacity: 0.85;
+  }
+  .prod .p-foot{
+    margin-top: 32px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    border-top: 1px solid currentColor;
+    padding-top: 14px;
+    opacity: 0.85;
+  }
+
+  .prod.carua{ background: var(--barro); color: var(--cal); }
+  .prod.renda{ background: var(--mascavo); color: var(--grauna); }
+  .prod.inteira{ background: var(--grauna); color: var(--cal); }
+
+  .site-foot{
+    padding: 40px 48px;
+    display: flex; justify-content: space-between;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  /* Social composite */
+  .social-row{
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    margin-top: 56px;
+  }
+  .social-card{
+    aspect-ratio: 1;
+    padding: 36px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    border: 1px solid var(--rule-soft);
+    position: relative;
+  }
+  .social-card .top{
+    display: flex; justify-content: space-between;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .social-card .ig-mark{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 18px;
+  }
+  .social-card .post{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 56px; line-height: 0.92;
+    letter-spacing: -0.012em;
+    font-style: italic;
+  }
+  .social-card .post .nm{
+    font-style: italic;
+  }
+  .social-card .bottom{
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .social-card.s-carua{ background: var(--barro); color: var(--cal); }
+  .social-card.s-renda{ background: var(--mascavo); color: var(--grauna); }
+  .social-card.s-inteira{ background: var(--grauna); color: var(--cal); }
+
+  /* ——— Footer ——— */
+  footer.colophon{
+    padding: 96px 0 72px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 48px;
+    align-items: end;
+  }
+  footer.colophon .signoff{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 32px; line-height: 1.1;
+    letter-spacing: -0.005em;
+    max-width: 14ch;
+  }
+  footer.colophon .signoff em{ font-style: italic; color: var(--areia); font-weight: 300; }
+  footer.colophon .meta{
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.6; line-height: 1.9;
+  }
+  footer.colophon .right{ text-align: right; }
+
+  /* ——— Responsive ——— */
+  @media (max-width: 1024px){
+    .shell{ grid-template-columns: 1fr; }
+    aside.nav{ position: static; height: auto; border-right: none; border-bottom: 1px solid var(--rule-soft); padding: 32px 28px; }
+    .nav-list{ display: grid; grid-template-columns: 1fr 1fr; }
+    main{ padding: 0 28px; }
+    .subbrand-band{ margin: 0 -28px 56px; padding: 56px 28px; grid-template-columns: 1fr; }
+    .cover .lede, .lockups, .rules-grid, .arch .row, .arch .children,
+    .personality, .site-hero, .site-products, .social-row, footer.colophon{
+      grid-template-columns: 1fr !important;
+    }
+    .col-6, .col-4, .col-3, .col-2{ grid-column: span 1; }
+    .lock-h .lk-tramar, .lock-h .sub-name{ font-size: 40px; }
+    .lock-v .sub-name{ font-size: 56px; }
+    .lock-r .sub-name{ font-size: 64px; }
+    .prod{ min-height: 360px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.18); }
+    .prod .p-name .big{ font-size: 64px; }
+    footer.colophon .right{ text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ============================ SIDE NAV ============================ -->
+  <aside class="nav">
+    <div>
+      <div class="brand-mark">Tramar</div>
+      <div class="brand-sub">Arquitetura · 2026</div>
+    </div>
+
+    <div>
+      <div class="nav-doc">Sumário</div>
+      <ul class="nav-list">
+        <li><a href="#arquitetura">
+          <span class="nidx">00</span>
+          <span><span class="ntitle">Arquitetura</span><span class="nsub">Mãe &amp; filhas</span></span>
+        </a></li>
+        <li><a href="#carua">
+          <span class="nidx">01</span>
+          <span><span class="ntitle"><span class="swatch" style="background:var(--barro)"></span>Caruá</span><span class="nsub">Flat 1 · encorpada</span></span>
+        </a></li>
+        <li><a href="#renda">
+          <span class="nidx">02</span>
+          <span><span class="ntitle"><span class="swatch" style="background:var(--mascavo)"></span>Renda</span><span class="nsub">Flat 2 · aérea</span></span>
+        </a></li>
+        <li><a href="#inteira">
+          <span class="nidx">03</span>
+          <span><span class="ntitle"><span class="swatch" style="background:var(--grauna)"></span>Inteira</span><span class="nsub">Os dois · união</span></span>
+        </a></li>
+        <li><a href="#convivencia">
+          <span class="nidx">04</span>
+          <span><span class="ntitle">Convivência</span><span class="nsub">Quando usar qual</span></span>
+        </a></li>
+        <li><a href="#aplicacao">
+          <span class="nidx">05</span>
+          <span><span class="ntitle">Aplicação</span><span class="nsub">Site &amp; redes</span></span>
+        </a></li>
+      </ul>
+    </div>
+
+    <div class="nav-foot">
+      Documento V.01<br />
+      Maio 2026 · Confidencial
+    </div>
+  </aside>
+
+  <!-- ============================ MAIN ============================ -->
+  <main>
+
+    <!-- ====================== COVER + ARCHITECTURE ====================== -->
+    <section class="cover" id="arquitetura">
+      <div class="doc-meta">
+        <span>Tramar · Muro Alto · Pernambuco</span>
+        <span>Arquitetura de Marca · V.01 · 2026</span>
+      </div>
+
+      <h1 class="serif">Uma casa,<br /><em>três entradas.</em></h1>
+
+      <div class="lede">
+        <p class="first serif">Tramar Muro Alto é a marca-mãe. Sob ela vivem três produtos comerciais: <em>Caruá</em>, o flat encorpado de barro e mato; <em>Renda</em>, o flat aéreo de mascavo e Olinda; e <em>Inteira</em>, os dois flats juntos para até oito pessoas.</p>
+        <p class="second">Caruá e Renda são gêmeas — partilham tipografia, grade, composição — mas têm personalidades opostas, uma de gravidade, outra de leveza. Inteira é a coexistência das duas, sem identidade própria forte. As três falam a mesma língua, com sotaques diferentes.</p>
+      </div>
+
+      <!-- Architecture diagram -->
+      <div class="arch">
+        <div class="row">
+          <div class="label">Marca-mãe</div>
+          <div class="mother serif">Tramar <span class="sub">Muro Alto · Pernambuco</span></div>
+        </div>
+        <div class="row">
+          <div class="label">Sub-marcas</div>
+          <div class="children">
+            <div class="child">
+              <div class="swatch" style="background:var(--barro)"></div>
+              <div class="tag">01 · Flat encorpado</div>
+              <div class="nm serif italic">Caruá</div>
+              <div class="desc">Cerâmica escura, fibra forte, têxteis pesados. Gravidade e ofício.</div>
+            </div>
+            <div class="child">
+              <div class="swatch" style="background:var(--mascavo)"></div>
+              <div class="tag">02 · Flat aéreo</div>
+              <div class="nm serif italic">Renda</div>
+              <div class="desc">Linho cru, parede caiada, renda renascença. Leveza e respiração.</div>
+            </div>
+            <div class="child">
+              <div class="swatch" style="background:var(--grauna)"></div>
+              <div class="tag">03 · União · até 8 pessoas</div>
+              <div class="nm serif italic">Inteira</div>
+              <div class="desc">Os dois flats juntos. Família, grupo, casa cheia.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== CARUÁ ====================== -->
+    <section class="block" id="carua">
+      <div class="sec-head">
+        <div class="sec-num">01 / Sub-marca</div>
+        <div>
+          <h2 class="serif">Tramar <em>Caruá</em>.</h2>
+          <p class="deck">Caruá é o flat encorpado — terroso, gravitacional, feito para quem busca o peso bom do ofício. A palavra é tupi, descreve a fibra forte usada em redes e cordas pernambucanas. Assina-se em barro escuro com apoio de verde-mato sobre branco-cal.</p>
+        </div>
+      </div>
+
+      <!-- Hero band -->
+      <div class="subbrand-band band-carua">
+        <div>
+          <div class="meta-tag">Sub-marca · 01 · Flat encorpado</div>
+          <div class="hero-lockup serif">
+            <span class="small">Tramar</span>
+            <span class="italic">Caruá</span>
+          </div>
+        </div>
+        <div class="copy">
+          <p class="serif italic">"O barro do Alto do Moura esfria devagar. A casa que vai abrigá-lo precisa do mesmo tempo."</p>
+          <p class="alt">Diário Tramar, dezembro de 2025.</p>
+        </div>
+        <div class="palette-strip">
+          <div class="ps-item"><span>Barro escuro</span><span class="hex">#6E3B2A</span></div>
+          <div class="ps-item"><span>Verde-mato</span><span class="hex">#3D4836</span></div>
+          <div class="ps-item"><span>Branco-cal</span><span class="hex">#F0E9DC</span></div>
+        </div>
+      </div>
+
+      <!-- Personality -->
+      <div class="personality">
+        <div class="pq serif">Caruá é a marca que abraça forte e oferece café passado em coador de pano.</div>
+        <dl>
+          <div><dt>Sensação</dt><dd>Gravidade, raiz, ofício, peso bom. Calor que vem de dentro do barro.</dd></div>
+          <div><dt>Materialidade</dt><dd>Cerâmica escura, fibra de caruá, têxteis pesados, madeira de cumaru.</dd></div>
+          <div><dt>Hóspede ideal</dt><dd>Quem precisa parar — leitura longa, sesta de tarde, fogo no fogão.</dd></div>
+          <div><dt>Voz</dt><dd>Pausada, descritiva, sem adjetivo turístico. Frases curtas.</dd></div>
+        </dl>
+      </div>
+
+      <!-- Lockups -->
+      <div class="subhead first">Lockups · Caruá</div>
+      <div class="lockups">
+
+        <!-- L1 horizontal positivo -->
+        <div class="lock-card col-6 lk-on-cal">
+          <div class="lock-stage tall">
+            <div class="lock-h">
+              <span class="lk-word lk-tramar">Tramar</span>
+              <span class="divider"></span>
+              <span class="lk-word sub-name serif italic">Caruá</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">01</span>
+            <span class="name">Lockup horizontal</span>
+            <span class="use">Assinatura principal</span>
+          </div>
+        </div>
+
+        <!-- L2 vertical positivo -->
+        <div class="lock-card col-3 lk-on-cal">
+          <div class="lock-stage tall">
+            <div class="lock-v">
+              <span class="lk-tramar">Tramar</span>
+              <span class="lk-word sub-name serif">Caruá</span>
+              <span class="place">Muro Alto</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">02</span>
+            <span class="name">Lockup vertical</span>
+            <span class="use">Selo</span>
+          </div>
+        </div>
+
+        <!-- L3 reduzido -->
+        <div class="lock-card col-3 lk-on-cal">
+          <div class="lock-stage tall">
+            <div class="lock-r">
+              <span class="lk-tramar">Tramar</span>
+              <span class="lk-word sub-name serif">Caruá</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">03</span>
+            <span class="name">Reduzido</span>
+            <span class="use">Mídia · botão</span>
+          </div>
+        </div>
+
+        <!-- L4 sobre barro (assinatura) -->
+        <div class="lock-card col-4 lk-on-barro">
+          <div class="lock-stage tall">
+            <div class="lock-h">
+              <span class="lk-word lk-tramar">Tramar</span>
+              <span class="divider"></span>
+              <span class="lk-word sub-name serif italic">Caruá</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">04</span>
+            <span class="name">Sobre barro</span>
+            <span class="use">Assinatura · capa</span>
+          </div>
+        </div>
+
+        <!-- L5 sobre mato (apoio) -->
+        <div class="lock-card col-4 lk-on-mato">
+          <div class="lock-stage tall">
+            <div class="lock-stamp">
+              <span class="lk-tramar">Tramar</span>
+              <span class="lk-word sub-name serif">Caruá</span>
+              <span class="place">Muro Alto · 2026</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">05</span>
+            <span class="name">Sobre mato</span>
+            <span class="use">Selo · lacre</span>
+          </div>
+        </div>
+
+        <!-- L6 monocromática (areia molhada sobre cal) -->
+        <div class="lock-card col-4 lk-mono-areia">
+          <div class="lock-stage tall">
+            <div class="lock-h">
+              <span class="lk-word lk-tramar">Tramar</span>
+              <span class="divider"></span>
+              <span class="lk-word sub-name serif italic">Caruá</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">06</span>
+            <span class="name">Monocromática</span>
+            <span class="use">Areia · gravado</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== RENDA ====================== -->
+    <section class="block" id="renda">
+      <div class="sec-head">
+        <div class="sec-num">02 / Sub-marca</div>
+        <div>
+          <h2 class="serif">Tramar <em>Renda</em>.</h2>
+          <p class="deck">Renda é o flat aéreo — claro, refinado, feito para quem busca a respiração da casa. A palavra vem da renda renascença, ofício de Pesqueira, ponto trançado sobre tecido fino. Assina-se em açúcar-mascavo com apoio de azul-Olinda sobre branco-cal.</p>
+        </div>
+      </div>
+
+      <!-- Hero band -->
+      <div class="subbrand-band band-renda">
+        <div>
+          <div class="meta-tag">Sub-marca · 02 · Flat aéreo</div>
+          <div class="hero-lockup serif">
+            <span class="small">Tramar</span>
+            <span class="italic">Renda</span>
+          </div>
+        </div>
+        <div class="copy">
+          <p class="serif italic">"A renda renascença não tece para cobrir; tece para deixar a luz passar."</p>
+          <p class="alt">Caderno de notas Tramar, janeiro de 2026.</p>
+        </div>
+        <div class="palette-strip">
+          <div class="ps-item"><span>Açúcar-mascavo</span><span class="hex">#C49A6B</span></div>
+          <div class="ps-item"><span>Azul-Olinda</span><span class="hex">#5C7A8C</span></div>
+          <div class="ps-item"><span>Branco-cal</span><span class="hex">#F0E9DC</span></div>
+        </div>
+      </div>
+
+      <!-- Personality -->
+      <div class="personality">
+        <div class="pq serif">Renda é a marca que abre a janela primeiro e pergunta o nome depois.</div>
+        <dl>
+          <div><dt>Sensação</dt><dd>Leveza, respiração, refinamento contido. Calor sem peso.</dd></div>
+          <div><dt>Materialidade</dt><dd>Linho cru, renda de Pesqueira, parede caiada, cerâmica vidrada.</dd></div>
+          <div><dt>Hóspede ideal</dt><dd>Quem busca silêncio bem desenhado — escrita, contemplação, banhos longos.</dd></div>
+          <div><dt>Voz</dt><dd>Suave, observadora, gosta de detalhe pequeno. Frases compridas, pontuadas.</dd></div>
+        </dl>
+      </div>
+
+      <!-- Lockups -->
+      <div class="subhead first">Lockups · Renda</div>
+      <div class="lockups">
+
+        <div class="lock-card col-6 lk-on-cal">
+          <div class="lock-stage tall">
+            <div class="lock-h">
+              <span class="lk-word lk-tramar">Tramar</span>
+              <span class="divider"></span>
+              <span class="lk-word sub-name serif italic">Renda</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">01</span>
+            <span class="name">Lockup horizontal</span>
+            <span class="use">Assinatura principal</span>
+          </div>
+        </div>
+
+        <div class="lock-card col-3 lk-on-cal">
+          <div class="lock-stage tall">
+            <div class="lock-v">
+              <span class="lk-tramar">Tramar</span>
+              <span class="lk-word sub-name serif">Renda</span>
+              <span class="place">Muro Alto</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">02</span>
+            <span class="name">Lockup vertical</span>
+            <span class="use">Selo</span>
+          </div>
+        </div>
+
+        <div class="lock-card col-3 lk-on-cal">
+          <div class="lock-stage tall">
+            <div class="lock-r">
+              <span class="lk-tramar">Tramar</span>
+              <span class="lk-word sub-name serif">Renda</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">03</span>
+            <span class="name">Reduzido</span>
+            <span class="use">Mídia · botão</span>
+          </div>
+        </div>
+
+        <div class="lock-card col-4 lk-on-mascavo">
+          <div class="lock-stage tall">
+            <div class="lock-h">
+              <span class="lk-word lk-tramar">Tramar</span>
+              <span class="divider"></span>
+              <span class="lk-word sub-name serif italic">Renda</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">04</span>
+            <span class="name">Sobre mascavo</span>
+            <span class="use">Assinatura · capa</span>
+          </div>
+        </div>
+
+        <div class="lock-card col-4 lk-on-olinda">
+          <div class="lock-stage tall">
+            <div class="lock-stamp">
+              <span class="lk-tramar">Tramar</span>
+              <span class="lk-word sub-name serif">Renda</span>
+              <span class="place">Muro Alto · 2026</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">05</span>
+            <span class="name">Sobre Olinda</span>
+            <span class="use">Selo · lacre</span>
+          </div>
+        </div>
+
+        <div class="lock-card col-4 lk-mono-areia">
+          <div class="lock-stage tall">
+            <div class="lock-h">
+              <span class="lk-word lk-tramar">Tramar</span>
+              <span class="divider"></span>
+              <span class="lk-word sub-name serif italic">Renda</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">06</span>
+            <span class="name">Monocromática</span>
+            <span class="use">Areia · gravado</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== INTEIRA ====================== -->
+    <section class="block" id="inteira">
+      <div class="sec-head">
+        <div class="sec-num">03 / Sub-marca</div>
+        <div>
+          <h2 class="serif">Tramar <em>Inteira</em>.</h2>
+          <p class="deck">Inteira é o produto que junta os dois flats — para grupos de até oito pessoas, família estendida, casamento pequeno, retiro de trabalho. Não tem personalidade própria forte: trabalha como soma. Branco-cal e tinta-graúna unificam, e as duas paletas de assinatura aparecem em equilíbrio, lado a lado.</p>
+        </div>
+      </div>
+
+      <!-- Hero band -->
+      <div class="subbrand-band band-inteira">
+        <div>
+          <div class="meta-tag">Sub-marca · 03 · Casa cheia · até 8</div>
+          <div class="hero-lockup serif">
+            <span class="small">Tramar</span>
+            <span class="italic">Inteira</span>
+          </div>
+        </div>
+        <div class="copy">
+          <p class="serif italic">"Tomar a casa inteira: tirar os sapatos na porta, e ficar."</p>
+          <p class="alt">Diário Tramar, março de 2026.</p>
+        </div>
+        <div class="palette-strip">
+          <div class="ps-item"><span>Tinta-graúna</span><span class="hex">#1A1F26</span></div>
+          <div class="ps-item"><span>Branco-cal</span><span class="hex">#F0E9DC</span></div>
+          <div class="ps-item"><span>Barro + Mascavo</span><span class="hex">acento</span></div>
+        </div>
+      </div>
+
+      <!-- Personality -->
+      <div class="personality">
+        <div class="pq serif">Inteira é a marca que recebe o grupo e divide o pão sem perguntar quantos.</div>
+        <dl>
+          <div><dt>Sensação</dt><dd>Completude, união, abundância contida. A casa cheia mas não barulhenta.</dd></div>
+          <div><dt>Materialidade</dt><dd>As duas casas, somadas. Barro e renda no mesmo aparador, mesa longa.</dd></div>
+          <div><dt>Hóspede ideal</dt><dd>Grupos de até oito — família, amigos antigos, equipes em retiro.</dd></div>
+          <div><dt>Voz</dt><dd>Anfitriã, sem cerimônia. Frases plurais ("Nós", "a casa", "vocês").</dd></div>
+        </dl>
+      </div>
+
+      <!-- Lockups -->
+      <div class="subhead first">Lockups · Inteira</div>
+      <div class="lockups">
+
+        <div class="lock-card col-6 lk-on-cal">
+          <div class="lock-stage tall">
+            <div class="lock-h">
+              <span class="lk-word lk-tramar">Tramar</span>
+              <span class="divider"></span>
+              <span class="lk-word sub-name serif italic">Inteira</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">01</span>
+            <span class="name">Lockup horizontal</span>
+            <span class="use">Assinatura principal</span>
+          </div>
+        </div>
+
+        <div class="lock-card col-3 lk-on-cal">
+          <div class="lock-stage tall">
+            <div class="lock-v">
+              <span class="lk-tramar">Tramar</span>
+              <span class="lk-word sub-name serif">Inteira</span>
+              <span class="place">Muro Alto · até 8</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">02</span>
+            <span class="name">Lockup vertical</span>
+            <span class="use">Selo</span>
+          </div>
+        </div>
+
+        <div class="lock-card col-3 lk-on-cal">
+          <div class="lock-stage tall">
+            <div class="lock-r">
+              <span class="lk-tramar">Tramar</span>
+              <span class="lk-word sub-name serif">Inteira</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">03</span>
+            <span class="name">Reduzido</span>
+            <span class="use">Mídia · botão</span>
+          </div>
+        </div>
+
+        <div class="lock-card col-4 lk-on-grauna">
+          <div class="lock-stage tall">
+            <div class="lock-h">
+              <span class="lk-word lk-tramar">Tramar</span>
+              <span class="divider"></span>
+              <span class="lk-word sub-name serif italic">Inteira</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">04</span>
+            <span class="name">Sobre graúna</span>
+            <span class="use">Assinatura · capa</span>
+          </div>
+        </div>
+
+        <div class="lock-card col-4 lk-on-grauna" style="background: linear-gradient(110deg, var(--barro) 0% 50%, var(--mascavo) 50% 100%); color: var(--cal);">
+          <div class="lock-stage tall">
+            <div class="lock-stamp">
+              <span class="lk-tramar">Tramar</span>
+              <span class="lk-word sub-name serif">Inteira</span>
+              <span class="place">Caruá · Renda · juntos</span>
+            </div>
+          </div>
+          <div class="lock-info" style="border-top-color: rgba(240,233,220,0.18); color: var(--cal);">
+            <span class="idx" style="color: var(--areia);">05</span>
+            <span class="name">Sobre duo</span>
+            <span class="use">Casamento das paletas</span>
+          </div>
+        </div>
+
+        <div class="lock-card col-4 lk-mono-areia">
+          <div class="lock-stage tall">
+            <div class="lock-h">
+              <span class="lk-word lk-tramar">Tramar</span>
+              <span class="divider"></span>
+              <span class="lk-word sub-name serif italic">Inteira</span>
+            </div>
+          </div>
+          <div class="lock-info">
+            <span class="idx">06</span>
+            <span class="name">Monocromática</span>
+            <span class="use">Areia · gravado</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== CONVIVÊNCIA ====================== -->
+    <section class="block" id="convivencia">
+      <div class="sec-head">
+        <div class="sec-num">04 / Convivência</div>
+        <div>
+          <h2 class="serif">Quando<br />usar <em>qual</em>.</h2>
+          <p class="deck">A marca-mãe e as três sub-marcas não competem; cada uma tem seu lugar. A regra geral: comunicação institucional usa Tramar Muro Alto; comunicação de produto usa a sub-marca; comunicação comparativa (reservar) usa as três juntas.</p>
+        </div>
+      </div>
+
+      <!-- Three cards: when to use what -->
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="when">Cenário 01</div>
+          <h4>Quando usar a marca-mãe.</h4>
+          <p>Em todo conteúdo institucional, narrativo, editorial ou de marca, onde o que se comunica é a casa como um todo — sua história, seu lugar, seus ofícios. Posts de bastidor, manifesto, página "Sobre", artigos, embalagens secundárias.</p>
+          <div class="mini-lock">
+            <div class="label">Forma</div>
+            <div class="form">
+              <span class="sm">Lockup completo</span>
+              Tramar <span style="opacity:.4">|</span> Muro Alto
+            </div>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="when">Cenário 02</div>
+          <h4>Quando usar uma sub-marca.</h4>
+          <p>Em comunicação de produto específico: anúncio do flat, página de reserva da unidade, e-mail transacional, chave de entrega, etiqueta de amenidade. A sub-marca traz a personalidade certa para o contexto.</p>
+          <div class="mini-lock">
+            <div class="label">Forma</div>
+            <div class="form">
+              <span class="sm">Tramar +</span>
+              <span class="it">Caruá</span> · <span class="it">Renda</span> · <span class="it">Inteira</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="when">Cenário 03</div>
+          <h4>Quando usar as três juntas.</h4>
+          <p>Em qualquer ponto de escolha pelo hóspede — página de reservas, capa de Instagram, e-mail promocional comparativo, brochura. As três sub-marcas aparecem em paridade visual, com a marca-mãe acima.</p>
+          <div class="mini-lock">
+            <div class="label">Forma</div>
+            <div class="form">
+              <span class="sm">Mãe acima + trio paritário</span>
+              <span class="it">Caruá</span> <span style="opacity:.4">·</span> <span class="it">Renda</span> <span style="opacity:.4">·</span> <span class="it">Inteira</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hierarchy table -->
+      <div class="subhead">Hierarquia visual · por contexto</div>
+      <table class="hierarchy-table">
+        <thead>
+          <tr>
+            <th>Contexto</th>
+            <th>Forma da marca</th>
+            <th>Observação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="context">Página inicial do site</td>
+            <td class="lockup"><span class="pre">Mãe dominante</span>Tramar · Muro Alto</td>
+            <td class="note">Hero institucional com Tramar Muro Alto, seguido de bloco com os três produtos em paridade.</td>
+          </tr>
+          <tr>
+            <td class="context">Página do flat Caruá</td>
+            <td class="lockup"><span class="pre">Sub-marca dominante</span>Tramar <em>Caruá</em></td>
+            <td class="note">Marca-mãe aparece em escala menor no topo; a sub-marca conduz a página.</td>
+          </tr>
+          <tr>
+            <td class="context">Página de reservas</td>
+            <td class="lockup"><span class="pre">Trio paritário</span><em>Caruá</em> · <em>Renda</em> · <em>Inteira</em></td>
+            <td class="note">As três sub-marcas em cards de igual peso visual. Marca-mãe apenas como assinatura de rodapé.</td>
+          </tr>
+          <tr>
+            <td class="context">Instagram · feed institucional</td>
+            <td class="lockup"><span class="pre">Mãe dominante</span>Tramar</td>
+            <td class="note">Conteúdo de marca, ofício, lugar, narrativa. Sub-marca só quando o post é especificamente sobre um dos flats.</td>
+          </tr>
+          <tr>
+            <td class="context">E-mail transacional · reserva</td>
+            <td class="lockup"><span class="pre">Sub-marca dominante</span>Tramar <em>Renda</em></td>
+            <td class="note">Cabeçalho com a sub-marca reservada; rodapé assina como Tramar Muro Alto.</td>
+          </tr>
+          <tr>
+            <td class="context">Papelaria interna do flat</td>
+            <td class="lockup"><span class="pre">Apenas sub-marca</span><em>Caruá</em> ou <em>Renda</em></td>
+            <td class="note">Lacres, etiquetas de amenidade, carta de boas-vindas — usar só a palavra reduzida da sub-marca.</td>
+          </tr>
+          <tr>
+            <td class="context">Embalagem de presente</td>
+            <td class="lockup"><span class="pre">Mãe dominante</span>Tramar</td>
+            <td class="note">Caixas, sacolas e papéis de presente assinam pela marca-mãe; o conteúdo dentro pode ser por sub-marca.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ====================== APLICAÇÃO ====================== -->
+    <section class="block" id="aplicacao">
+      <div class="sec-head">
+        <div class="sec-num">05 / Aplicação</div>
+        <div>
+          <h2 class="serif">As três <em>juntas</em>.</h2>
+          <p class="deck">A coexistência das sub-marcas em peças reais. Abaixo: a página inicial do site, com hero da Tramar Muro Alto seguido do bloco de escolha entre Caruá, Renda e Inteira; e um trio de posts para Instagram em paridade visual.</p>
+        </div>
+      </div>
+
+      <!-- Website mock -->
+      <div class="subhead first">Site · página inicial</div>
+      <div class="site-mock">
+        <div class="mock-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="url">tramar.com.br</span>
+        </div>
+        <div class="site-nav">
+          <div class="logo serif">Tramar</div>
+          <div class="links">
+            <span>A casa</span><span>Estadias</span><span>Diário</span><span>Contato</span>
+          </div>
+          <div class="cta">Reservar</div>
+        </div>
+        <div class="site-hero">
+          <div>
+            <div class="h-eyebrow">
+              <span class="rule"></span>
+              <span>Muro Alto · Pernambuco</span>
+            </div>
+            <h3 class="h serif">Uma trama pernambucana,<br /><em>à beira-mar</em>.</h3>
+          </div>
+          <div class="copy">
+            <p>Dois flats studio em Muro Alto, curadoria material em cerâmica, renda renascença e linho cru. Reservar uma estadia, ou tomar a casa inteira.</p>
+          </div>
+        </div>
+
+        <div class="site-products">
+          <div class="prod carua">
+            <div class="p-head">
+              <span class="num">01 · Flat encorpado</span>
+              <span class="badge">2 hóspedes</span>
+            </div>
+            <div class="p-name">
+              <div class="small">Tramar</div>
+              <div class="big serif">Caruá</div>
+            </div>
+            <div class="p-desc">Barro escuro, fibra forte, têxteis pesados. Para quem busca o peso bom do ofício e a sombra de coqueiral.</div>
+            <div class="p-foot">
+              <span>A partir de R$ 780 / noite</span>
+              <span>Ver →</span>
+            </div>
+          </div>
+
+          <div class="prod renda">
+            <div class="p-head">
+              <span class="num">02 · Flat aéreo</span>
+              <span class="badge">2 hóspedes</span>
+            </div>
+            <div class="p-name">
+              <div class="small">Tramar</div>
+              <div class="big serif">Renda</div>
+            </div>
+            <div class="p-desc">Linho cru, parede caiada, renda renascença. Para quem busca a luz da manhã e a respiração do quarto vazio.</div>
+            <div class="p-foot">
+              <span>A partir de R$ 780 / noite</span>
+              <span>Ver →</span>
+            </div>
+          </div>
+
+          <div class="prod inteira">
+            <div class="p-head">
+              <span class="num">03 · Casa cheia</span>
+              <span class="badge">Até 8 hóspedes</span>
+            </div>
+            <div class="p-name">
+              <div class="small">Tramar</div>
+              <div class="big serif">Inteira</div>
+            </div>
+            <div class="p-desc">Os dois flats juntos. Para família estendida, retiro de trabalho, casamento pequeno. A casa toda, sem cerimônia.</div>
+            <div class="p-foot">
+              <span>A partir de R$ 1.480 / noite</span>
+              <span>Ver →</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-foot">
+          <span>Tramar · Muro Alto · Pernambuco</span>
+          <span>Reservar &nbsp;·&nbsp; Diário &nbsp;·&nbsp; Contato</span>
+        </div>
+      </div>
+
+      <!-- Instagram trio -->
+      <div class="subhead">Instagram · trio de posts em paridade</div>
+      <div class="social-row">
+        <div class="social-card s-carua">
+          <div class="top">
+            <span class="ig-mark serif">@tramar.muroalto</span>
+            <span>01 / 03</span>
+          </div>
+          <div class="post">
+            <span style="font-style:normal; font-family:'DM Sans'; font-size: 13px; letter-spacing:0.36em; opacity:0.7; text-transform:uppercase; display:block; margin-bottom:18px;">Tramar</span>
+            <span class="nm">Caruá</span>
+          </div>
+          <div class="bottom">
+            <span>Flat encorpado</span>
+            <span>Muro Alto · PE</span>
+          </div>
+        </div>
+
+        <div class="social-card s-renda">
+          <div class="top">
+            <span class="ig-mark serif">@tramar.muroalto</span>
+            <span>02 / 03</span>
+          </div>
+          <div class="post">
+            <span style="font-style:normal; font-family:'DM Sans'; font-size: 13px; letter-spacing:0.36em; opacity:0.7; text-transform:uppercase; display:block; margin-bottom:18px;">Tramar</span>
+            <span class="nm">Renda</span>
+          </div>
+          <div class="bottom">
+            <span>Flat aéreo</span>
+            <span>Muro Alto · PE</span>
+          </div>
+        </div>
+
+        <div class="social-card s-inteira">
+          <div class="top">
+            <span class="ig-mark serif">@tramar.muroalto</span>
+            <span>03 / 03</span>
+          </div>
+          <div class="post">
+            <span style="font-style:normal; font-family:'DM Sans'; font-size: 13px; letter-spacing:0.36em; opacity:0.7; text-transform:uppercase; display:block; margin-bottom:18px;">Tramar</span>
+            <span class="nm">Inteira</span>
+          </div>
+          <div class="bottom">
+            <span>Casa cheia · até 8</span>
+            <span>Muro Alto · PE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== FOOTER ====================== -->
+    <footer class="colophon">
+      <div class="signoff">Caruá <em>e</em> Renda,<br />sob a mesma <em>cal</em>.</div>
+      <div class="meta">
+        Arquitetura de Marca V.01<br />
+        Maio 2026<br />
+        Confidencial
+      </div>
+      <div class="meta right">
+        Tramar Muro Alto<br />
+        Tramar Caruá · Tramar Renda · Tramar Inteira<br />
+        Muro Alto, Pernambuco
+      </div>
+    </footer>
+
+  </main>
+
+</div>
+
+</body>
+</html>

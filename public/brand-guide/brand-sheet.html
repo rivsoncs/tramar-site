@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tramar — Identidade Visual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..600,30..100,0..1&family=DM+Sans:opsz,wght@9..40,300..500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cal: #F0E9DC;
+    --areia: #A89C8A;
+    --grauna: #1A1F26;
+    --cal-soft: #E6DECF;
+    --rule: rgba(26, 31, 38, 0.18);
+    --rule-soft: rgba(26, 31, 38, 0.08);
+  }
+
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+  html, body{ background: var(--cal); color: var(--grauna); }
+  body{
+    font-family: "DM Sans", system-ui, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  /* ——— Typography primitives ——— */
+  .serif{ font-family: "Fraunces", "Cormorant Garamond", Georgia, serif; font-optical-sizing: auto; }
+  .sans{ font-family: "DM Sans", system-ui, sans-serif; }
+  .caps{ text-transform: uppercase; letter-spacing: 0.18em; }
+  .caps-tight{ text-transform: uppercase; letter-spacing: 0.08em; }
+  .micro{ font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400; }
+  .num{ font-variant-numeric: tabular-nums; }
+
+  /* ——— Page layout ——— */
+  .page{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+
+  /* ——— Top bar ——— */
+  .topbar{
+    position: sticky; top: 0; z-index: 50;
+    background: var(--cal);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .topbar-inner{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 22px 64px;
+    max-width: 1440px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+  .topbar .mark{
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+  }
+  .topbar nav{
+    display: flex; gap: 36px; justify-content: center;
+  }
+  .topbar nav a{
+    color: var(--grauna);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 400;
+    opacity: 0.7;
+    transition: opacity 200ms ease;
+  }
+  .topbar nav a:hover{ opacity: 1; }
+  .topbar .meta{
+    justify-self: end;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  /* ——— Hero ——— */
+  .hero{
+    padding: 120px 0 96px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: end;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .hero-eyebrow{
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow .rule{
+    width: 56px; height: 1px; background: var(--grauna); opacity: 0.5;
+  }
+  .hero h1{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: clamp(64px, 9vw, 132px);
+    line-height: 0.92;
+    letter-spacing: -0.015em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+  }
+  .hero h1 em{
+    font-style: italic;
+    font-weight: 300;
+    color: var(--areia);
+  }
+  .hero .right{
+    padding-bottom: 14px;
+    max-width: 420px;
+    justify-self: end;
+  }
+  .hero .right p{
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--grauna);
+    opacity: 0.78;
+  }
+  .hero .right p + p{ margin-top: 16px; }
+
+  /* ——— Section frame ——— */
+  section.block{
+    padding: 96px 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .sec-head{
+    display: grid;
+    grid-template-columns: 96px 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+    align-items: baseline;
+  }
+  .sec-num{
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.5;
+  }
+  .sec-title{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  .sec-desc{
+    font-size: 13.5px; line-height: 1.6; opacity: 0.7;
+    max-width: 380px; justify-self: end;
+  }
+
+  /* ——— Palette ——— */
+  .palette{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .swatch{
+    aspect-ratio: 4/5;
+    border: 1px solid var(--rule-soft);
+    position: relative;
+    padding: 22px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .swatch .label{
+    font-family: "Fraunces", serif;
+    font-size: 22px;
+    line-height: 1.1;
+    font-weight: 400;
+  }
+  .swatch .meta{
+    font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    line-height: 1.7;
+  }
+  .swatch.cal{ background: var(--cal); color: var(--grauna); }
+  .swatch.areia{ background: var(--areia); color: var(--cal); }
+  .swatch.grauna{ background: var(--grauna); color: var(--cal); }
+
+  /* ——— Type specimen ——— */
+  .type-spec{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: stretch;
+  }
+  .spec-card{
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+  }
+  .spec-card .role{
+    display: flex; justify-content: space-between;
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 36px;
+  }
+  .spec-card .display{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: 120px;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+    margin-bottom: 36px;
+  }
+  .spec-card .display.sans-display{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    font-size: 72px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .spec-card .glyphs{
+    font-family: "Fraunces", serif; font-weight: 300; font-size: 22px;
+    line-height: 1.4; letter-spacing: 0.02em;
+    opacity: 0.85;
+    padding-top: 24px; border-top: 1px solid var(--rule-soft);
+  }
+  .spec-card .glyphs.sans-glyphs{
+    font-family: "DM Sans", sans-serif; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase;
+  }
+
+  /* ——— Logo grid ——— */
+  .logo-grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+  .card{
+    position: relative;
+    background: var(--cal);
+    border: 1px solid var(--rule-soft);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .card.on-dark{ background: var(--grauna); border-color: transparent; }
+  .card .stage{
+    flex: 1;
+    display: grid; place-items: center;
+    padding: 56px 32px;
+    min-height: 360px;
+  }
+  .card .stage.tall{ min-height: 460px; }
+  .card .stage.xtall{ min-height: 540px; }
+  .card .info{
+    border-top: 1px solid var(--rule-soft);
+    padding: 18px 22px;
+    display: grid;
+    grid-template-columns: 24px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .card.on-dark .info{
+    border-top-color: rgba(240, 233, 220, 0.12);
+    color: var(--cal);
+  }
+  .card.on-dark .info .idx{ color: var(--areia); }
+  .card .info .idx{
+    font-variant-numeric: tabular-nums;
+    opacity: 0.55;
+  }
+  .card .info .label{
+    opacity: 0.8;
+  }
+  .card.on-dark .info .label{ opacity: 0.7; }
+  .card .info .min{
+    opacity: 0.5;
+    font-feature-settings: "tnum";
+  }
+
+  /* span helpers */
+  .col-12{ grid-column: span 12; }
+  .col-8{ grid-column: span 8; }
+  .col-6{ grid-column: span 6; }
+  .col-5{ grid-column: span 5; }
+  .col-7{ grid-column: span 7; }
+  .col-4{ grid-column: span 4; }
+  .col-3{ grid-column: span 3; }
+
+  /* ——— LOGO LOCKUPS (rendered in HTML, not images) ——— */
+  .lk-word{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: 0.005em;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+    display: inline-block;
+  }
+  .lk-sub{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  /* Horizontal lockup */
+  .lockup-h{
+    display: flex; align-items: baseline; gap: 28px;
+    color: var(--grauna);
+  }
+  .lockup-h .lk-word{ font-size: 92px; }
+  .lockup-h .divider{
+    width: 1px; height: 44px; background: currentColor; opacity: 0.45;
+    align-self: center;
+  }
+  .lockup-h .lk-sub{
+    font-size: 13px;
+    letter-spacing: 0.32em;
+    line-height: 1.3;
+    text-align: left;
+    opacity: 0.85;
+  }
+
+  /* Vertical lockup */
+  .lockup-v{
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    color: var(--grauna);
+    gap: 18px;
+  }
+  .lockup-v .lk-word{ font-size: 96px; }
+  .lockup-v .rule{ width: 28px; height: 1px; background: currentColor; opacity: 0.6; }
+  .lockup-v .lk-sub{
+    font-size: 12px; letter-spacing: 0.42em;
+    opacity: 0.85;
+  }
+
+  /* Reduced */
+  .lockup-r{ color: var(--grauna); }
+  .lockup-r .lk-word{ font-size: 64px; }
+
+  /* Monogram */
+  .monogram{
+    color: var(--grauna);
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: 240px;
+    line-height: 0.8;
+    letter-spacing: -0.04em;
+    font-variation-settings: "SOFT" 30, "opsz" 144, "WONK" 1;
+    position: relative;
+    padding-right: 0.05em;
+  }
+
+  /* Color variants — applied to card */
+  .var-cal{ background: var(--cal); }
+  .var-cal .lockup-h, .var-cal .lockup-v, .var-cal .lockup-r, .var-cal .monogram{ color: var(--grauna); }
+
+  .var-grauna{ background: var(--grauna); }
+  .var-grauna .lockup-h, .var-grauna .lockup-v, .var-grauna .lockup-r, .var-grauna .monogram{ color: var(--cal); }
+
+  .var-areia-on-cal .lockup-h,
+  .var-areia-on-cal .lockup-v,
+  .var-areia-on-cal .lockup-r,
+  .var-areia-on-cal .monogram{ color: var(--areia); }
+
+  .var-areia-on-grauna{ background: var(--grauna); }
+  .var-areia-on-grauna .lockup-h,
+  .var-areia-on-grauna .lockup-v,
+  .var-areia-on-grauna .lockup-r,
+  .var-areia-on-grauna .monogram{ color: var(--areia); }
+
+  /* Tick marks under monogram for size scale */
+  .scale{
+    position: absolute;
+    bottom: 14px; left: 14px; right: 14px;
+    display: flex; justify-content: space-between;
+    font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase;
+    opacity: 0.35;
+    font-feature-settings: "tnum";
+  }
+
+  /* ——— Construction/clear space mini ——— */
+  .construction{
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px;
+    align-items: stretch;
+  }
+  .const-stage{
+    background: var(--cal-soft);
+    border: 1px solid var(--rule-soft);
+    padding: 64px;
+    display: grid; place-items: center;
+    position: relative;
+    min-height: 340px;
+  }
+  .const-stage .frame{
+    position: relative;
+    padding: 48px 56px;
+    outline: 1px dashed rgba(26,31,38,0.35);
+  }
+  .const-stage .tick{
+    position: absolute; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    opacity: 0.55;
+  }
+  .const-stage .tick.t{ top: 14px; left: 50%; transform: translateX(-50%); }
+  .const-stage .tick.b{ bottom: 14px; left: 50%; transform: translateX(-50%); }
+  .const-stage .tick.l{ left: 14px; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: left center; }
+  .const-stage .tick.r{ right: 14px; top: 50%; transform: translateY(-50%) rotate(90deg); transform-origin: right center; }
+  .const-stage .word{
+    font-family: "Fraunces", serif; font-weight: 300; font-size: 88px;
+    letter-spacing: 0.005em;
+    line-height: 0.9;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+  }
+  .const-note{
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+  }
+  .const-note h4{
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 22px;
+    margin-bottom: 18px;
+  }
+  .const-note dl{
+    display: grid; grid-template-columns: 1fr 2fr; gap: 14px 24px;
+    font-size: 12.5px; line-height: 1.5;
+  }
+  .const-note dt{ opacity: 0.55; letter-spacing: 0.18em; text-transform: uppercase; font-size: 10.5px; padding-top: 3px; }
+  .const-note dd{ opacity: 0.85; }
+
+  /* ——— Misuse / Do-don't simplified to written principles ——— */
+  .principles{
+    columns: 2;
+    column-gap: 64px;
+    column-rule: 1px solid var(--rule-soft);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .principles p{
+    break-inside: avoid;
+    margin-bottom: 24px;
+    text-indent: 0;
+  }
+  .principles p .lead{
+    font-family: "Fraunces", serif; font-weight: 400;
+    font-size: 16px;
+    display: block; margin-bottom: 4px;
+  }
+
+  /* ——— Footer ——— */
+  footer{
+    padding: 72px 0 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 48px;
+    align-items: end;
+  }
+  footer .colophon{
+    font-family: "Fraunces", serif; font-weight: 300;
+    font-size: 28px; line-height: 1.15;
+    letter-spacing: -0.005em;
+  }
+  footer .meta{
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.6; line-height: 1.9;
+  }
+  footer .right{ text-align: right; }
+
+  /* ——— small responsive tweaks ——— */
+  @media (max-width: 980px){
+    .page, .topbar-inner{ padding-left: 28px; padding-right: 28px; }
+    .hero{ grid-template-columns: 1fr; gap: 36px; padding: 80px 0 64px; }
+    .hero .right{ justify-self: start; }
+    .sec-head{ grid-template-columns: 1fr; gap: 16px; }
+    .sec-desc{ justify-self: start; }
+    .palette{ grid-template-columns: 1fr; }
+    .type-spec{ grid-template-columns: 1fr; }
+    .col-8, .col-6, .col-5, .col-7, .col-4, .col-3{ grid-column: span 12; }
+    .construction{ grid-template-columns: 1fr; }
+    .principles{ columns: 1; }
+    footer{ grid-template-columns: 1fr; }
+    footer .right{ text-align: left; }
+    .topbar nav{ display: none; }
+    .topbar-inner{ grid-template-columns: 1fr auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============= TOP BAR ============= -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="mark">Tramar</div>
+    <nav>
+      <a href="#manifesto">Manifesto</a>
+      <a href="#paleta">Paleta</a>
+      <a href="#tipografia">Tipografia</a>
+      <a href="#variacoes">Variações</a>
+      <a href="#uso">Uso</a>
+    </nav>
+    <div class="meta">Identidade Visual · v.01 — 2026</div>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- ============= HERO ============= -->
+  <section class="hero" id="manifesto">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="rule"></span>
+        <span class="micro">Muro Alto · Pernambuco</span>
+      </div>
+      <h1 class="serif">Tramar<br /><em>tece um lugar</em></h1>
+    </div>
+    <div class="right">
+      <p>Trama é fio cruzado com intenção. A marca toma emprestado o verbo da cerâmica de Caruaru, da renda renascença, do barro do Alto do Moura — ofício pernambucano feito com mão presente.</p>
+      <p>Esta brand sheet documenta a aplicação tipográfica da marca, sua paleta restrita e oito variações de uso. Sem ícones, sem ornamento. A palavra carrega.</p>
+    </div>
+  </section>
+
+  <!-- ============= PALETA ============= -->
+  <section class="block" id="paleta">
+    <div class="sec-head">
+      <div class="sec-num num">01 / Paleta</div>
+      <h2 class="sec-title">Três tons, nenhum a mais.</h2>
+      <p class="sec-desc">Branco-cal como respiração, areia molhada como pausa, tinta-graúna como afirmação. A restrição é parte da marca; o calor vem do papel, do barro e da luz.</p>
+    </div>
+
+    <div class="palette">
+      <div class="swatch cal">
+        <div class="label">Branco-cal</div>
+        <div class="meta">
+          Hex &nbsp;F0E9DC<br />
+          RGB&nbsp;240·233·220<br />
+          Pantone&nbsp;7527 C<br /><br />
+          Fundo principal · papelaria
+        </div>
+      </div>
+      <div class="swatch areia">
+        <div class="label">Areia molhada</div>
+        <div class="meta">
+          Hex &nbsp;A89C8A<br />
+          RGB&nbsp;168·156·138<br />
+          Pantone&nbsp;Warm Gray 6<br /><br />
+          Apoio · monocromático · texto secundário
+        </div>
+      </div>
+      <div class="swatch grauna">
+        <div class="label">Tinta-graúna</div>
+        <div class="meta">
+          Hex &nbsp;1A1F26<br />
+          RGB&nbsp;26·31·38<br />
+          Pantone&nbsp;Black 6 C<br /><br />
+          Tipografia · contraste máximo
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= TIPOGRAFIA ============= -->
+  <section class="block" id="tipografia">
+    <div class="sec-head">
+      <div class="sec-num num">02 / Tipografia</div>
+      <h2 class="sec-title">Uma serifada com calor. Uma sans para o silêncio.</h2>
+      <p class="sec-desc">A serifada carrega a brasilidade contemporânea — terminais suaves, eixo levemente humanista. A sans entra como legenda discreta, peso leve, tracking generoso.</p>
+    </div>
+
+    <div class="type-spec">
+      <div class="spec-card">
+        <div class="role">
+          <span>Display · marca</span>
+          <span>Fraunces 300</span>
+        </div>
+        <div class="display">Tramar</div>
+        <div class="glyphs">Aa Bb Cc Dd Ee Ff Gg Hh · 0123456789 · &amp; ç ã õ á é í</div>
+      </div>
+      <div class="spec-card">
+        <div class="role">
+          <span>Subtítulo · localização</span>
+          <span>DM Sans 300</span>
+        </div>
+        <div class="display sans-display">Muro Alto</div>
+        <div class="glyphs sans-glyphs">Pernambucanidade Contemporânea · 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= VARIAÇÕES ============= -->
+  <section class="block" id="variacoes">
+    <div class="sec-head">
+      <div class="sec-num num">03 / Variações</div>
+      <h2 class="sec-title">Oito formas, um único gesto.</h2>
+      <p class="sec-desc">Cada variação atende a uma função. A lógica de aplicação prevalece sobre a preferência: lockup horizontal para assinaturas largas, vertical para selos, reduzida para legendas, monograma para sinais mínimos.</p>
+    </div>
+
+    <div class="logo-grid">
+
+      <!-- 01 — Lockup horizontal positivo -->
+      <div class="card col-7 var-cal">
+        <div class="stage tall">
+          <div class="lockup-h">
+            <span class="lk-word">Tramar</span>
+            <span class="divider"></span>
+            <span class="lk-sub">Muro Alto<br />Pernambuco</span>
+          </div>
+        </div>
+        <div class="info">
+          <span class="idx">01</span>
+          <span class="label">Lockup horizontal · assinatura principal</span>
+          <span class="min">Mín. 120 mm / 480 px</span>
+        </div>
+      </div>
+
+      <!-- 02 — Lockup vertical positivo -->
+      <div class="card col-5 var-cal">
+        <div class="stage tall">
+          <div class="lockup-v">
+            <span class="lk-word">Tramar</span>
+            <span class="rule"></span>
+            <span class="lk-sub">Muro Alto · Pernambuco</span>
+          </div>
+        </div>
+        <div class="info">
+          <span class="idx">02</span>
+          <span class="label">Lockup vertical · selo, papelaria</span>
+          <span class="min">Mín. 32 mm / 128 px</span>
+        </div>
+      </div>
+
+      <!-- 03 — Marca reduzida -->
+      <div class="card col-7 var-cal">
+        <div class="stage">
+          <div class="lockup-r">
+            <span class="lk-word">Tramar</span>
+          </div>
+        </div>
+        <div class="info">
+          <span class="idx">03</span>
+          <span class="label">Marca reduzida · espaços estreitos</span>
+          <span class="min">Mín. 18 mm / 72 px</span>
+        </div>
+      </div>
+
+      <!-- 04 — Monograma T -->
+      <div class="card col-5 var-cal">
+        <div class="stage">
+          <div class="monogram">T</div>
+        </div>
+        <div class="info">
+          <span class="idx">04</span>
+          <span class="label">Monograma · avatar, favicon, lacre</span>
+          <span class="min">Mín. 16 px / 6 mm</span>
+        </div>
+      </div>
+
+      <!-- 05 — Versão positiva (calo) -->
+      <div class="card col-6 var-cal">
+        <div class="stage tall">
+          <div class="lockup-h">
+            <span class="lk-word">Tramar</span>
+            <span class="divider"></span>
+            <span class="lk-sub">Muro Alto<br />Pernambuco</span>
+          </div>
+        </div>
+        <div class="info">
+          <span class="idx">05</span>
+          <span class="label">Positivo sobre branco-cal</span>
+          <span class="min">F0E9DC · padrão</span>
+        </div>
+      </div>
+
+      <!-- 06 — Versão negativa (grauna) -->
+      <div class="card col-6 var-grauna on-dark">
+        <div class="stage tall">
+          <div class="lockup-h">
+            <span class="lk-word">Tramar</span>
+            <span class="divider"></span>
+            <span class="lk-sub">Muro Alto<br />Pernambuco</span>
+          </div>
+        </div>
+        <div class="info">
+          <span class="idx">06</span>
+          <span class="label">Negativo sobre tinta-graúna</span>
+          <span class="min">1A1F26 · noite</span>
+        </div>
+      </div>
+
+      <!-- 07 — Monocromática areia sobre cal -->
+      <div class="card col-6 var-cal var-areia-on-cal">
+        <div class="stage tall">
+          <div class="lockup-v">
+            <span class="lk-word">Tramar</span>
+            <span class="rule"></span>
+            <span class="lk-sub">Muro Alto · Pernambuco</span>
+          </div>
+        </div>
+        <div class="info">
+          <span class="idx">07</span>
+          <span class="label">Monocromática · areia sobre cal</span>
+          <span class="min">A89C8A / F0E9DC</span>
+        </div>
+      </div>
+
+      <!-- 08 — Areia sobre grauna -->
+      <div class="card col-6 var-areia-on-grauna on-dark">
+        <div class="stage tall">
+          <div class="lockup-v">
+            <span class="lk-word">Tramar</span>
+            <span class="rule"></span>
+            <span class="lk-sub">Muro Alto · Pernambuco</span>
+          </div>
+        </div>
+        <div class="info">
+          <span class="idx">08</span>
+          <span class="label">Areia sobre tinta-graúna · low light</span>
+          <span class="min">A89C8A / 1A1F26</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============= USO / CONSTRUÇÃO ============= -->
+  <section class="block" id="uso">
+    <div class="sec-head">
+      <div class="sec-num num">04 / Uso</div>
+      <h2 class="sec-title">Espaço de proteção e medidas mínimas.</h2>
+      <p class="sec-desc">A altura da letra <em>T</em> em maiúscula define a margem de respiro em volta da marca. Esta zona deve permanecer livre de tipografia, imagem, borda ou texto corrido.</p>
+    </div>
+
+    <div class="construction">
+      <div class="const-stage">
+        <span class="tick t">— Altura do T —</span>
+        <span class="tick b">— Altura do T —</span>
+        <span class="tick l">— T —</span>
+        <span class="tick r">— T —</span>
+        <div class="frame">
+          <div class="word">Tramar</div>
+        </div>
+      </div>
+      <div class="const-note">
+        <h4>Regras de aplicação</h4>
+        <dl>
+          <dt>Respiro</dt>
+          <dd>Margem livre equivalente à altura da letra T capital em todos os quatro lados.</dd>
+          <dt>Lockup horizontal</dt>
+          <dd>Mínimo 120 mm impresso · 480 px digital. Acima de 200 mm prevalece sobre outras versões.</dd>
+          <dt>Lockup vertical</dt>
+          <dd>Mínimo 32 mm impresso · 128 px digital. Usar em selos, lacres e papelaria quadrada.</dd>
+          <dt>Marca reduzida</dt>
+          <dd>Mínimo 18 mm · 72 px. Subtítulo "Muro Alto" é omitido por legibilidade.</dd>
+          <dt>Monograma T</dt>
+          <dd>Mínimo 16 px / 6 mm. Avatar redondo, favicon, lacre de cera, marcação interna de roupas de cama.</dd>
+        </dl>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============= PRINCÍPIOS ============= -->
+  <section class="block">
+    <div class="sec-head">
+      <div class="sec-num num">05 / Princípios</div>
+      <h2 class="sec-title">O que a marca não faz.</h2>
+      <p class="sec-desc">A consistência da Tramar depende menos do que se aplica e mais do que se recusa. Pernambucanidade contemporânea trabalha por subtração.</p>
+    </div>
+
+    <div class="principles">
+      <p><span class="lead">Sem pictogramas.</span>Nenhum ícone literal de tear, fio, praia, coqueiro, sol, onda ou telhado acompanha a marca. A palavra Tramar carrega o conceito sozinha.</p>
+      <p><span class="lead">Sem gradientes nem efeitos.</span>A marca não recebe sombras dramáticas, brilhos, contornos, traçados ou tratamentos 3D. Apenas as três cores da paleta, em chapado.</p>
+      <p><span class="lead">Sem distorção.</span>A tipografia jamais é esticada, condensada, inclinada manualmente ou recomposta com fonte substituta. Use sempre o arquivo original.</p>
+      <p><span class="lead">Sem cores fora da paleta.</span>Branco-cal, areia molhada e tinta-graúna respondem por toda aplicação. Fotografia colorida convive com a marca, mas não a tinge.</p>
+      <p><span class="lead">Sem fundos ruidosos.</span>A marca não se aplica sobre fotografia carregada, padrões impressos ou superfícies texturizadas que comprometam a leitura. Use uma faixa sólida.</p>
+      <p><span class="lead">Sem maiúsculas inteiras.</span>"Tramar" mantém sempre o T capital e o restante em minúsculas. A força vem da forma da palavra, não do volume.</p>
+    </div>
+  </section>
+
+  <!-- ============= FOOTER ============= -->
+  <footer>
+    <div class="colophon">Tramar é um ofício de hospedar. <br />Muro Alto, Pernambuco.</div>
+    <div class="meta">
+      Identidade Visual<br />
+      Documento V.01<br />
+      Maio 2026
+    </div>
+    <div class="meta right">
+      Fraunces · DM Sans<br />
+      F0E9DC · A89C8A · 1A1F26<br />
+      Confidencial
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
