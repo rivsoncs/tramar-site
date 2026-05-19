@@ -45,6 +45,17 @@
       "imageAlt": "Varanda tropical com vista para o mar"
     }
   },
+  "makai": {
+    "sectionLabel": "O Resort",
+    "title": "Makai Acqua Resort",
+    "text": "Os flats Tramar ficam dentro do Makai Acqua Resort, em Muro Alto, a 50 minutos do Recife. Junto com a hospedagem, você tem acesso completo ao complexo aquático e à infraestrutura do resort.",
+    "feature1": "Piscina de Correnteza",
+    "feature2": "Toboáguas",
+    "feature3": "Beach Tennis",
+    "feature4": "Restaurante",
+    "feature5": "Academia",
+    "feature6": "Brinquedoteca"
+  },
   "amenities": {
     "sectionLabel": "Comodidades",
     "title": "O que a casa oferece",

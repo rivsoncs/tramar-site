@@ -29,8 +29,8 @@ export function Hero() {
           />
         </div>
 
-        <div className="bg-branco-cal px-6 pt-8 pb-12">
-          <div className="mb-10 flex justify-center">
+        <div className="bg-branco-cal px-6 pt-5 pb-6">
+          <div className="mb-4 flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/brand-assets/logos/tramar-muroalto-vertical.svg"
@@ -51,13 +51,13 @@ export function Hero() {
             {t('tagline')}
           </h1>
           <p
-            className="font-body text-areia-molhada mb-8"
+            className="font-body text-areia-molhada mb-5"
             style={{ fontSize: '16px', lineHeight: '1.65', letterSpacing: '0.006em' }}
           >
             {t('subtitle')}
           </p>
           <p
-            className="overline text-areia-molhada mb-6 opacity-70"
+            className="overline text-areia-molhada mb-4 opacity-70"
             style={{ fontSize: '10px' }}
           >
             Makai Acqua Resort · Muro Alto · Pernambuco

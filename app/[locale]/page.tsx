@@ -5,6 +5,7 @@ import { Hero } from './components/Hero';
 import { Manifesto } from './components/Manifesto';
 import { Curadoria } from './components/Curadoria';
 import { ProductCards } from './components/ProductCards';
+import { Makai } from './components/Makai';
 import { Amenities } from './components/Amenities';
 import { Gallery } from './components/Gallery';
 import { Location } from './components/Location';
@@ -30,6 +31,7 @@ export default function HomePage({
         <Manifesto />
         <Curadoria />
         <ProductCards />
+        <Makai />
         <Amenities />
         <Gallery />
         <Location />
