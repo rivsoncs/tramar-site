@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /brand/
+Disallow: /brand-guide/
 
 Sitemap: https://tramarmuroalto.com.br/sitemap.xml
