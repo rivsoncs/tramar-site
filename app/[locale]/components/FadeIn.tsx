@@ -17,6 +17,16 @@ export function FadeIn({ children, className = '', delay = 0, as: Tag = 'div' }:
     const el = ref.current;
     if (!el) return;
 
+    // Respeitar prefers-reduced-motion: revelar imediatamente
+    const prefersReduced =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReduced) {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -29,7 +39,10 @@ export function FadeIn({ children, className = '', delay = 0, as: Tag = 'div' }:
           };
         }
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -64px 0px',
+      }
     );
 
     observer.observe(el);

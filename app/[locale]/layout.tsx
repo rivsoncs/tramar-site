@@ -51,10 +51,9 @@ export async function generateMetadata({
       siteName: 'Tramar Muro Alto',
       locale: locale === 'pt-BR' ? 'pt_BR' : 'en_US',
       type: 'website',
-      // TODO: substituir por imagem real após sessão fotográfica
       images: [
         {
-          url: `${baseUrl}/og-image.jpg`,
+          url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=630&fit=crop&q=85',
           width: 1200,
           height: 630,
           alt: 'Tramar Muro Alto',
@@ -65,6 +64,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
+      images: ['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=630&fit=crop&q=85'],
     },
     robots: {
       index: true,

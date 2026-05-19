@@ -13,7 +13,7 @@ export function Footer() {
       {/* Faixa de padrão trama discreta no topo do footer */}
       <div className="pattern-trama-dark" style={{ height: '32px', width: '100%' }} aria-hidden="true" />
 
-      <div className="px-6 md:px-12 lg:px-16 py-10 md:py-12">
+      <div className="px-6 md:px-12 lg:px-16 py-16">
         {/* Linha superior: logo + idioma */}
         <div className="flex items-center justify-between mb-8">
           {/* Logo reduzida — width explícita para controlar o SVG em flex */}
@@ -73,6 +73,16 @@ export function Footer() {
             style={{ color: '#A89C8A', fontSize: '11px', opacity: 0.45, letterSpacing: '0.04em' }}
           >
             {t('copyright')}
+          </span>
+        </div>
+
+        {/* Crédito de fotos */}
+        <div className="mt-6 pt-6" style={{ borderTop: '1px solid rgba(168,156,138,0.15)' }}>
+          <span
+            className="font-body"
+            style={{ color: '#A89C8A', fontSize: '10px', opacity: 0.4, letterSpacing: '0.04em' }}
+          >
+            {t('photoCredit')}
           </span>
         </div>
       </div>

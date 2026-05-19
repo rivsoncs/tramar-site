@@ -4,6 +4,8 @@ import { FadeIn } from './FadeIn';
 export function Location() {
   const t = useTranslations('location');
 
+  const mapsHref = 'https://maps.google.com/?q=Makai+Acqua+Resort+Muro+Alto+Pernambuco';
+
   return (
     <section
       aria-labelledby="location-heading"
@@ -13,37 +15,110 @@ export function Location() {
       {/* Padrão rede como visual de fundo */}
       <div className="absolute inset-0 pattern-rede-dark pointer-events-none" aria-hidden="true" />
 
-      <div className="relative z-10 px-6 md:px-12 lg:px-16 py-16 md:py-20 lg:py-24">
+      {/* Mobile: stack vertical */}
+      <div className="lg:hidden relative z-10 px-6 py-16">
         <FadeIn>
-          <span className="overline block mb-6" style={{ color: '#F0E9DC', opacity: 0.65 }}>
-            {t('sectionLabel')}
-          </span>
-          <h2
-            id="location-heading"
-            className="font-display font-light mb-6 max-w-xl"
+          <LocationContent t={t} />
+          {/* Botão Google Maps — full-width no mobile */}
+          <a
+            href={mapsHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body block text-center w-full py-4 mt-10 uppercase transition-colors duration-200"
             style={{
               color: '#F0E9DC',
-              fontSize: 'clamp(28px, 3.2vw, 48px)',
-              letterSpacing: '-0.012em',
-              lineHeight: '1.02',
-              fontVariationSettings: '"SOFT" 30, "opsz" 144',
+              border: '1px solid rgba(240,233,220,0.5)',
+              fontSize: '13px',
+              letterSpacing: '0.1em',
             }}
           >
-            {t('title')}
-          </h2>
-          <p
-            className="font-display font-light max-w-lg"
-            style={{
-              color: '#F0E9DC',
-              fontSize: 'clamp(18px, 2vw, 24px)',
-              lineHeight: '1.5',
-              letterSpacing: '0.004em',
-            }}
-          >
-            {t('text')}
-          </p>
+            {t('mapsLabel')}
+          </a>
         </FadeIn>
       </div>
+
+      {/* Desktop: duas colunas */}
+      <div className="hidden lg:flex relative z-10" style={{ padding: '96px 80px' }}>
+        {/* Coluna esquerda — 60% */}
+        <div style={{ width: '60%', paddingRight: '80px' }}>
+          <FadeIn>
+            <LocationContent t={t} />
+          </FadeIn>
+        </div>
+
+        {/* Coluna direita — 40% — botão Maps */}
+        <div className="flex items-center justify-center" style={{ width: '40%' }}>
+          <FadeIn>
+            <a
+              href={mapsHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body inline-block uppercase transition-colors duration-200"
+              style={{
+                color: '#F0E9DC',
+                border: '1px solid rgba(240,233,220,0.5)',
+                fontSize: '13px',
+                letterSpacing: '0.1em',
+                padding: '20px 40px',
+              }}
+            >
+              {t('mapsLabel')}
+            </a>
+          </FadeIn>
+        </div>
+      </div>
     </section>
+  );
+}
+
+function LocationContent({ t }: { t: ReturnType<typeof useTranslations<'location'>> }) {
+  return (
+    <>
+      <span className="overline block mb-6" style={{ color: '#F0E9DC', opacity: 0.65 }}>
+        {t('sectionLabel')}
+      </span>
+      <h2
+        id="location-heading"
+        className="font-display font-light mb-6 max-w-xl"
+        style={{
+          color: '#F0E9DC',
+          fontSize: 'clamp(28px, 3.2vw, 48px)',
+          letterSpacing: '-0.012em',
+          lineHeight: '1.02',
+          fontVariationSettings: '"SOFT" 30, "opsz" 144',
+        }}
+      >
+        {t('title')}
+      </h2>
+      <p
+        className="font-body max-w-lg mb-10"
+        style={{
+          color: '#F0E9DC',
+          fontSize: 'clamp(16px, 1.8vw, 18px)',
+          lineHeight: '1.65',
+        }}
+      >
+        {t('text')}
+      </p>
+
+      {/* Pills informativos */}
+      <div className="flex flex-col gap-3">
+        {(['pill1', 'pill2'] as const).map((pill) => (
+          <div key={pill} className="flex items-center gap-3">
+            <div
+              className="w-6 h-px flex-shrink-0"
+              style={{ backgroundColor: 'rgba(240,233,220,0.4)' }}
+              aria-hidden="true"
+            />
+            <span
+              className="font-body uppercase"
+              style={{ color: '#F0E9DC', fontSize: '11px', letterSpacing: '0.2em', opacity: 0.75 }}
+            >
+              {t(pill)}
+            </span>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

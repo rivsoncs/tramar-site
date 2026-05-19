@@ -10,7 +10,14 @@
   "hero": {
     "tagline": "Tecido com o que Pernambuco tem de melhor.",
     "subtitle": "Dois flats studios no Makai Acqua Resort, Muro Alto. Curadoria de ofício pernambucano.",
-    "cta": "Reservar no Airbnb"
+    "cta": "Reservar no Airbnb",
+    "imageAlt": "Praia tropical de Muro Alto, Pernambuco"
+  },
+  "curadoria": {
+    "sectionLabel": "Curadoria",
+    "title": "O que a gente traz",
+    "text": "Cada flat é curado com ofício pernambucano de verdade. A cerâmica que você usa no café da manhã vem de Caruaru. A renda da almofada é renascença de Pesqueira. Os têxteis vieram de mão em mão, não de catálogo. A curadoria é o núcleo da Tramar.",
+    "imageAlt": "Mãos modelando cerâmica artesanal de Caruaru"
   },
   "manifesto": {
     "sectionLabel": "Manifesto",
@@ -22,17 +29,20 @@
     "carua": {
       "name": "Tramar Caruá",
       "tagline": "Studio de praia com peso de barro de Caruaru e fibra de mata atlântica. Para 2 a 3 hóspedes.",
-      "cta": "Reservar no Airbnb"
+      "cta": "Reservar no Airbnb",
+      "imageAlt": "Cerâmica artesanal escura"
     },
     "renda": {
       "name": "Tramar Renda",
       "tagline": "Studio de praia com leveza de renda renascença e luz de fachada de Olinda. Para 2 a 3 hóspedes.",
-      "cta": "Reservar no Airbnb"
+      "cta": "Reservar no Airbnb",
+      "imageAlt": "Têxtil delicado com textura de renda"
     },
     "inteira": {
       "name": "Tramar Inteira",
       "tagline": "A casa inteira, a trama inteira, o descanso inteiro. Até 8 hóspedes.",
-      "cta": "Reservar no Airbnb"
+      "cta": "Reservar no Airbnb",
+      "imageAlt": "Varanda tropical com vista para o mar"
     }
   },
   "amenities": {
@@ -53,35 +63,40 @@
     "item3": "Cerâmica da casa",
     "item4": "Renda no descanso",
     "item5": "Fim de tarde, Muro Alto",
-    "item6": "A maré que volta"
+    "item6": "A maré que volta",
+    "photoCredit": "Fotos provisórias: Unsplash. Imagens oficiais do espaço em breve."
   },
   "location": {
     "sectionLabel": "Localização",
     "title": "Onde ficamos",
-    "text": "Makai Acqua Resort, Muro Alto, Pernambuco. A 50 minutos do aeroporto do Recife. A 8 minutos das piscinas naturais de Porto de Galinhas."
+    "text": "Makai Acqua Resort, Muro Alto, Pernambuco. A 50 minutos do aeroporto do Recife. A 8 minutos das piscinas naturais de Porto de Galinhas.",
+    "pill1": "50 min do Aeroporto do Recife",
+    "pill2": "8 min de Porto de Galinhas",
+    "mapsLabel": "Ver no Google Maps"
   },
   "faq": {
     "sectionLabel": "FAQ",
     "title": "Perguntas frequentes",
     "q1": "Quantos hóspedes cabem em cada flat?",
-    "a1": "Caruá e Renda acomodam de 2 a 3 hóspedes cada. A Tramar Inteira, com os dois studios juntos, acomoda até 8 hóspedes.",
+    "a1": "Cada flat acomoda confortavelmente até 3 hóspedes. O produto Tramar Inteira, com os dois flats combinados, acomoda até 8. (TODO: confirmar capacidade final com o proprietário)",
     "q2": "Os flats aceitam pets?",
-    "a2": "Entre em contato pelo Instagram ou e-mail para verificar disponibilidade com pets — analisamos caso a caso.",
+    "a2": "(TODO: verificar política de pets com o condomínio e os proprietários)",
     "q3": "Como funciona o check-in e check-out?",
-    "a3": "As informações de check-in são enviadas após a confirmação da reserva. Para detalhes, entre em contato: contato@tramarmuroalto.com.br",
+    "a3": "O check-in é às 15h e o check-out às 11h. Para outros horários, consulte a disponibilidade no momento da reserva. (TODO: confirmar horários com a operação)",
     "q4": "O que está incluído na diária?",
-    "a4": "Acesso a todas as áreas do Makai Acqua Resort: piscinas, beach tennis, café da manhã incluso. Detalhes completos disponíveis no Airbnb.",
+    "a4": "Acesso completo ao complexo aquático do Makai Acqua Resort: piscina de correnteza, toboáguas, beach tennis, restaurante, fitness e brinquedoteca. (TODO: confirmar lista completa de comodidades com o resort)",
     "q5": "Tem estacionamento?",
-    "a5": "Sim. O Makai Acqua Resort dispõe de estacionamento para hóspedes.",
+    "a5": "Sim, o Makai Acqua Resort oferece estacionamento para hóspedes. (TODO: confirmar se há custo adicional)",
     "q6": "Qual a política de cancelamento?",
-    "a6": "A política de cancelamento segue os termos do Airbnb. Verifique as condições na página da reserva antes de confirmar."
+    "a6": "(TODO: definir política de cancelamento com os proprietários antes do lançamento)"
   },
   "footer": {
     "instagramHandle": "@tramr.muroalto",
     "instagramLabel": "Instagram da Tramar",
     "emailLabel": "E-mail de contato",
     "brandGuideLabel": "Identidade visual da marca",
-    "copyright": "© 2026 Tramar Muro Alto"
+    "copyright": "© 2026 Tramar Muro Alto",
+    "photoCredit": "Fotos provisórias: Unsplash"
   },
   "langToggle": {
     "label": "Mudar idioma para inglês",

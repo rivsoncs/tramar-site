@@ -10,7 +10,14 @@
   "hero": {
     "tagline": "Woven with the best Pernambuco has to offer.",
     "subtitle": "Two studio flats at Makai Acqua Resort, Muro Alto. A curation of Pernambucan craft.",
-    "cta": "Book on Airbnb"
+    "cta": "Book on Airbnb",
+    "imageAlt": "Tropical beach of Muro Alto, Pernambuco"
+  },
+  "curadoria": {
+    "sectionLabel": "Curation",
+    "title": "What we bring",
+    "text": "Each flat is curated with real Pernambucan craft. The ceramics you use at breakfast come from Caruaru. The lace on the pillow is renascença from Pesqueira. The textiles passed from hand to hand, not from a catalog. Curation is the heart of Tramar.",
+    "imageAlt": "Hands shaping handcrafted ceramics from Caruaru"
   },
   "manifesto": {
     "sectionLabel": "Manifesto",
@@ -22,17 +29,20 @@
     "carua": {
       "name": "Tramar Caruá",
       "tagline": "Beachfront studio with the weight of Caruaru clay and the fiber of Atlantic forest. For 2 to 3 guests.",
-      "cta": "Book on Airbnb"
+      "cta": "Book on Airbnb",
+      "imageAlt": "Dark handcrafted ceramics"
     },
     "renda": {
       "name": "Tramar Renda",
       "tagline": "Beachfront studio with the lightness of renaissance lace and the light of Olinda facades. For 2 to 3 guests.",
-      "cta": "Book on Airbnb"
+      "cta": "Book on Airbnb",
+      "imageAlt": "Delicate textile with lace texture"
     },
     "inteira": {
       "name": "Tramar Inteira",
       "tagline": "The whole house, the whole weave, the whole rest. Up to 8 guests.",
-      "cta": "Book on Airbnb"
+      "cta": "Book on Airbnb",
+      "imageAlt": "Tropical balcony with sea view"
     }
   },
   "amenities": {
@@ -53,35 +63,40 @@
     "item3": "House ceramics",
     "item4": "Lace at rest",
     "item5": "Late afternoon, Muro Alto",
-    "item6": "The returning tide"
+    "item6": "The returning tide",
+    "photoCredit": "Provisional photos: Unsplash. Official space photos coming soon."
   },
   "location": {
     "sectionLabel": "Location",
     "title": "Where we are",
-    "text": "Makai Acqua Resort, Muro Alto, Pernambuco. 50 minutes from Recife airport. 8 minutes from Porto de Galinhas natural pools."
+    "text": "Makai Acqua Resort, Muro Alto, Pernambuco. 50 minutes from Recife airport. 8 minutes from Porto de Galinhas natural pools.",
+    "pill1": "50 min from Recife Airport",
+    "pill2": "8 min from Porto de Galinhas",
+    "mapsLabel": "View on Google Maps"
   },
   "faq": {
     "sectionLabel": "FAQ",
     "title": "Frequently asked questions",
     "q1": "How many guests fit in each flat?",
-    "a1": "Caruá and Renda accommodate 2 to 3 guests each. Tramar Inteira, with both studios combined, sleeps up to 8 guests.",
+    "a1": "Each flat comfortably accommodates up to 3 guests. The Tramar Inteira product, with both flats combined, accommodates up to 8. (TODO: confirm final capacity with owner)",
     "q2": "Are pets allowed?",
-    "a2": "Reach out via Instagram or email to check availability with pets — we review requests case by case.",
+    "a2": "(TODO: confirm pet policy with the condominium and owners)",
     "q3": "How does check-in and check-out work?",
-    "a3": "Check-in details are sent after booking confirmation. For further questions: contato@tramarmuroalto.com.br",
+    "a3": "Check-in is at 3 PM and check-out at 11 AM. For other times, check availability at booking. (TODO: confirm with operations)",
     "q4": "What's included in the daily rate?",
-    "a4": "Full access to Makai Acqua Resort: pools, beach tennis, and breakfast included. Full details available on Airbnb.",
+    "a4": "Full access to the Makai Acqua Resort water complex: current pool, water slides, beach tennis, restaurant, fitness center, and kids area. (TODO: confirm full amenity list with resort)",
     "q5": "Is parking available?",
-    "a5": "Yes. Makai Acqua Resort provides on-site parking for guests.",
+    "a5": "Yes, Makai Acqua Resort offers parking for guests. (TODO: confirm whether there's an additional fee)",
     "q6": "What's the cancellation policy?",
-    "a6": "Cancellation follows Airbnb's terms and conditions. Please review the policy on the listing page before confirming."
+    "a6": "(TODO: define cancellation policy with owners before launch)"
   },
   "footer": {
     "instagramHandle": "@tramr.muroalto",
     "instagramLabel": "Tramar on Instagram",
     "emailLabel": "Contact email",
     "brandGuideLabel": "Brand identity guides",
-    "copyright": "© 2026 Tramar Muro Alto"
+    "copyright": "© 2026 Tramar Muro Alto",
+    "photoCredit": "Provisional photos: Unsplash"
   },
   "langToggle": {
     "label": "Switch language to Portuguese",

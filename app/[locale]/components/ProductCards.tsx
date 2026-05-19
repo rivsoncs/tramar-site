@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { FadeIn } from './FadeIn';
 import { SubBrandLogo } from './SubBrandLogo';
 
@@ -12,6 +13,10 @@ interface ProductCardProps {
   cta: string;
   index: number;
   delay?: number;
+  imageUrl: string;
+  imageAltPt: string;
+  imageAltEn: string;
+  imageAlt: string;
 }
 
 function ProductCard({
@@ -24,81 +29,109 @@ function ProductCard({
   cta,
   index,
   delay = 0,
+  imageUrl,
+  imageAlt,
 }: ProductCardProps) {
   const numerals = ['I', 'II', 'III'];
 
   return (
     <FadeIn delay={delay} className="flex flex-col h-full">
       <article
-        className="flex flex-col h-full relative overflow-hidden"
-        style={{ backgroundColor: bgColor }}
+        className="flex flex-col h-full"
+        style={{ backgroundColor: bgColor, minHeight: '520px' }}
         aria-label={name}
       >
-        {/* Padrão de fundo */}
+        {/* Terço superior — imagem com overlay + logo */}
         <div
-          className={`absolute inset-0 ${patternClass} pointer-events-none`}
-          aria-hidden="true"
-        />
-
-        {/* Conteúdo */}
-        <div className="relative z-10 flex flex-col h-full px-8 pt-12 pb-10 md:px-10 md:pt-14 md:pb-12 min-h-[520px]">
-
-          {/* Numeral editorial */}
-          <p
-            className="font-body mb-6"
-            style={{
-              color: logoColor,
-              fontSize: '10px',
-              letterSpacing: '0.28em',
-              opacity: 0.45,
-              textTransform: 'uppercase',
-            }}
-          >
-            {numerals[index]}
-          </p>
-
-          {/* Logo sub-marca — área generosa */}
-          <div className="flex-1 flex items-center justify-center py-4">
-            <SubBrandLogo
-              brand={brand}
-              color={logoColor}
-              className="w-full max-w-[260px] h-auto"
-            />
-          </div>
-
-          {/* Traço separador */}
+          className="relative overflow-hidden flex-shrink-0"
+          style={{ height: '200px' }}
+        >
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            fill
+            loading="lazy"
+            style={{ objectFit: 'cover' }}
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+          {/* Overlay de cor de assinatura */}
           <div
-            className="w-8 h-px mb-6 mt-4"
-            style={{ backgroundColor: logoColor, opacity: 0.3 }}
+            className="absolute inset-0"
+            style={{ backgroundColor: bgColor, opacity: 0.5 }}
+            aria-hidden="true"
+          />
+          {/* Logo sub-marca centralizado sobre o overlay */}
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <div style={{ width: '200px' }}>
+              <SubBrandLogo
+                brand={brand}
+                color={logoColor}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Dois terços inferiores — conteúdo */}
+        <div
+          className="relative flex flex-col flex-1 overflow-hidden"
+          style={{ backgroundColor: bgColor }}
+        >
+          {/* Padrão de fundo */}
+          <div
+            className={`absolute inset-0 ${patternClass} pointer-events-none`}
             aria-hidden="true"
           />
 
-          {/* Tagline */}
-          <p
-            className="font-body mb-8"
-            style={{
-              color: logoColor,
-              fontSize: '14px',
-              lineHeight: '1.7',
-              opacity: 0.85,
-              maxWidth: '240px',
-            }}
-          >
-            {tagline}
-          </p>
+          <div className="relative z-10 flex flex-col flex-1 px-8 pt-8 pb-10 md:px-10 md:pb-12">
+            {/* Numeral editorial */}
+            <p
+              className="font-body mb-6"
+              style={{
+                color: logoColor,
+                fontSize: '10px',
+                letterSpacing: '0.28em',
+                opacity: 0.45,
+                textTransform: 'uppercase',
+              }}
+            >
+              {numerals[index]}
+            </p>
 
-          {/* CTA */}
-          <a
-            href="#"
-            className="btn-secondary self-start"
-            aria-label={`${cta} — ${name}`}
-            style={{
-              color: logoColor,
-              borderColor: `${logoColor}55`,
-            }}
-          >
-            {cta}
-          </a>
+            {/* Traço separador */}
+            <div
+              className="w-8 h-px mb-6"
+              style={{ backgroundColor: logoColor, opacity: 0.3 }}
+              aria-hidden="true"
+            />
+
+            {/* Tagline */}
+            <p
+              className="font-body mb-8 flex-1"
+              style={{
+                color: logoColor,
+                fontSize: '14px',
+                lineHeight: '1.7',
+                opacity: 0.85,
+                maxWidth: '240px',
+              }}
+            >
+              {tagline}
+            </p>
+
+            {/* CTA */}
+            <a
+              href="#"
+              className="btn-secondary self-start"
+              aria-label={`${cta} — ${name}`}
+              style={{
+                color: logoColor,
+                borderColor: `${logoColor}55`,
+              }}
+            >
+              {cta}
+            </a>
+          </div>
         </div>
       </article>
     </FadeIn>
@@ -117,6 +150,8 @@ export function ProductCards() {
       nameKey: 'carua.name',
       taglineKey: 'carua.tagline',
       ctaKey: 'carua.cta',
+      imageUrl: 'https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=800&q=80&fit=crop',
+      imageAlt: t('carua.imageAlt' as Parameters<typeof t>[0]),
     },
     {
       brand: 'renda' as const,
@@ -126,6 +161,8 @@ export function ProductCards() {
       nameKey: 'renda.name',
       taglineKey: 'renda.tagline',
       ctaKey: 'renda.cta',
+      imageUrl: 'https://images.unsplash.com/photo-1614107151491-6876eecbff89?w=800&q=80&fit=crop',
+      imageAlt: t('renda.imageAlt' as Parameters<typeof t>[0]),
     },
     {
       brand: 'inteira' as const,
@@ -135,6 +172,8 @@ export function ProductCards() {
       nameKey: 'inteira.name',
       taglineKey: 'inteira.tagline',
       ctaKey: 'inteira.cta',
+      imageUrl: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&q=80&fit=crop',
+      imageAlt: t('inteira.imageAlt' as Parameters<typeof t>[0]),
     },
   ];
 
@@ -157,7 +196,7 @@ export function ProductCards() {
         </h2>
       </div>
 
-      {/* Grid de cards — sem gap para flush editorial */}
+      {/* Grid de cards */}
       <div className="grid grid-cols-1 md:grid-cols-3">
         {cards.map((card, i) => (
           <ProductCard
@@ -171,6 +210,10 @@ export function ProductCards() {
             cta={t(card.ctaKey as Parameters<typeof t>[0])}
             index={i}
             delay={i * 80}
+            imageUrl={card.imageUrl}
+            imageAlt={card.imageAlt}
+            imageAltPt=""
+            imageAltEn=""
           />
         ))}
       </div>
