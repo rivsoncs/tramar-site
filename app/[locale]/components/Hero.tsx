@@ -1,9 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { BrandLogoHorizontal } from './BrandLogo';
-
-const HERO_IMAGE_URL =
-  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=85&fit=crop';
+import { photos } from '@/lib/photo-manifest';
 
 export function Hero() {
   const t = useTranslations('hero');
@@ -18,14 +15,13 @@ export function Hero() {
       <div className="lg:hidden">
         <div className="relative w-full" style={{ aspectRatio: '3/2' }}>
           <Image
-            src={HERO_IMAGE_URL}
+            src={photos.hero.url}
             alt={t('imageAlt') as string}
             fill
             priority
             style={{ objectFit: 'cover' }}
             sizes="100vw"
           />
-          {/* Overlay leve */}
           <div
             className="absolute inset-0"
             style={{ background: 'rgba(26,31,38,0.15)' }}
@@ -33,13 +29,13 @@ export function Hero() {
           />
         </div>
 
-        <div
-          className="bg-branco-cal px-6 pt-8 pb-12"
-        >
-          <div className="mb-10">
-            <BrandLogoHorizontal
-              className="w-full max-w-[320px] h-auto"
-              color="#1A1F26"
+        <div className="bg-branco-cal px-6 pt-8 pb-12">
+          <div className="mb-10 flex justify-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand-assets/logos/tramar-muroalto-vertical.svg"
+              alt="Tramar Muro Alto"
+              style={{ height: '80px', width: 'auto' }}
             />
           </div>
           <h1
@@ -79,11 +75,13 @@ export function Hero() {
           className="flex flex-col bg-branco-cal"
           style={{ width: '55%', padding: '80px' }}
         >
-          {/* Logo */}
-          <div className="mb-auto pb-16">
-            <BrandLogoHorizontal
-              className="w-full max-w-[440px] h-auto"
-              color="#1A1F26"
+          {/* Logo vertical centralizado */}
+          <div className="mb-auto pb-16 flex justify-start">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand-assets/logos/tramar-muroalto-vertical.svg"
+              alt="Tramar Muro Alto"
+              style={{ height: '96px', width: 'auto' }}
             />
           </div>
 
@@ -135,20 +133,20 @@ export function Hero() {
           style={{ width: '45%' }}
         >
           <Image
-            src={HERO_IMAGE_URL}
+            src={photos.hero.url}
             alt={t('imageAlt') as string}
             fill
             priority
             style={{ objectFit: 'cover' }}
             sizes="45vw"
           />
-          {/* Overlay branco-cal levíssimo */}
+          {/* Overlay tinta-graúna 40% */}
           <div
             className="absolute inset-0"
-            style={{ background: 'rgba(240,233,220,0.1)' }}
+            style={{ background: 'rgba(26,31,38,0.40)' }}
             aria-hidden="true"
           />
-          {/* Pattern trama inline em 8% opacidade */}
+          {/* Pattern trama sutil */}
           <div
             className="absolute inset-0 pattern-trama-dark"
             style={{ opacity: 0.08 }}

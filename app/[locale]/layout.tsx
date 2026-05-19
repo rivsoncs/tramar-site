@@ -70,6 +70,9 @@ export async function generateMetadata({
       index: true,
       follow: true,
     },
+    icons: {
+      icon: '/favicon.svg',
+    },
   };
 }
 
@@ -109,7 +112,7 @@ export default async function LocaleLayout({
                 addressRegion: 'Pernambuco',
                 addressCountry: 'BR',
               },
-              sameAs: ['https://instagram.com/tramr.muroalto'],
+              sameAs: ['https://www.instagram.com/tramar.muroalto/'],
             }),
           }}
         />

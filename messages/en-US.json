@@ -72,7 +72,10 @@
     "text": "Makai Acqua Resort, Muro Alto, Pernambuco. 50 minutes from Recife airport. 8 minutes from Porto de Galinhas natural pools.",
     "pill1": "50 min from Recife Airport",
     "pill2": "8 min from Porto de Galinhas",
-    "mapsLabel": "View on Google Maps"
+    "mapsLabel": "View on Google Maps",
+    "pdgTitle": "Porto de Galinhas 8 minutes away",
+    "pdgText": "Porto de Galinhas natural pools are 8 minutes from Makai Acqua Resort. You wake up on the balcony, have coffee in the house ceramics, and minutes later you are at Pernambuco's most celebrated coastline.",
+    "pdgCaption": "Porto de Galinhas natural pools — 8 min from Makai"
   },
   "faq": {
     "sectionLabel": "FAQ",
@@ -91,7 +94,7 @@
     "a6": "(TODO: define cancellation policy with owners before launch)"
   },
   "footer": {
-    "instagramHandle": "@tramr.muroalto",
+    "instagramHandle": "@tramar.muroalto",
     "instagramLabel": "Tramar on Instagram",
     "emailLabel": "Contact email",
     "brandGuideLabel": "Brand identity guides",

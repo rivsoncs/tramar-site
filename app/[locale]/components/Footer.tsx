@@ -1,5 +1,4 @@
 import { useTranslations } from 'next-intl';
-import { BrandLogoReduzida } from './BrandLogo';
 import { LanguageToggle } from './LanguageToggle';
 
 export function Footer() {
@@ -16,11 +15,13 @@ export function Footer() {
       <div className="px-6 md:px-12 lg:px-16 py-16">
         {/* Linha superior: logo + idioma */}
         <div className="flex items-center justify-between mb-8">
-          {/* Logo reduzida — width explícita para controlar o SVG em flex */}
-          <div style={{ width: '96px', flexShrink: 0 }}>
-            <BrandLogoReduzida
-              color="#A89C8A"
-              className="w-full h-auto"
+          {/* Logo reduzida */}
+          <div style={{ flexShrink: 0 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand-assets/logos/tramar-reduzida.svg"
+              alt="Tramar"
+              style={{ height: '24px', width: 'auto', display: 'block', filter: 'brightness(0) saturate(0) invert(70%) sepia(10%) saturate(300%) hue-rotate(10deg)' }}
             />
           </div>
 
@@ -40,7 +41,7 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <nav aria-label="Links do rodapé" className="flex flex-col sm:flex-row gap-3 sm:gap-6">
             <a
-              href="https://instagram.com/tramr.muroalto"
+              href="https://www.instagram.com/tramar.muroalto/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-body transition-colors duration-200 hover:opacity-100"
@@ -58,7 +59,7 @@ export function Footer() {
               contato@tramarmuroalto.com.br
             </a>
             <a
-              href="/brand-guide/"
+              href="/brand"
               className="font-body transition-colors duration-200 hover:opacity-100"
               aria-label={t('brandGuideLabel')}
               style={{ color: '#A89C8A', fontSize: '12px', letterSpacing: '0.05em', opacity: 0.5 }}

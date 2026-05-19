@@ -1,39 +1,9 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { FadeIn } from './FadeIn';
+import { photos } from '@/lib/photo-manifest';
 
-const galleryPhotos = [
-  {
-    url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80&fit=crop',
-    captionKey: 'item1' as const,
-    altKey: 'item1' as const,
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&fit=crop',
-    captionKey: 'item2' as const,
-    altKey: 'item2' as const,
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&q=80&fit=crop',
-    captionKey: 'item3' as const,
-    altKey: 'item3' as const,
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=900&q=80&fit=crop',
-    captionKey: 'item4' as const,
-    altKey: 'item4' as const,
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&fit=crop',
-    captionKey: 'item5' as const,
-    altKey: 'item5' as const,
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=900&q=80&fit=crop',
-    captionKey: 'item6' as const,
-    altKey: 'item6' as const,
-  },
-];
+const galleryPhotos = photos.galeria;
 
 // index 0,2,3,5 → aspect 3/4; index 1,4 → aspect 1/1
 function getAspectRatio(index: number): string {
@@ -95,6 +65,7 @@ function GalleryItem({ url, caption, alt, index, delay = 0 }: GalleryItemProps) 
 
 export function Gallery() {
   const t = useTranslations('gallery');
+  const locale = useLocale();
 
   return (
     <section
@@ -119,10 +90,10 @@ export function Gallery() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {galleryPhotos.map((item, i) => (
           <GalleryItem
-            key={item.captionKey}
+            key={i}
             url={item.url}
-            caption={t(item.captionKey)}
-            alt={t(item.altKey)}
+            caption={locale === 'en-US' ? item.caption_en : item.caption_pt}
+            alt={item.alt}
             index={i}
             delay={i * 50}
           />

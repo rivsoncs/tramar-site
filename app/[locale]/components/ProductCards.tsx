@@ -2,10 +2,12 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { FadeIn } from './FadeIn';
 import { SubBrandLogo } from './SubBrandLogo';
+import { photos } from '@/lib/photo-manifest';
 
 interface ProductCardProps {
   brand: 'carua' | 'renda' | 'inteira';
   bgColor: string;
+  overlayOpacity: number;
   logoColor: string;
   patternClass: string;
   name: string;
@@ -14,14 +16,13 @@ interface ProductCardProps {
   index: number;
   delay?: number;
   imageUrl: string;
-  imageAltPt: string;
-  imageAltEn: string;
   imageAlt: string;
 }
 
 function ProductCard({
   brand,
   bgColor,
+  overlayOpacity,
   logoColor,
   patternClass,
   name,
@@ -54,10 +55,10 @@ function ProductCard({
             style={{ objectFit: 'cover' }}
             sizes="(max-width: 768px) 100vw, 33vw"
           />
-          {/* Overlay de cor de assinatura */}
+          {/* Overlay de cor de assinatura com opacidade calibrada */}
           <div
             className="absolute inset-0"
-            style={{ backgroundColor: bgColor, opacity: 0.5 }}
+            style={{ backgroundColor: bgColor, opacity: overlayOpacity }}
             aria-hidden="true"
           />
           {/* Logo sub-marca centralizado sobre o overlay */}
@@ -145,34 +146,41 @@ export function ProductCards() {
     {
       brand: 'carua' as const,
       bgColor: '#6E3B2A',
+      overlayOpacity: 0.65,
       logoColor: '#F0E9DC',
       patternClass: 'pattern-trama-dark',
       nameKey: 'carua.name',
       taglineKey: 'carua.tagline',
       ctaKey: 'carua.cta',
-      imageUrl: 'https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=800&q=80&fit=crop',
+      // FOTO PROVISÓRIA: substituir por imagem oficial do flat Caruá após entrega (jun/2026)
+      imageUrl: photos.flats.carua.interior.url,
       imageAlt: t('carua.imageAlt' as Parameters<typeof t>[0]),
     },
     {
       brand: 'renda' as const,
       bgColor: '#C49A6B',
-      logoColor: '#1A1F26',
+      overlayOpacity: 0.70,
+      logoColor: '#F0E9DC',
       patternClass: 'pattern-renda-light',
       nameKey: 'renda.name',
       taglineKey: 'renda.tagline',
       ctaKey: 'renda.cta',
-      imageUrl: 'https://images.unsplash.com/photo-1614107151491-6876eecbff89?w=800&q=80&fit=crop',
+      // FOTO PROVISÓRIA: substituir por imagem oficial do flat Renda após entrega (jun/2026)
+      imageUrl: photos.flats.renda.interior.url,
       imageAlt: t('renda.imageAlt' as Parameters<typeof t>[0]),
     },
     {
       brand: 'inteira' as const,
       bgColor: '#1A1F26',
+      overlayOpacity: 0.75,
       logoColor: '#F0E9DC',
       patternClass: 'pattern-rede-dark',
       nameKey: 'inteira.name',
       taglineKey: 'inteira.tagline',
       ctaKey: 'inteira.cta',
-      imageUrl: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&q=80&fit=crop',
+      // FOTO PROVISÓRIA: substituir por imagem oficial do Makai Acqua Resort
+      // após autorização da Pernambuco Construtora ou entrega das chaves (jun/2026)
+      imageUrl: photos.resort.areaExterna.url,
       imageAlt: t('inteira.imageAlt' as Parameters<typeof t>[0]),
     },
   ];
@@ -203,6 +211,7 @@ export function ProductCards() {
             key={card.brand}
             brand={card.brand}
             bgColor={card.bgColor}
+            overlayOpacity={card.overlayOpacity}
             logoColor={card.logoColor}
             patternClass={card.patternClass}
             name={t(card.nameKey as Parameters<typeof t>[0])}
@@ -212,8 +221,6 @@ export function ProductCards() {
             delay={i * 80}
             imageUrl={card.imageUrl}
             imageAlt={card.imageAlt}
-            imageAltPt=""
-            imageAltEn=""
           />
         ))}
       </div>
