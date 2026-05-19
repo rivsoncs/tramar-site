@@ -1,7 +1,11 @@
 import type { Metadata } from 'next';
 import { Fraunces, DM_Sans } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from 'next-intl/server';
 import '../globals.css';
 
 const fraunces = Fraunces({
@@ -10,7 +14,6 @@ const fraunces = Fraunces({
   style: ['normal', 'italic'],
   variable: '--font-fraunces',
   display: 'swap',
-  axes: ['SOFT', 'opsz'],
 });
 
 const dmSans = DM_Sans({
@@ -25,6 +28,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
+  unstable_setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'meta' });
 
   const baseUrl = 'https://tramarmuroalto.com.br';
@@ -80,6 +84,7 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  unstable_setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
