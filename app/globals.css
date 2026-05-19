@@ -1,0 +1,185 @@
+@import '../styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   BASE RESETS & GLOBAL STYLES
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-branco-cal);
+  color: var(--color-tinta-grauna);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: var(--font-weight-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus visible for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-areia-molhada);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   PATTERN BACKGROUNDS (data URI — cores embutidas)
+   Usando stroke com opacity na tag g para controle de intensidade
+   ============================================================ */
+
+/* Trama sobre fundo claro — stroke tinta-graúna */
+.pattern-trama-light {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%231A1F26' stroke-width='0.9' stroke-linecap='square' opacity='0.09'%3E%3Cline x1='0' y1='6' x2='12' y2='6'/%3E%3Cline x1='12' y1='18' x2='24' y2='18'/%3E%3Cline x1='6' y1='0' x2='6' y2='12'/%3E%3Cline x1='18' y1='12' x2='18' y2='24'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 48px 48px;
+  background-repeat: repeat;
+}
+
+/* Trama sobre fundo escuro — stroke branco-cal */
+.pattern-trama-dark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23F0E9DC' stroke-width='0.9' stroke-linecap='square' opacity='0.13'%3E%3Cline x1='0' y1='6' x2='12' y2='6'/%3E%3Cline x1='12' y1='18' x2='24' y2='18'/%3E%3Cline x1='6' y1='0' x2='6' y2='12'/%3E%3Cline x1='18' y1='12' x2='18' y2='24'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 48px 48px;
+  background-repeat: repeat;
+}
+
+/* Renda sobre fundo claro */
+.pattern-renda-light {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%231A1F26' stroke-width='0.6' opacity='0.09'%3E%3Ccircle cx='20' cy='20' r='11'/%3E%3Ccircle cx='0' cy='0' r='11'/%3E%3Ccircle cx='40' cy='0' r='11'/%3E%3Ccircle cx='0' cy='40' r='11'/%3E%3Ccircle cx='40' cy='40' r='11'/%3E%3Cline x1='20' y1='0' x2='20' y2='40'/%3E%3Cline x1='0' y1='20' x2='40' y2='20'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+  background-repeat: repeat;
+}
+
+/* Renda sobre fundo escuro */
+.pattern-renda-dark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23F0E9DC' stroke-width='0.6' opacity='0.13'%3E%3Ccircle cx='20' cy='20' r='11'/%3E%3Ccircle cx='0' cy='0' r='11'/%3E%3Ccircle cx='40' cy='0' r='11'/%3E%3Ccircle cx='0' cy='40' r='11'/%3E%3Ccircle cx='40' cy='40' r='11'/%3E%3Cline x1='20' y1='0' x2='20' y2='40'/%3E%3Cline x1='0' y1='20' x2='40' y2='20'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+  background-repeat: repeat;
+}
+
+/* Rede sobre fundo claro */
+.pattern-rede-light {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%231A1F26' stroke-width='0.6' opacity='0.09'%3E%3Cline x1='0' y1='12' x2='12' y2='0'/%3E%3Cline x1='12' y1='0' x2='24' y2='12'/%3E%3Cline x1='24' y1='12' x2='12' y2='24'/%3E%3Cline x1='12' y1='24' x2='0' y2='12'/%3E%3Cline x1='0' y1='0' x2='12' y2='12'/%3E%3Cline x1='12' y1='12' x2='24' y2='0'/%3E%3Cline x1='12' y1='12' x2='0' y2='24'/%3E%3Cline x1='12' y1='12' x2='24' y2='24'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='0.9' fill='%231A1F26' opacity='0.09'/%3E%3C/svg%3E");
+  background-size: 48px 48px;
+  background-repeat: repeat;
+}
+
+/* Rede sobre fundo escuro */
+.pattern-rede-dark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23F0E9DC' stroke-width='0.6' opacity='0.13'%3E%3Cline x1='0' y1='12' x2='12' y2='0'/%3E%3Cline x1='12' y1='0' x2='24' y2='12'/%3E%3Cline x1='24' y1='12' x2='12' y2='24'/%3E%3Cline x1='12' y1='24' x2='0' y2='12'/%3E%3Cline x1='0' y1='0' x2='12' y2='12'/%3E%3Cline x1='12' y1='12' x2='24' y2='0'/%3E%3Cline x1='12' y1='12' x2='0' y2='24'/%3E%3Cline x1='12' y1='12' x2='24' y2='24'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='0.9' fill='%23F0E9DC' opacity='0.13'/%3E%3C/svg%3E");
+  background-size: 48px 48px;
+  background-repeat: repeat;
+}
+
+/* ============================================================
+   SECTION DIVIDER — faixa de padrão como separador
+   ============================================================ */
+.pattern-divider {
+  height: 32px;
+  width: 100%;
+}
+
+/* ============================================================
+   ANIMAÇÃO DE REVEAL — controlada via JS (IntersectionObserver)
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms cubic-bezier(0.2, 0, 0.2, 1),
+              transform 600ms cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-tinta-grauna);
+  color: var(--color-branco-cal);
+  font-family: var(--font-body);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-overline);
+  text-transform: uppercase;
+  padding: var(--space-3) var(--space-5);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-barro-escuro);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color-branco-cal);
+  font-family: var(--font-body);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-overline);
+  text-transform: uppercase;
+  padding: calc(var(--space-3) - 1px) calc(var(--space-5) - 1px);
+  border: 1px solid rgba(240, 233, 220, 0.5);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(240, 233, 220, 0.12);
+  border-color: rgba(240, 233, 220, 0.8);
+}
+
+/* ============================================================
+   SKIP LINK
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: var(--space-3);
+  z-index: 100;
+  background: var(--color-tinta-grauna);
+  color: var(--color-branco-cal);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--font-size-caption);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: var(--space-3);
+}
+
+/* ============================================================
+   OVERLINE LABEL
+   ============================================================ */
+.overline {
+  font-family: var(--font-body);
+  font-size: var(--font-size-overline);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-overline);
+  text-transform: uppercase;
+}

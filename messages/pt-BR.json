@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Tramar Muro Alto — Hospedagem de temporada em Muro Alto, Pernambuco",
+    "description": "Dois flats studios curados com ofício pernambucano no Makai Acqua Resort, Muro Alto. Cerâmica de Caruaru, renda renascença, descanso atento."
+  },
+  "skip": "Ir para o conteúdo principal",
+  "nav": {
+    "book": "Reservar no Airbnb"
+  },
+  "hero": {
+    "tagline": "Tecido com o que Pernambuco tem de melhor.",
+    "subtitle": "Dois flats studios no Makai Acqua Resort, Muro Alto. Curadoria de ofício pernambucano.",
+    "cta": "Reservar no Airbnb"
+  },
+  "manifesto": {
+    "sectionLabel": "Manifesto",
+    "text": "A gente acredita que descansar bem é, no fundo, prestar atenção. Atenção ao tecido da rede, ao barro da xícara, ao som da maré, ao tempo que passa diferente quando ninguém tem pressa. A Tramar é uma casa de praia tecida com o que Pernambuco tem de melhor para oferecer: a mão do artesão, o ofício de quem faz, a calma de quem vive perto do mar. Você chega, descansa, e leva um pedaço dessa trama para casa."
+  },
+  "products": {
+    "sectionLabel": "Os flats",
+    "title": "Escolha o seu studio",
+    "carua": {
+      "name": "Tramar Caruá",
+      "tagline": "Studio de praia com peso de barro de Caruaru e fibra de mata atlântica. Para 2 a 3 hóspedes.",
+      "cta": "Reservar no Airbnb"
+    },
+    "renda": {
+      "name": "Tramar Renda",
+      "tagline": "Studio de praia com leveza de renda renascença e luz de fachada de Olinda. Para 2 a 3 hóspedes.",
+      "cta": "Reservar no Airbnb"
+    },
+    "inteira": {
+      "name": "Tramar Inteira",
+      "tagline": "A casa inteira, a trama inteira, o descanso inteiro. Até 8 hóspedes.",
+      "cta": "Reservar no Airbnb"
+    }
+  },
+  "amenities": {
+    "sectionLabel": "Comodidades",
+    "title": "O que a casa oferece",
+    "wifi": "Wi-Fi",
+    "cafe": "Café",
+    "ar": "Ar-condicionado",
+    "varanda": "Varanda",
+    "piscina": "Piscina",
+    "beachTennis": "Beach Tennis"
+  },
+  "gallery": {
+    "sectionLabel": "A casa",
+    "title": "A casa em imagens",
+    "item1": "Manhã na varanda",
+    "item2": "Trama no detalhe",
+    "item3": "Cerâmica da casa",
+    "item4": "Renda no descanso",
+    "item5": "Fim de tarde, Muro Alto",
+    "item6": "A maré que volta"
+  },
+  "location": {
+    "sectionLabel": "Localização",
+    "title": "Onde ficamos",
+    "text": "Makai Acqua Resort, Muro Alto, Pernambuco. A 50 minutos do aeroporto do Recife. A 8 minutos das piscinas naturais de Porto de Galinhas."
+  },
+  "faq": {
+    "sectionLabel": "FAQ",
+    "title": "Perguntas frequentes",
+    "q1": "Quantos hóspedes cabem em cada flat?",
+    "a1": "Resposta a ser definida em conjunto com a operação dos flats.",
+    "q2": "Os flats aceitam pets?",
+    "a2": "Resposta a ser definida em conjunto com a operação dos flats.",
+    "q3": "Como funciona o check-in e check-out?",
+    "a3": "Resposta a ser definida em conjunto com a operação dos flats.",
+    "q4": "O que está incluído na diária?",
+    "a4": "Resposta a ser definida em conjunto com a operação dos flats.",
+    "q5": "Tem estacionamento?",
+    "a5": "Resposta a ser definida em conjunto com a operação dos flats.",
+    "q6": "Qual a política de cancelamento?",
+    "a6": "Resposta a ser definida em conjunto com a operação dos flats."
+  },
+  "footer": {
+    "instagramHandle": "@tramr.muroalto",
+    "instagramLabel": "Instagram da Tramar",
+    "emailLabel": "E-mail de contato",
+    "copyright": "© 2026 Tramar Muro Alto"
+  },
+  "langToggle": {
+    "label": "Mudar idioma para inglês",
+    "pt": "PT",
+    "en": "EN"
+  }
+}

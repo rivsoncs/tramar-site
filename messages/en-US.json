@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Tramar Muro Alto — Short-term rentals in Muro Alto, Pernambuco",
+    "description": "Two studio flats curated with Pernambucan craft at Makai Acqua Resort, Muro Alto. Caruaru ceramics, renaissance lace, attentive rest."
+  },
+  "skip": "Skip to main content",
+  "nav": {
+    "book": "Book on Airbnb"
+  },
+  "hero": {
+    "tagline": "Woven with the best Pernambuco has to offer.",
+    "subtitle": "Two studio flats at Makai Acqua Resort, Muro Alto. A curation of Pernambucan craft.",
+    "cta": "Book on Airbnb"
+  },
+  "manifesto": {
+    "sectionLabel": "Manifesto",
+    "text": "We believe that resting well is, at its core, paying attention. Attention to the weave of the hammock, the clay of the cup, the sound of the tide, the time that passes differently when no one is in a hurry. Tramar is a beach house woven with the best Pernambuco has to offer: the artisan's hand, the craft of those who make, the calm of those who live by the sea. You arrive, you rest, and you take a piece of this weave home."
+  },
+  "products": {
+    "sectionLabel": "The flats",
+    "title": "Choose your studio",
+    "carua": {
+      "name": "Tramar Caruá",
+      "tagline": "Beachfront studio with the weight of Caruaru clay and the fiber of Atlantic forest. For 2 to 3 guests.",
+      "cta": "Book on Airbnb"
+    },
+    "renda": {
+      "name": "Tramar Renda",
+      "tagline": "Beachfront studio with the lightness of renaissance lace and the light of Olinda facades. For 2 to 3 guests.",
+      "cta": "Book on Airbnb"
+    },
+    "inteira": {
+      "name": "Tramar Inteira",
+      "tagline": "The whole house, the whole weave, the whole rest. Up to 8 guests.",
+      "cta": "Book on Airbnb"
+    }
+  },
+  "amenities": {
+    "sectionLabel": "Amenities",
+    "title": "What the house offers",
+    "wifi": "Wi-Fi",
+    "cafe": "Coffee",
+    "ar": "Air conditioning",
+    "varanda": "Balcony",
+    "piscina": "Pool",
+    "beachTennis": "Beach Tennis"
+  },
+  "gallery": {
+    "sectionLabel": "The house",
+    "title": "The house in images",
+    "item1": "Morning at the balcony",
+    "item2": "Weave in detail",
+    "item3": "House ceramics",
+    "item4": "Lace at rest",
+    "item5": "Late afternoon, Muro Alto",
+    "item6": "The returning tide"
+  },
+  "location": {
+    "sectionLabel": "Location",
+    "title": "Where we are",
+    "text": "Makai Acqua Resort, Muro Alto, Pernambuco. 50 minutes from Recife airport. 8 minutes from Porto de Galinhas natural pools."
+  },
+  "faq": {
+    "sectionLabel": "FAQ",
+    "title": "Frequently asked questions",
+    "q1": "How many guests fit in each flat?",
+    "a1": "Answer to be defined alongside flat operations.",
+    "q2": "Are pets allowed?",
+    "a2": "Answer to be defined alongside flat operations.",
+    "q3": "How does check-in and check-out work?",
+    "a3": "Answer to be defined alongside flat operations.",
+    "q4": "What's included in the daily rate?",
+    "a4": "Answer to be defined alongside flat operations.",
+    "q5": "Is parking available?",
+    "a5": "Answer to be defined alongside flat operations.",
+    "q6": "What's the cancellation policy?",
+    "a6": "Answer to be defined alongside flat operations."
+  },
+  "footer": {
+    "instagramHandle": "@tramr.muroalto",
+    "instagramLabel": "Tramar on Instagram",
+    "emailLabel": "Contact email",
+    "copyright": "© 2026 Tramar Muro Alto"
+  },
+  "langToggle": {
+    "label": "Switch language to Portuguese",
+    "pt": "PT",
+    "en": "EN"
+  }
+}
