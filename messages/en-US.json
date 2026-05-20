@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Tramar Muro Alto — Short-term rentals in Muro Alto, Pernambuco",
+    "title": "Tramar Muro Alto · Curated stays in Muro Alto, Pernambuco",
     "description": "Two studio flats curated with Pernambucan craft at Makai Acqua Resort, Muro Alto. Caruaru ceramics, renaissance lace, attentive rest."
   },
   "skip": "Skip to main content",
@@ -16,12 +16,12 @@
   "curadoria": {
     "sectionLabel": "Curation",
     "title": "What we bring",
-    "text": "Each flat is curated with real Pernambucan craft. The ceramics you use at breakfast come from Caruaru. The lace on the pillow is renascença from Pesqueira. The textiles passed from hand to hand, not from a catalog. Curation is the heart of Tramar.",
+    "text": "Each flat is curated with Pernambucan craft. The ceramics you use at breakfast come from Caruaru. The lace on the pillow is renascença from Pesqueira. The textiles passed from hand to hand, not from a catalog. Curation is the core of Tramar.",
     "imageAlt": "Hands shaping handcrafted ceramics from Caruaru"
   },
   "manifesto": {
     "sectionLabel": "Manifesto",
-    "text": "We believe that resting well is, at its core, paying attention. Attention to the weave of the hammock, the clay of the cup, the sound of the tide, the time that passes differently when no one is in a hurry. Tramar is a beach house woven with the best Pernambuco has to offer: the artisan's hand, the craft of those who make, the calm of those who live by the sea. You arrive, you rest, and you take a piece of this weave home."
+    "text": "We believe resting well is paying attention. Attention to the weave of the hammock, the clay of the cup, the sound of the tide, the time that passes differently when no one is in a hurry. Tramar is a beach house woven with the best Pernambuco has to offer: the artisan's hand, the craft of those who make, the calm of those who live by the sea. You arrive, you rest, and you leave with a thread of this weave."
   },
   "products": {
     "sectionLabel": "The flats",
@@ -48,7 +48,7 @@
   "makai": {
     "sectionLabel": "The Resort",
     "title": "Makai Acqua Resort",
-    "text": "Tramar flats are inside Makai Acqua Resort, in Muro Alto, 50 minutes from Recife. Along with your stay, you have full access to the water complex and all resort facilities.",
+    "text": "Tramar flats are at Makai Acqua Resort, in Muro Alto, 50 minutes from Recife. Your stay includes full access to the resort: the water complex, the restaurant, the fitness center, and the kids area.",
     "feature1": "Lazy River Pool",
     "feature2": "Water Slides",
     "feature3": "Beach Tennis",
@@ -92,17 +92,17 @@
     "sectionLabel": "FAQ",
     "title": "Frequently asked questions",
     "q1": "How many guests fit in each flat?",
-    "a1": "Each flat comfortably accommodates up to 3 guests. The Tramar Inteira product, with both flats combined, accommodates up to 8. (TODO: confirm final capacity with owner)",
+    "a1": "Each flat accommodates up to 3 guests. Tramar Inteira, with both flats combined, accommodates up to 8 guests.",
     "q2": "Are pets allowed?",
-    "a2": "(TODO: confirm pet policy with the condominium and owners)",
+    "a2": "Please get in touch before booking to confirm the pet policy.",
     "q3": "How does check-in and check-out work?",
-    "a3": "Check-in is at 3 PM and check-out at 11 AM. For other times, check availability at booking. (TODO: confirm with operations)",
-    "q4": "What's included in the daily rate?",
-    "a4": "Full access to the Makai Acqua Resort water complex: current pool, water slides, beach tennis, restaurant, fitness center, and kids area. (TODO: confirm full amenity list with resort)",
+    "a3": "Check-in is at 3 PM and check-out at 11 AM. For other times, check availability when booking.",
+    "q4": "What's included in the stay?",
+    "a4": "Full access to the Makai Acqua Resort water complex: lazy river pool, water slides, beach tennis, restaurant, fitness center, and kids area.",
     "q5": "Is parking available?",
-    "a5": "Yes, Makai Acqua Resort offers parking for guests. (TODO: confirm whether there's an additional fee)",
+    "a5": "Yes, Makai Acqua Resort provides parking for guests.",
     "q6": "What's the cancellation policy?",
-    "a6": "(TODO: define cancellation policy with owners before launch)"
+    "a6": "The cancellation policy follows the booking platform's terms. Check the Airbnb listing before confirming your reservation."
   },
   "footer": {
     "instagramHandle": "@tramar.muroalto",
