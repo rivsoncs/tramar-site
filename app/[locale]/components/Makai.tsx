@@ -18,10 +18,10 @@ export function Makai() {
       aria-labelledby="makai-heading"
       style={{ backgroundColor: '#E6DECF' }}
     >
-      <div className="px-6 md:px-12 lg:px-16 py-16 md:py-20">
+      <div className="px-6 md:px-12 lg:px-16 py-7 md:py-16">
         <div className="flex flex-col lg:flex-row lg:gap-12 items-start">
           {/* Texto */}
-          <div className="flex-1 max-w-xl mb-8 lg:mb-0">
+          <div className="flex-1 max-w-xl mb-5 lg:mb-0">
             <FadeIn>
               <span className="overline text-areia-molhada block mb-4">
                 {t('sectionLabel')}

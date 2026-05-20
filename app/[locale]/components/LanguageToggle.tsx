@@ -39,7 +39,8 @@ export function LanguageToggle({ variant = 'header', dark = false }: LanguageTog
       <button
         onClick={() => switchTo('pt-BR')}
         aria-pressed={locale === 'pt-BR'}
-        className={`overline px-1 py-0.5 ${locale === 'pt-BR' ? activeClass : `${inactiveClass} ${baseClass}`} focus-visible:outline-areia-molhada`}
+        className={`overline flex items-center justify-center ${locale === 'pt-BR' ? activeClass : `${inactiveClass} ${baseClass}`} focus-visible:outline-areia-molhada`}
+        style={{ minHeight: '44px', minWidth: '44px' }}
       >
         {t('pt')}
       </button>
@@ -52,7 +53,8 @@ export function LanguageToggle({ variant = 'header', dark = false }: LanguageTog
       <button
         onClick={() => switchTo('en-US')}
         aria-pressed={locale === 'en-US'}
-        className={`overline px-1 py-0.5 ${locale === 'en-US' ? activeClass : `${inactiveClass} ${baseClass}`} focus-visible:outline-areia-molhada`}
+        className={`overline flex items-center justify-center ${locale === 'en-US' ? activeClass : `${inactiveClass} ${baseClass}`} focus-visible:outline-areia-molhada`}
+        style={{ minHeight: '44px', minWidth: '44px' }}
       >
         {t('en')}
       </button>

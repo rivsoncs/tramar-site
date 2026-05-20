@@ -14,7 +14,7 @@ function Amenity({ iconPath, label, delay = 0 }: AmenityProps) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={iconPath} alt="" width={32} height={32} className="w-8 h-8 opacity-75" />
       </div>
-      <span className="overline text-areia-molhada tracking-widest">{label}</span>
+      <span className="overline text-areia-molhada" style={{ letterSpacing: '0.12em' }}>{label}</span>
     </FadeIn>
   );
 }
@@ -39,8 +39,8 @@ export function Amenities() {
       {/* Divisor padrão trama acima */}
       <div className="pattern-trama-light pattern-divider w-full" aria-hidden="true" />
 
-      <div className="py-16 md:py-20 px-6 md:px-12 lg:px-16">
-        <FadeIn className="mb-12">
+      <div className="py-7 md:py-16 px-6 md:px-12 lg:px-16">
+        <FadeIn className="mb-5 md:mb-12">
           <span className="overline text-areia-molhada block mb-4">
             {t('sectionLabel')}
           </span>
@@ -53,7 +53,7 @@ export function Amenities() {
           </h2>
         </FadeIn>
 
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-8 md:gap-6 max-w-3xl">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6 md:gap-6 max-w-3xl">
           {items.map((item) => (
             <Amenity
               key={item.icon}

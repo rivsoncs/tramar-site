@@ -12,9 +12,9 @@ export function Footer() {
       {/* Faixa de padrão trama discreta no topo do footer */}
       <div className="pattern-trama-dark" style={{ height: '32px', width: '100%' }} aria-hidden="true" />
 
-      <div className="px-6 md:px-12 lg:px-16 py-16">
+      <div className="px-6 md:px-12 lg:px-16 py-7 md:py-16">
         {/* Linha superior: logo + idioma */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-5 md:mb-8">
           {/* Logo reduzida */}
           <div style={{ flexShrink: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -46,7 +46,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="font-body transition-colors duration-200 hover:opacity-100"
               aria-label={t('instagramLabel')}
-              style={{ color: '#A89C8A', fontSize: '12px', letterSpacing: '0.05em', opacity: 0.8 }}
+              style={{ color: '#A89C8A', fontSize: '12px', letterSpacing: '0.05em', opacity: 0.8, paddingBlock: '12px', display: 'inline-block' }}
             >
               {t('instagramHandle')}
             </a>
@@ -54,7 +54,7 @@ export function Footer() {
               href="mailto:contato@tramarmuroalto.com.br"
               className="font-body transition-colors duration-200 hover:opacity-100"
               aria-label={t('emailLabel')}
-              style={{ color: '#A89C8A', fontSize: '12px', letterSpacing: '0.05em', opacity: 0.8 }}
+              style={{ color: '#A89C8A', fontSize: '12px', letterSpacing: '0.05em', opacity: 0.8, paddingBlock: '12px', display: 'inline-block' }}
             >
               contato@tramarmuroalto.com.br
             </a>
@@ -62,7 +62,7 @@ export function Footer() {
               href="/brand"
               className="font-body transition-colors duration-200 hover:opacity-100"
               aria-label={t('brandGuideLabel')}
-              style={{ color: '#A89C8A', fontSize: '12px', letterSpacing: '0.05em', opacity: 0.5 }}
+              style={{ color: '#A89C8A', fontSize: '12px', letterSpacing: '0.05em', opacity: 0.5, paddingBlock: '12px', display: 'inline-block' }}
             >
               {t('brandGuideLabel')}
             </a>

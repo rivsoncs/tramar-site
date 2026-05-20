@@ -95,7 +95,7 @@ export function Hero() {
           {/* Tagline + subtítulo + CTA */}
           <div className="mt-auto">
             <h1
-              id="hero-heading"
+              aria-hidden="true"
               className="font-display font-light text-tinta-grauna mb-6"
               style={{
                 fontSize: 'clamp(56px, 5.6vw, 88px)',

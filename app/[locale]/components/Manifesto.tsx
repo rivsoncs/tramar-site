@@ -17,7 +17,7 @@ export function Manifesto() {
             <h2 id="manifesto-heading" className="sr-only">{t('sectionLabel')}</h2>
 
             {/* Overline + traço */}
-            <div className="flex items-center gap-5 mb-10" aria-hidden="true">
+            <div className="flex items-center gap-5 mb-5 md:mb-10" aria-hidden="true">
               <div
                 className="w-6 h-px"
                 style={{ backgroundColor: '#A89C8A' }}
@@ -41,7 +41,7 @@ export function Manifesto() {
             </blockquote>
 
             {/* Assinatura discreta */}
-            <div className="flex items-center gap-4 mt-10" aria-hidden="true">
+            <div className="flex items-center gap-4 mt-5 md:mt-10" aria-hidden="true">
               <div
                 className="w-4 h-px"
                 style={{ backgroundColor: 'rgba(26,31,38,0.25)' }}

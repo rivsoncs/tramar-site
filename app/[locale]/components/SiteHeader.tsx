@@ -32,8 +32,9 @@ export function SiteHeader() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-8 h-16"
+      className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-8"
       style={{
+        height: '64px',
         background: scrolled ? 'rgba(240,233,220,0.96)' : 'transparent',
         backdropFilter: scrolled ? 'blur(8px)' : 'none',
         transform: hidden ? 'translateY(-100%)' : 'translateY(0)',
