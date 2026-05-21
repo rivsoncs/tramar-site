@@ -5,8 +5,8 @@ interface SubBrandLogoProps {
 }
 
 const defaultColors = {
-  carua:   '#6E3B2A',
-  renda:   '#C49A6B',
+  carua:   '#3D2B1F',
+  renda:   '#4A6B8A',
   inteira: '#1A1F26',
 };
 

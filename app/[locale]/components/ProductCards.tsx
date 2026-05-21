@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { FadeIn } from './FadeIn';
 import { SubBrandLogo } from './SubBrandLogo';
+import { CaruaSymbol, RendaSymbol, InteiraSymbol } from './SubBrandSymbols';
 import { photos } from '@/lib/photo-manifest';
 
 interface ProductCardProps {
@@ -61,8 +62,11 @@ function ProductCard({
             style={{ backgroundColor: bgColor, opacity: overlayOpacity }}
             aria-hidden="true"
           />
-          {/* Logo sub-marca centralizado sobre o overlay */}
-          <div className="absolute inset-0 flex items-center justify-center z-10">
+          {/* Símbolo + logo sub-marca centralizados sobre o overlay */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center z-10 gap-3">
+            {brand === 'carua' && <CaruaSymbol className="w-10 h-10 opacity-80" strokeColor={logoColor} />}
+            {brand === 'renda' && <RendaSymbol className="w-10 h-10 opacity-80" strokeColor={logoColor} />}
+            {brand === 'inteira' && <InteiraSymbol className="w-10 h-10 opacity-80" strokeColor={logoColor} />}
             <div style={{ width: '200px' }}>
               <SubBrandLogo
                 brand={brand}
@@ -145,7 +149,7 @@ export function ProductCards() {
   const cards = [
     {
       brand: 'carua' as const,
-      bgColor: '#6E3B2A',
+      bgColor: '#3D2B1F',
       overlayOpacity: 0.65,
       logoColor: '#F0E9DC',
       patternClass: 'pattern-trama-dark',
@@ -158,10 +162,10 @@ export function ProductCards() {
     },
     {
       brand: 'renda' as const,
-      bgColor: '#C49A6B',
+      bgColor: '#4A6B8A',
       overlayOpacity: 0.70,
       logoColor: '#F0E9DC',
-      patternClass: 'pattern-renda-light',
+      patternClass: 'pattern-renda-dark',
       nameKey: 'renda.name',
       taglineKey: 'renda.tagline',
       ctaKey: 'renda.cta',

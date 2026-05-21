@@ -9,14 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Nomes completos (mantidos para compatibilidade)
         'branco-cal':    '#F0E9DC',
         'areia-molhada': '#A89C8A',
         'tinta-grauna':  '#1A1F26',
-        'barro-escuro':  '#6E3B2A',
-        'verde-mato':    '#3D4836',
+        'barro-escuro':  '#3D2B1F',
+        'verde-mato':    '#2C4A3E',
         'acucar-mascavo':'#C49A6B',
-        'azul-olinda':   '#5C7A8C',
+        'azul-olinda':   '#4A6B8A',
         'bg-soft':       '#E6DECF',
+        // Aliases curtos (nova identidade visual)
+        'cal':     '#F0E9DC',
+        'areia':   '#A89C8A',
+        'grauna':  '#1A1F26',
+        'barro':   '#3D2B1F',
+        'mascavo': '#C49A6B',
+        'olinda':  '#4A6B8A',
+        'mato':    '#2C4A3E',
       },
       fontFamily: {
         display: ['var(--font-fraunces)', 'Georgia', '"Times New Roman"', 'serif'],

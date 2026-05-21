@@ -21,12 +21,12 @@
   --color-tinta-grauna:   #1A1F26; /* Tipografia · contraste alto · ~12% */
 
   /* Assinatura — Família Caruá (gravidade) */
-  --color-barro-escuro:   #6E3B2A; /* Cor principal da sub-marca Caruá */
-  --color-verde-mato:     #3D4836; /* Apoio frio da família Caruá */
+  --color-barro-escuro:   #3D2B1F; /* Cor principal da sub-marca Caruá */
+  --color-verde-mato:     #2C4A3E; /* Apoio frio da família Caruá */
 
   /* Assinatura — Família Renda (leveza) */
   --color-acucar-mascavo: #C49A6B; /* Cor principal da sub-marca Renda */
-  --color-azul-olinda:    #5C7A8C; /* Apoio frio da família Renda */
+  --color-azul-olinda:    #4A6B8A; /* Apoio frio da família Renda */
 
   /* Aliases semânticos · use estes em componentes */
   --color-bg:             var(--color-branco-cal);
