@@ -45,6 +45,28 @@
       "imageAlt": "Tropical balcony with sea view"
     }
   },
+  "studios": {
+    "sectionLabel": "Curated Stays",
+    "title": "Choose Your Stay",
+    "subtitle": "Each space is a self-contained retreat curated with pieces by local Pernambuco artisans.",
+    "craftLabel": "Craft Details",
+    "cta": "Confirm on Airbnb",
+    "carua": {
+      "badge": "Studio I · Earth, Fiber & Clay",
+      "details": "Morning coffee in raw clay pottery · Rustic cotton throw · Soft candlelight",
+      "guests": "2 to 3 guests"
+    },
+    "renda": {
+      "badge": "Studio II · Light, Breeze & Lace",
+      "details": "Bobbin lace cushions · Pure linen gauze curtains · Olinda Blue tones",
+      "guests": "2 to 3 guests"
+    },
+    "inteira": {
+      "badge": "Full Weave · Expanded Stay",
+      "details": "Two integrated studios · Private antechamber · Two curated kitchens",
+      "guests": "Up to 8 guests"
+    }
+  },
   "makai": {
     "sectionLabel": "The Resort",
     "title": "Makai Acqua Resort",

@@ -45,6 +45,28 @@
       "imageAlt": "Varanda tropical com vista para o mar"
     }
   },
+  "studios": {
+    "sectionLabel": "Acomodações Curadas",
+    "title": "Escolha sua Estada",
+    "subtitle": "Cada espaço é um refúgio autônomo curado com peças de artesãos locais pernambucanos.",
+    "craftLabel": "Detalhes de Ofício",
+    "cta": "Confirmar no Airbnb",
+    "carua": {
+      "badge": "Estúdio I · Terra, Fibra & Barro",
+      "details": "Café em louça de argila crua · Cobertor de algodão rústico · Luz de candeeiro sutil",
+      "guests": "2 a 3 hóspedes"
+    },
+    "renda": {
+      "badge": "Estúdio II · Luz, Frescor & Renda",
+      "details": "Almofadas bordadas a bilro · Gaze de linho pura nas janelas · Tons de Azul-Olinda",
+      "guests": "2 a 3 hóspedes"
+    },
+    "inteira": {
+      "badge": "Trama Inteira · Acomodação Expandida",
+      "details": "Dois estúdios integrados · Antessala privativa · Duas cozinhas curadas",
+      "guests": "Até 8 hóspedes"
+    }
+  },
   "makai": {
     "sectionLabel": "O Resort",
     "title": "Makai Acqua Resort",
