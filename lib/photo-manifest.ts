@@ -46,8 +46,9 @@ export const photos = {
     // FOTO PROVISÓRIA: substituir por fotos reais dos flats após entrega e sessão fotográfica
     carua: {
       interior: {
-        url: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=900&q=80&fit=crop',
-        alt: 'Interior de flat de praia com decoração em tons terrosos — imagem ilustrativa',
+        // Cerâmica de barro cozido — evoca o ofício do Estúdio Caruá
+        url: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=900&q=80&fit=crop',
+        alt: 'Detalhe tátil de cerâmica crua trabalhada manualmente — Estúdio Caruá',
         credit: 'Unsplash',
       },
       detalhe: {
@@ -58,8 +59,9 @@ export const photos = {
     },
     renda: {
       interior: {
-        url: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=900&q=80&fit=crop',
-        alt: 'Interior de flat com decoração clara e leve — imagem ilustrativa',
+        // Lençóis de linho natural e sombras suaves — evoca o Estúdio Renda
+        url: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=900&q=80&fit=crop',
+        alt: 'Lençóis de linho natural com sombras de fim de tarde — Estúdio Renda',
         credit: 'Unsplash',
       },
       detalhe: {
@@ -78,10 +80,11 @@ export const photos = {
       credit: 'Makai Acqua Resort',
     },
     {
-      caption_pt: 'Trama no detalhe',
-      caption_en: 'Weave in detail',
-      url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&fit=crop',
-      alt: 'Detalhe de têxtil artesanal',
+      caption_pt: 'O ritual do café',
+      caption_en: 'The morning ritual',
+      // Presença humana implícita — xícara fumegante, luz tropical
+      url: 'https://images.unsplash.com/photo-1517256064527-09c73b2d0bc6?w=900&q=80&fit=crop',
+      alt: 'Café da manhã vagaroso sob luz de sombras tropicais — presença humana implícita',
       credit: 'Unsplash',
     },
     {
@@ -106,10 +109,11 @@ export const photos = {
       credit: 'Muro Alto, Pernambuco',
     },
     {
-      caption_pt: 'A maré que volta',
-      caption_en: 'The returning tide',
-      url: 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=900&q=80&fit=crop',
-      alt: 'Vista aérea da costa do Brasil',
+      caption_pt: 'As águas de Muro Alto',
+      caption_en: 'The waters of Muro Alto',
+      // Mar calmo de arrecifes — espaço negativo dominante
+      url: 'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=900&q=80&fit=crop',
+      alt: 'As águas calmas e translúcidas das piscinas naturais de Muro Alto',
       credit: 'Unsplash',
     },
   ],

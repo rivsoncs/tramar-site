@@ -4,8 +4,7 @@ import { SiteHeader } from './components/SiteHeader';
 import { Hero } from './components/Hero';
 import { Manifesto } from './components/Manifesto';
 import { Curadoria } from './components/Curadoria';
-import { ProductCards } from './components/ProductCards';
-import { StudiosSection } from './components/StudiosSection';
+import { StudioCards } from './components/StudioCards';
 import { Makai } from './components/Makai';
 import { Amenities } from './components/Amenities';
 import { Gallery } from './components/Gallery';
@@ -31,8 +30,7 @@ export default function HomePage({
         <Hero />
         <Manifesto />
         <Curadoria />
-        <ProductCards />
-        <StudiosSection />
+        <StudioCards />
         <Makai />
         <Amenities />
         <Gallery />

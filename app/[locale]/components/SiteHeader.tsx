@@ -41,16 +41,33 @@ export function SiteHeader() {
         transition: 'background 300ms ease, backdrop-filter 300ms ease, transform 200ms ease',
       }}
     >
-      {/* Logo — sempre positivo (texto escuro, fundo transparente)
-          O layout split do hero tem coluna esquerda clara, logo nunca fica sobre fundo escuro */}
-      <div style={{ flexShrink: 0 }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/brand-assets/logos/tramar-muroalto-horizontal.svg"
-          alt="Tramar Muro Alto"
-          className="h-7 md:h-8 w-auto"
-          style={{ display: 'block' }}
-        />
+      {/* Wordmark — T itálico em Fraunces, subtítulo em DM Sans */}
+      <div style={{ flexShrink: 0, lineHeight: 1 }}>
+        <div
+          className="font-display font-light"
+          style={{
+            fontSize: '22px',
+            letterSpacing: '0.10em',
+            color: '#1A1F26',
+            lineHeight: 1,
+          }}
+          aria-label="Tramar Muro Alto"
+        >
+          <em style={{ fontStyle: 'italic', marginRight: '1px' }}>T</em>ramar
+        </div>
+        <div
+          className="font-body"
+          style={{
+            fontSize: '7.5px',
+            letterSpacing: '0.32em',
+            textTransform: 'uppercase',
+            color: '#1A1F26',
+            opacity: 0.55,
+            marginTop: '3px',
+          }}
+        >
+          muro alto · pe
+        </div>
       </div>
 
       <LanguageToggle variant="header" dark={!scrolled} />

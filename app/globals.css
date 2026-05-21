@@ -107,6 +107,19 @@ body {
 }
 
 /* ============================================================
+   FILTRO FOTOGRÁFICO EDITORIAL — "película orgânica morna"
+   Evita que fotos de banco de dados pareçam genéricas.
+   Ao hover, remove o filtro para revelar a imagem plena.
+   ============================================================ */
+.img-tramar {
+  filter: brightness(0.98) sepia(4%) contrast(96%);
+  transition: filter 500ms ease-out;
+}
+.img-tramar:hover {
+  filter: brightness(1.0) sepia(0%) contrast(100%);
+}
+
+/* ============================================================
    BOTÕES
    ============================================================ */
 .btn-primary {
