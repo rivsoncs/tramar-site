@@ -26,7 +26,7 @@ export function BrandLogoHorizontal({
         fill={color}
         letterSpacing="1"
       >
-        Tramar
+        <tspan fontStyle="italic">T</tspan>ramar
       </text>
       <line
         x1="596"
@@ -93,7 +93,7 @@ export function BrandLogoReduzida({
         fill={color}
         letterSpacing="1"
       >
-        Tramar
+        <tspan fontStyle="italic">T</tspan>ramar
       </text>
     </svg>
   );
