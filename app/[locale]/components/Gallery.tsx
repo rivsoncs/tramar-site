@@ -36,6 +36,7 @@ function GalleryItem({ url, caption, alt, index, delay = 0 }: GalleryItemProps) 
             alt={alt}
             fill
             loading="lazy"
+            className="img-tramar"
             style={{ objectFit: 'cover' }}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
