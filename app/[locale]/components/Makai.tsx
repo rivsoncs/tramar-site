@@ -1,4 +1,6 @@
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import { photos } from '@/lib/photo-manifest';
 import { FadeIn } from './FadeIn';
 
 export function Makai() {
@@ -18,6 +20,17 @@ export function Makai() {
       aria-labelledby="makai-heading"
       style={{ backgroundColor: '#E6DECF' }}
     >
+      {/* Imagem do resort — full-width, proporção panorâmica */}
+      <div className="relative w-full overflow-hidden" style={{ aspectRatio: '16/7' }}>
+        <Image
+          src={photos.resort.aerial.url}
+          alt={photos.resort.aerial.alt}
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          sizes="100vw"
+        />
+      </div>
+
       <div className="px-6 md:px-12 lg:px-16 py-7 md:py-16">
         <div className="flex flex-col lg:flex-row lg:gap-12 items-start">
           {/* Texto */}

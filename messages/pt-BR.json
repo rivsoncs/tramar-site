@@ -69,13 +69,13 @@
   "gallery": {
     "sectionLabel": "A casa",
     "title": "A casa em imagens",
-    "item1": "Manhã na varanda",
+    "item1": "Complexo aquático do Makai",
     "item2": "Trama no detalhe",
     "item3": "Cerâmica da casa",
-    "item4": "Renda no descanso",
+    "item4": "Piscinas naturais de Porto de Galinhas",
     "item5": "Fim de tarde, Muro Alto",
     "item6": "A maré que volta",
-    "photoCredit": "Fotos provisórias: Unsplash. Imagens oficiais do espaço em breve."
+    "photoCredit": "Fotos dos flats: provisórias (Unsplash), aguardando sessão fotográfica."
   },
   "location": {
     "sectionLabel": "Localização",
@@ -110,7 +110,7 @@
     "emailLabel": "E-mail de contato",
     "brandGuideLabel": "Identidade visual da marca",
     "copyright": "© 2026 Tramar Muro Alto",
-    "photoCredit": "Fotos provisórias: Unsplash"
+    "photoCredit": "Fotos dos flats: provisórias, aguardando sessão fotográfica"
   },
   "langToggle": {
     "label": "Mudar idioma para inglês",

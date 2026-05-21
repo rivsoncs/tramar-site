@@ -69,13 +69,13 @@
   "gallery": {
     "sectionLabel": "The house",
     "title": "The house in images",
-    "item1": "Morning at the balcony",
+    "item1": "Makai aquatic complex",
     "item2": "Weave in detail",
     "item3": "House ceramics",
-    "item4": "Lace at rest",
+    "item4": "Natural pools of Porto de Galinhas",
     "item5": "Late afternoon, Muro Alto",
     "item6": "The returning tide",
-    "photoCredit": "Provisional photos: Unsplash. Official space photos coming soon."
+    "photoCredit": "Flat photos: provisional (Unsplash), awaiting photoshoot."
   },
   "location": {
     "sectionLabel": "Location",
@@ -110,7 +110,7 @@
     "emailLabel": "Contact email",
     "brandGuideLabel": "Brand identity guides",
     "copyright": "© 2026 Tramar Muro Alto",
-    "photoCredit": "Provisional photos: Unsplash"
+    "photoCredit": "Flat photos: provisional, awaiting photoshoot"
   },
   "langToggle": {
     "label": "Switch language to Portuguese",
