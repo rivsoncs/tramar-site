@@ -17,6 +17,7 @@ export function Makai() {
 
   return (
     <section
+      id="resort"
       aria-labelledby="makai-heading"
       style={{ backgroundColor: '#E6DECF' }}
     >

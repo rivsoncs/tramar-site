@@ -4,8 +4,15 @@ import { FadeIn } from './FadeIn';
 export function Manifesto() {
   const t = useTranslations('manifesto');
 
+  const pillars = [
+    { label: t('p1Label'), text: t('p1Text') },
+    { label: t('p2Label'), text: t('p2Text') },
+    { label: t('p3Label'), text: t('p3Text') },
+  ];
+
   return (
     <section
+      id="manifesto"
       aria-labelledby="manifesto-heading"
       className="bg-branco-cal"
       style={{ borderTop: '1px solid rgba(26,31,38,0.08)' }}
@@ -58,6 +65,41 @@ export function Manifesto() {
                 Tramar Muro Alto
               </p>
             </div>
+          </div>
+        </FadeIn>
+
+        {/* ── Três pilares ── */}
+        <FadeIn delay={150}>
+          <div
+            className="grid grid-cols-1 sm:grid-cols-3 gap-0 mt-16 md:mt-20"
+            style={{ borderTop: '1px solid rgba(26,31,38,0.08)', paddingTop: '40px' }}
+          >
+            {pillars.map(({ label, text }) => (
+              <div
+                key={label}
+                className="sm:pr-8"
+                style={{ borderLeft: '1px solid rgba(168,156,138,0.35)', paddingLeft: '20px', marginBottom: '28px' }}
+              >
+                <p
+                  className="font-body mb-3"
+                  style={{
+                    fontSize: '9px',
+                    letterSpacing: '0.22em',
+                    textTransform: 'uppercase',
+                    color: '#C49A6B',
+                    fontWeight: 500,
+                  }}
+                >
+                  {label}
+                </p>
+                <p
+                  className="font-body text-tinta-grauna"
+                  style={{ fontSize: '12px', lineHeight: '1.75', opacity: 0.72 }}
+                >
+                  {text}
+                </p>
+              </div>
+            ))}
           </div>
         </FadeIn>
       </div>

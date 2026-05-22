@@ -1,11 +1,17 @@
 {
   "meta": {
-    "title": "Tramar Muro Alto · Curated stays in Muro Alto, Pernambuco",
+    "title": "Tramar Muro Alto",
     "description": "Two studio flats curated with Pernambucan craft at Makai Acqua Resort, Muro Alto. Caruaru ceramics, renaissance lace, attentive rest."
   },
   "skip": "Skip to main content",
+  "announcement": "Pernambuco craft curation · Two studios at Makai Acqua Resort · Muro Alto",
   "nav": {
-    "book": "Book on Airbnb"
+    "book": "Book on Airbnb",
+    "studios": "The Studios",
+    "resort": "The Resort",
+    "amenities": "Amenities",
+    "faq": "FAQ",
+    "reservar": "Book Your Stay"
   },
   "hero": {
     "tagline": "Woven with the best Pernambuco has to offer.",
@@ -21,7 +27,13 @@
   },
   "manifesto": {
     "sectionLabel": "Manifesto",
-    "text": "We believe resting well is paying attention. Attention to the weave of the hammock, the clay of the cup, the sound of the tide, the time that passes differently when no one is in a hurry. Tramar is a beach house woven with the best Pernambuco has to offer: the artisan's hand, the craft of those who make, the calm of those who live by the sea. You arrive, you rest, and you leave with a thread of this weave."
+    "text": "We believe resting well is paying attention. Attention to the weave of the hammock, the clay of the cup, the sound of the tide, the time that passes differently when no one is in a hurry. Tramar is a beach house woven with the best Pernambuco has to offer: the artisan's hand, the craft of those who make, the calm of those who live by the sea. You arrive, you rest, and you leave with a thread of this weave.",
+    "p1Label": "01 / Authentic Matter",
+    "p1Text": "We reject generic plastic and staged folklore. We value the porosity of fired clay and the patient stitches of true lacework.",
+    "p2Label": "02 / Conscious Pause",
+    "p2Text": "We slow the traveller's landing. A quiet retreat where shadows move gently along the light-washed walls.",
+    "p3Label": "03 / Rootedness",
+    "p3Text": "Grounded on Pernambuco's southern coast. A contemporary tribute that honours the handcrafted treasures of our hillsides and hinterlands."
   },
   "products": {
     "sectionLabel": "The flats",
@@ -113,18 +125,18 @@
   "faq": {
     "sectionLabel": "FAQ",
     "title": "Frequently asked questions",
-    "q1": "How many guests fit in each flat?",
-    "a1": "Each flat accommodates up to 3 guests. Tramar Inteira, with both flats combined, accommodates up to 8 guests.",
+    "q1": "How many guests fit in each studio and in the full house?",
+    "a1": "Each studio (Caruá and Renda) comfortably accommodates up to 3 guests — 1 queen bed and 1 single sofa bed. When booking Tramar Inteira, the private combination of both studios, we welcome groups of up to 8 guests with complete privacy.",
     "q2": "Are pets allowed?",
-    "a2": "Please get in touch before booking to confirm the pet policy.",
-    "q3": "How does check-in and check-out work?",
-    "a3": "Check-in is at 3 PM and check-out at 11 AM. For other times, check availability when booking.",
+    "a2": "We accept small pets with prior consultation and approval before booking, to ensure compliance with the Makai Acqua Resort condominium rules. Please get in touch before reserving.",
+    "q3": "How do check-in and check-out times work?",
+    "a3": "Check-in starts from 3 PM and check-out must be completed by 11 AM. For early arrivals or flexible departures, please contact us in advance so we can check calendar availability.",
     "q4": "What's included in the stay?",
-    "a4": "Full access to the Makai Acqua Resort water complex: lazy river pool, water slides, beach tennis, restaurant, fitness center, and kids area.",
-    "q5": "Is parking available?",
-    "a5": "Yes, Makai Acqua Resort provides parking for guests.",
-    "q6": "What's the cancellation policy?",
-    "a6": "The cancellation policy follows the booking platform's terms. Check the Airbnb listing before confirming your reservation."
+    "a4": "Full and complimentary access to all Makai Acqua Resort facilities: lazy river and aquatic playground, beachside bar and restaurant, air-conditioned gym, beach tennis courts, games room, and kids club.",
+    "q5": "Is parking included?",
+    "a5": "Yes. The resort offers free, secure private parking with 24-hour concierge. Each studio reservation includes 1 assigned indoor parking space.",
+    "q6": "What is the cancellation policy?",
+    "a6": "We follow Airbnb's standard moderate policy: full refund for cancellations made up to 5 days before check-in. Full details can be reviewed directly on the platform listing before confirming your reservation."
   },
   "footer": {
     "instagramHandle": "@tramar.muroalto",

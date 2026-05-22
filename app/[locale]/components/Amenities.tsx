@@ -134,7 +134,7 @@ export function Amenities() {
   ];
 
   return (
-    <section aria-labelledby="amenities-heading" className="bg-branco-cal">
+    <section id="amenities" aria-labelledby="amenities-heading" className="bg-branco-cal">
       {/* Divisor padrão trama acima */}
       <div className="pattern-trama-light pattern-divider w-full" aria-hidden="true" />
 

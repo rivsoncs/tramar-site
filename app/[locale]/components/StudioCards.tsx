@@ -58,7 +58,7 @@ export function StudioCards() {
   const studios: StudioKey[] = ['carua', 'renda', 'inteira'];
 
   return (
-    <section aria-labelledby="studio-cards-heading" className="bg-branco-cal">
+    <section id="studios" aria-labelledby="studio-cards-heading" className="bg-branco-cal">
 
       {/* Cabeçalho */}
       <div className="px-6 md:px-12 lg:px-16 pt-16 md:pt-20 lg:pt-24 pb-10 md:pb-12">

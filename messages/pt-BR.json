@@ -1,11 +1,17 @@
 {
   "meta": {
-    "title": "Tramar Muro Alto · Hospedagem de temporada em Muro Alto, Pernambuco",
+    "title": "Tramar Muro Alto",
     "description": "Dois flats studios curados com ofício pernambucano no Makai Acqua Resort, Muro Alto. Cerâmica de Caruaru, renda renascença, descanso atento."
   },
   "skip": "Ir para o conteúdo principal",
+  "announcement": "Curadoria pernambucana de ofício · Dois estúdios no Makai Acqua Resort · Muro Alto",
   "nav": {
-    "book": "Reservar no Airbnb"
+    "book": "Reservar no Airbnb",
+    "studios": "Os Estúdios",
+    "resort": "O Resort",
+    "amenities": "Amenidades",
+    "faq": "Perguntas",
+    "reservar": "Reservar Estadia"
   },
   "hero": {
     "tagline": "Tecido com o que Pernambuco tem de melhor.",
@@ -21,7 +27,13 @@
   },
   "manifesto": {
     "sectionLabel": "Manifesto",
-    "text": "Acreditamos que descansar bem é prestar atenção. Atenção ao tecido da rede, ao barro da xícara, ao som da maré, ao tempo que passa diferente quando ninguém tem pressa. A Tramar é uma casa de praia tecida com o que Pernambuco tem de melhor para oferecer: a mão do artesão, o ofício de quem faz, a calma de quem vive perto do mar. Você chega, descansa, e sai com um fio dessa trama."
+    "text": "Acreditamos que descansar bem é prestar atenção. Atenção ao tecido da rede, ao barro da xícara, ao som da maré, ao tempo que passa diferente quando ninguém tem pressa. A Tramar é uma casa de praia tecida com o que Pernambuco tem de melhor para oferecer: a mão do artesão, o ofício de quem faz, a calma de quem vive perto do mar. Você chega, descansa, e sai com um fio dessa trama.",
+    "p1Label": "01 / Matéria Autêntica",
+    "p1Text": "Rejeitamos o plástico genérico e o folclore cenográfico. Valorizamos a porosidade do barro cozido e os pontos pacientes de renda verdadeira.",
+    "p2Label": "02 / Pausa Consciente",
+    "p2Text": "Desaceleramos o pouso dos viajantes. Um retiro silencioso onde as sombras se movem devagar ao longo das paredes encaladas de luz.",
+    "p3Label": "03 / Enraizamento",
+    "p3Text": "Fincados no litoral sul de Pernambuco. Uma homenagem contemporânea que valoriza os tesouros artesanais das nossas ladeiras e sertões."
   },
   "products": {
     "sectionLabel": "Os flats",
@@ -113,18 +125,18 @@
   "faq": {
     "sectionLabel": "FAQ",
     "title": "Perguntas frequentes",
-    "q1": "Quantos hóspedes cabem em cada flat?",
-    "a1": "Cada flat acomoda até 3 hóspedes. A Tramar Inteira, com os dois flats combinados, acomoda até 8 hóspedes.",
+    "q1": "Quantos hóspedes cabem em cada estúdio e na casa inteira?",
+    "a1": "Cada estúdio (Caruá e Renda) acomoda confortavelmente até 3 hóspedes — 1 cama de casal queen e 1 sofá-cama de solteiro. Ao alugar a Tramar Inteira, a combinação privativa dos dois estúdios, acolhemos grupos de até 8 hóspedes com privacidade total.",
     "q2": "Os flats aceitam pets?",
-    "a2": "Entre em contato antes de reservar para verificar a política de pets.",
-    "q3": "Como funciona o check-in e check-out?",
-    "a3": "O check-in é às 15h e o check-out às 11h. Para outros horários, consulte a disponibilidade no momento da reserva.",
+    "a2": "Aceitamos pets de pequeno porte mediante consulta prévia e aprovação antes da reserva, para garantir o cumprimento das normas do condomínio do Makai Acqua Resort. Entre em contato antes de reservar.",
+    "q3": "Como funcionam os horários de check-in e check-out?",
+    "a3": "O check-in inicia-se a partir das 15h e o check-out deve ser concluído até as 11h. Para entradas antecipadas ou saídas flexibilizadas, entre em contato com antecedência para avaliarmos a disponibilidade do calendário.",
     "q4": "O que está incluído na diária?",
-    "a4": "Acesso completo ao complexo aquático do Makai Acqua Resort: piscina de correnteza, toboáguas, beach tennis, restaurante, academia e brinquedoteca.",
-    "q5": "Tem estacionamento?",
-    "a5": "Sim, o Makai Acqua Resort disponibiliza estacionamento para hóspedes.",
+    "a4": "Acesso integral e gratuito a toda a infraestrutura do Makai Acqua Resort: complexo de piscinas com correnteza e playground aquático, restaurante bar de praia, academia climatizada, quadras de beach tennis, sala de jogos e brinquedoteca.",
+    "q5": "Tem estacionamento incluso?",
+    "a5": "Sim. O resort oferece estacionamento privativo gratuito e seguro com portaria 24 horas. Cada reserva de estúdio dá direito a 1 vaga interna demarcada.",
     "q6": "Qual a política de cancelamento?",
-    "a6": "A política de cancelamento segue os termos da plataforma de reserva. Consulte a listagem no Airbnb antes de confirmar."
+    "a6": "Seguimos a política moderada padrão do Airbnb: reembolso integral para cancelamentos realizados até 5 dias antes do check-in. Os detalhes completos podem ser revisados diretamente na listagem da plataforma antes de confirmar a reserva."
   },
   "footer": {
     "instagramHandle": "@tramar.muroalto",
