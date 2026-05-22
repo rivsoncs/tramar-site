@@ -1,5 +1,5 @@
-// Fotos — mix de imagens reais (Makai/Muro Alto/Porto de Galinhas) e provisórias (Unsplash)
-// Fotos provisórias: flats Caruá e Renda — aguardam sessão fotográfica (jun/2026)
+// Fotos — imagens reais (Makai/Muro Alto/Porto de Galinhas)
+// Fotos provisórias: flats Caruá e Renda e card Inteira — aguardam sessão fotográfica (jun/2026)
 // Licença Unsplash: uso comercial livre, sem atribuição obrigatória
 
 export const photos = {
@@ -9,20 +9,10 @@ export const photos = {
     credit: 'Muro Alto, Pernambuco',
   },
   portodeGalinhas: {
-    piscinasNaturais: {
-      url: 'https://images.unsplash.com/photo-1596394373834-d83e3ba2d0c8?w=1200&q=80&fit=crop',
-      alt: 'Piscinas naturais de Porto de Galinhas, Pernambuco',
-      credit: 'Unsplash',
-    },
     praia: {
       url: '/images/porto-galinhas-piscinas.jpg',
       alt: 'Piscinas naturais de Porto de Galinhas, a 8 minutos do Makai Acqua Resort',
       credit: 'Porto de Galinhas, Pernambuco',
-    },
-    costal: {
-      url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&fit=crop',
-      alt: 'Costa do litoral nordestino',
-      credit: 'Unsplash',
     },
   },
   resort: {
@@ -80,19 +70,18 @@ export const photos = {
       credit: 'Makai Acqua Resort',
     },
     {
-      caption_pt: 'O ritual do café',
-      caption_en: 'The morning ritual',
-      // Presença humana implícita — xícara fumegante, luz tropical
-      url: 'https://images.unsplash.com/photo-1517256064527-09c73b2d0bc6?w=900&q=80&fit=crop',
-      alt: 'Café da manhã vagaroso sob luz de sombras tropicais — presença humana implícita',
-      credit: 'Unsplash',
+      caption_pt: 'Deck do Makai',
+      caption_en: 'Makai deck',
+      url: '/gallery/makai-deck.webp',
+      alt: 'Deck e área de convivência do Makai Acqua Resort, Muro Alto',
+      credit: 'Makai Acqua Resort',
     },
     {
-      caption_pt: 'Cerâmica da casa',
-      caption_en: 'House ceramics',
-      url: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=900&q=80&fit=crop',
-      alt: 'Cerâmica artesanal de Caruaru',
-      credit: 'Unsplash',
+      caption_pt: 'Beach tennis no Makai',
+      caption_en: 'Beach tennis at Makai',
+      url: '/gallery/makai-beach-tennis.webp',
+      alt: 'Quadra de beach tennis do Makai Acqua Resort',
+      credit: 'Makai Acqua Resort',
     },
     {
       caption_pt: 'Piscinas naturais de Porto de Galinhas',
@@ -109,12 +98,11 @@ export const photos = {
       credit: 'Muro Alto, Pernambuco',
     },
     {
-      caption_pt: 'As águas de Muro Alto',
-      caption_en: 'The waters of Muro Alto',
-      // Mar calmo de arrecifes — espaço negativo dominante
-      url: 'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=900&q=80&fit=crop',
-      alt: 'As águas calmas e translúcidas das piscinas naturais de Muro Alto',
-      credit: 'Unsplash',
+      caption_pt: 'Jangadas, Porto de Galinhas',
+      caption_en: 'Jangadas, Porto de Galinhas',
+      url: '/gallery/porto-jangadas.jpg',
+      alt: 'Jangadas tradicionais na praia de Porto de Galinhas, Pernambuco',
+      credit: 'Porto de Galinhas, Pernambuco',
     },
   ],
 } as const;
