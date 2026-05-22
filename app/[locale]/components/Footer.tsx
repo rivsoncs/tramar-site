@@ -15,14 +15,15 @@ export function Footer() {
       <div className="px-6 md:px-12 lg:px-16 py-7 md:py-16">
         {/* Linha superior: logo + idioma */}
         <div className="flex items-center justify-between mb-5 md:mb-8">
-          {/* Logo reduzida */}
-          <div style={{ flexShrink: 0 }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand-assets/logos/tramar-reduzida.svg"
-              alt="Tramar"
-              style={{ height: '24px', width: 'auto', display: 'block', filter: 'brightness(0) saturate(0) invert(70%) sepia(10%) saturate(300%) hue-rotate(10deg)' }}
-            />
+          {/* Wordmark footer — HTML puro */}
+          <div style={{ flexShrink: 0, lineHeight: 1 }}>
+            <div
+              className="font-display font-light"
+              style={{ fontSize: '18px', letterSpacing: '0.10em', color: '#A89C8A', lineHeight: 1 }}
+              aria-label="Tramar"
+            >
+              <em style={{ fontStyle: 'italic', marginRight: '1px' }}>T</em>ramar
+            </div>
           </div>
 
           {/* Idioma + copyright */}

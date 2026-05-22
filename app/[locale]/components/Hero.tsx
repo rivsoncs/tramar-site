@@ -30,13 +30,23 @@ export function Hero() {
         </div>
 
         <div className="bg-branco-cal px-6 pt-5 pb-6">
+          {/* Wordmark mobile — HTML puro, sem dependência de SVG externo */}
           <div className="mb-4 flex justify-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand-assets/logos/tramar-muroalto-vertical.svg"
-              alt="Tramar Muro Alto"
-              style={{ height: '80px', width: 'auto' }}
-            />
+            <div style={{ textAlign: 'center', lineHeight: 1 }}>
+              <div
+                className="font-display font-light"
+                style={{ fontSize: '28px', letterSpacing: '0.10em', color: '#1A1F26', lineHeight: 1 }}
+                aria-label="Tramar Muro Alto"
+              >
+                <em style={{ fontStyle: 'italic', marginRight: '1px' }}>T</em>ramar
+              </div>
+              <div
+                className="font-body"
+                style={{ fontSize: '8px', letterSpacing: '0.32em', textTransform: 'uppercase', color: '#1A1F26', opacity: 0.55, marginTop: '5px' }}
+              >
+                muro alto · pe
+              </div>
+            </div>
           </div>
           <h1
             id="hero-heading"
@@ -75,14 +85,23 @@ export function Hero() {
           className="flex flex-col bg-branco-cal"
           style={{ width: '55%', padding: '80px' }}
         >
-          {/* Logo vertical centralizado */}
+          {/* Wordmark desktop — HTML puro, sem dependência de SVG externo */}
           <div className="mb-auto pb-16 flex justify-start">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand-assets/logos/tramar-muroalto-vertical.svg"
-              alt="Tramar Muro Alto"
-              style={{ height: '96px', width: 'auto' }}
-            />
+            <div style={{ lineHeight: 1 }}>
+              <div
+                className="font-display font-light"
+                style={{ fontSize: '32px', letterSpacing: '0.10em', color: '#1A1F26', lineHeight: 1 }}
+                aria-label="Tramar Muro Alto"
+              >
+                <em style={{ fontStyle: 'italic', marginRight: '1px' }}>T</em>ramar
+              </div>
+              <div
+                className="font-body"
+                style={{ fontSize: '9px', letterSpacing: '0.32em', textTransform: 'uppercase', color: '#1A1F26', opacity: 0.55, marginTop: '6px' }}
+              >
+                muro alto · pe
+              </div>
+            </div>
           </div>
 
           {/* Separador editorial */}
