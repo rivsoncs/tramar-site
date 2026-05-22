@@ -40,13 +40,13 @@
     "title": "Escolha o seu studio",
     "carua": {
       "name": "Tramar Caruá",
-      "tagline": "Studio de praia com peso de barro de Caruaru e fibra de mata atlântica. Para 2 a 3 hóspedes.",
+      "tagline": "Studio de praia com peso de barro de Caruaru e fibra de mata atlântica. Para até 4 hóspedes.",
       "cta": "Reservar no Airbnb",
       "imageAlt": "Cerâmica artesanal escura"
     },
     "renda": {
       "name": "Tramar Renda",
-      "tagline": "Studio de praia com leveza de renda renascença e luz de fachada de Olinda. Para 2 a 3 hóspedes.",
+      "tagline": "Studio de praia com leveza de renda renascença e luz de fachada de Olinda. Para até 4 hóspedes.",
       "cta": "Reservar no Airbnb",
       "imageAlt": "Têxtil delicado com textura de renda"
     },
@@ -66,12 +66,12 @@
     "carua": {
       "badge": "Estúdio I · Terra, Fibra & Barro",
       "details": "Café em louça de argila crua · Cobertor de algodão rústico · Luz de candeeiro sutil",
-      "guests": "2 a 3 hóspedes"
+      "guests": "Até 4 hóspedes"
     },
     "renda": {
       "badge": "Estúdio II · Luz, Frescor & Renda",
       "details": "Almofadas bordadas a bilro · Gaze de linho pura nas janelas · Tons de Azul-Olinda",
-      "guests": "2 a 3 hóspedes"
+      "guests": "Até 4 hóspedes"
     },
     "inteira": {
       "badge": "Trama Inteira · Acomodação Expandida",
@@ -138,7 +138,7 @@
     "sectionLabel": "FAQ",
     "title": "Perguntas frequentes",
     "q1": "Quantos hóspedes cabem em cada estúdio e na casa inteira?",
-    "a1": "Cada estúdio (Caruá e Renda) acomoda confortavelmente até 3 hóspedes — 1 cama de casal queen e 1 sofá-cama de solteiro. Ao alugar a Tramar Inteira, a combinação privativa dos dois estúdios, acolhemos grupos de até 8 hóspedes com privacidade total.",
+    "a1": "Cada estúdio (Caruá e Renda) acomoda confortavelmente até 4 hóspedes — 1 cama de casal queen e 1 sofá-cama de casal. Ao alugar a Tramar Inteira, a combinação privativa dos dois estúdios, acolhemos grupos de até 8 hóspedes com privacidade total.",
     "q2": "Os flats aceitam pets?",
     "a2": "Aceitamos pets de pequeno porte mediante consulta prévia e aprovação antes da reserva, para garantir o cumprimento das normas do condomínio do Makai Acqua Resort. Entre em contato antes de reservar.",
     "q3": "Como funcionam os horários de check-in e check-out?",
