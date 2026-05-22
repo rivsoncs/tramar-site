@@ -138,6 +138,18 @@
     "q6": "Qual a política de cancelamento?",
     "a6": "Seguimos a política moderada padrão do Airbnb: reembolso integral para cancelamentos realizados até 5 dias antes do check-in. Os detalhes completos podem ser revisados diretamente na listagem da plataforma antes de confirmar a reserva."
   },
+  "booking": {
+    "title": "Reservar Estadia",
+    "subtitle": "Reserva direta via plataforma",
+    "close": "Fechar",
+    "comingSoon": "Lançamento em breve",
+    "comingSoonText": "Os estúdios estão sendo preparados com todo o cuidado do ofício pernambucano. As reservas estarão disponíveis em breve via Airbnb.",
+    "datesUnavailable": "Datas indisponíveis",
+    "notifyTitle": "Seja o primeiro a saber",
+    "notifyText": "Siga no Instagram ou envie um e-mail para receber o aviso de abertura assim que as reservas abrirem.",
+    "instagramCta": "@tramar.muroalto",
+    "emailCta": "Enviar e-mail"
+  },
   "footer": {
     "instagramHandle": "@tramar.muroalto",
     "instagramLabel": "Instagram da Tramar",

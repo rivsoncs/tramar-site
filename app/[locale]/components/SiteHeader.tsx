@@ -134,9 +134,9 @@ export function SiteHeader() {
 
         {/* Direita: botão Reservar + PT/EN */}
         <div className="flex items-center gap-3">
-          <a
-            href="#studios"
+          <button
             className="hidden md:inline-block font-body"
+            onClick={() => window.dispatchEvent(new CustomEvent('open-booking'))}
             style={{
               fontSize: '9px',
               letterSpacing: '0.18em',
@@ -146,14 +146,15 @@ export function SiteHeader() {
               backgroundColor: '#1A1F26',
               padding: '8px 18px',
               borderRadius: '2px',
-              textDecoration: 'none',
+              border: 'none',
+              cursor: 'pointer',
               transition: 'background-color 200ms',
             }}
             onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#3D2B1F')}
             onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#1A1F26')}
           >
             {t('reservar')}
-          </a>
+          </button>
           <LanguageToggle variant="header" dark={!scrolled} />
         </div>
       </div>

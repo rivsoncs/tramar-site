@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { photos } from '@/lib/photo-manifest';
@@ -72,9 +74,13 @@ export function Hero() {
           >
             Makai Acqua Resort · Muro Alto · Pernambuco
           </p>
-          <a href="#" className="btn-primary" aria-label={t('cta')}>
+          <button
+            className="btn-primary"
+            aria-label={t('cta')}
+            onClick={() => window.dispatchEvent(new CustomEvent('open-booking'))}
+          >
             {t('cta')}
-          </a>
+          </button>
         </div>
       </div>
 

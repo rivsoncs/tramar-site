@@ -11,6 +11,7 @@ import { Gallery } from './components/Gallery';
 import { Location } from './components/Location';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
+import { BookingModal } from './components/BookingModal';
 
 export default function HomePage({
   params: { locale },
@@ -38,6 +39,7 @@ export default function HomePage({
         <FAQ />
       </main>
       <Footer />
+      <BookingModal />
     </>
   );
 }

@@ -44,12 +44,6 @@ const imageMap: Record<StudioKey, { url: string; alt: string }> = {
   inteira: { url: photos.resort.areaExterna.url, alt: photos.resort.areaExterna.alt },
 };
 
-const airbnbLinks: Record<StudioKey, string> = {
-  carua:   'https://www.airbnb.com',
-  renda:   'https://www.airbnb.com',
-  inteira: 'https://www.airbnb.com',
-};
-
 export function StudioCards() {
   const t  = useTranslations('products');
   const ts = useTranslations('studios');
@@ -272,14 +266,13 @@ export function StudioCards() {
                   </div>
 
                   {/* CTA */}
-                  <a
-                    href={airbnbLinks[key]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.dispatchEvent(new CustomEvent('open-booking'));
+                    }}
                     className="self-start"
                     style={{
-                      display: 'inline-block',
                       padding: '10px 24px',
                       fontSize: '10px',
                       letterSpacing: '0.22em',
@@ -290,13 +283,13 @@ export function StudioCards() {
                       backgroundColor: isSel ? cfg.accent : cfg.brand,
                       border: 'none',
                       borderRadius: '2px',
-                      textDecoration: 'none',
+                      cursor: 'pointer',
                       transition: 'opacity 200ms',
                     }}
                     aria-label={`${ts('cta')} — ${t(`${key}.name` as Parameters<typeof t>[0])}`}
                   >
                     {ts('cta')}
-                  </a>
+                  </button>
                 </div>
               </div>
             </article>

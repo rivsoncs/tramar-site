@@ -138,6 +138,18 @@
     "q6": "What is the cancellation policy?",
     "a6": "We follow Airbnb's standard moderate policy: full refund for cancellations made up to 5 days before check-in. Full details can be reviewed directly on the platform listing before confirming your reservation."
   },
+  "booking": {
+    "title": "Book Your Stay",
+    "subtitle": "Direct reservation via platform",
+    "close": "Close",
+    "comingSoon": "Coming soon",
+    "comingSoonText": "The studios are being prepared with full Pernambucan craft care. Reservations will be available soon via Airbnb.",
+    "datesUnavailable": "Dates unavailable",
+    "notifyTitle": "Be the first to know",
+    "notifyText": "Follow on Instagram or send an email to be notified as soon as reservations open.",
+    "instagramCta": "@tramar.muroalto",
+    "emailCta": "Send email"
+  },
   "footer": {
     "instagramHandle": "@tramar.muroalto",
     "instagramLabel": "Tramar on Instagram",
