@@ -1,6 +1,5 @@
-// Fotos — imagens reais (Makai/Muro Alto/Porto de Galinhas)
-// Fotos provisórias: flats Caruá e Renda e card Inteira — aguardam sessão fotográfica (jun/2026)
-// Licença Unsplash: uso comercial livre, sem atribuição obrigatória
+// Fotos — 100% imagens reais (Makai/Muro Alto/Porto de Galinhas + textura de ofício pernambucano)
+// Fotos dos flats interiores: provisórias de alta qualidade até sessão fotográfica (jun/2026)
 
 export const photos = {
   hero: {
@@ -27,37 +26,37 @@ export const photos = {
       credit: 'Makai Acqua Resort',
     },
     areaExterna: {
-      url: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1200&q=80&fit=crop',
-      alt: 'Área externa de resort tropical com varanda — imagem ilustrativa',
-      credit: 'Unsplash',
+      url: '/flats/muro-alto-entardecer.jpg',
+      alt: 'Praia de Muro Alto ao entardecer, Pernambuco',
+      credit: 'Muro Alto, Pernambuco',
     },
   },
   flats: {
     // FOTO PROVISÓRIA: substituir por fotos reais dos flats após entrega e sessão fotográfica
     carua: {
       interior: {
-        // Cerâmica de barro cozido — evoca o ofício do Estúdio Caruá
-        url: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=900&q=80&fit=crop',
-        alt: 'Detalhe tátil de cerâmica crua trabalhada manualmente — Estúdio Caruá',
-        credit: 'Unsplash',
+        // Cerâmica de barro sobre linho — ofício artesanal do Estúdio Caruá
+        url: '/flats/carua-ceramica.jpg',
+        alt: 'Cerâmica artesanal de barro sobre tecido de linho — Estúdio Caruá',
+        credit: 'Tramar',
       },
       detalhe: {
-        url: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=900&q=80&fit=crop',
-        alt: 'Cerâmica artesanal em tons de barro',
-        credit: 'Unsplash',
+        url: '/flats/carua-ceramica.jpg',
+        alt: 'Detalhe de cerâmica artesanal de barro — Estúdio Caruá',
+        credit: 'Tramar',
       },
     },
     renda: {
       interior: {
-        // Lençóis de linho natural e sombras suaves — evoca o Estúdio Renda
-        url: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=900&q=80&fit=crop',
-        alt: 'Lençóis de linho natural com sombras de fim de tarde — Estúdio Renda',
-        credit: 'Unsplash',
+        // Renda renascença sobre madeira — ofício têxtil do Estúdio Renda
+        url: '/flats/renda-lace.jpg',
+        alt: 'Renda renascença pernambucana sobre madeira — Estúdio Renda',
+        credit: 'Tramar',
       },
       detalhe: {
-        url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&fit=crop',
-        alt: 'Têxtil delicado em tom claro, renda renascença',
-        credit: 'Unsplash',
+        url: '/flats/renda-lace.jpg',
+        alt: 'Detalhe de renda renascença artesanal — Estúdio Renda',
+        credit: 'Tramar',
       },
     },
   },

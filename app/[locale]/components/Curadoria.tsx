@@ -2,8 +2,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { FadeIn } from './FadeIn';
 
-const CURADORIA_IMAGE_URL =
-  'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=85&fit=crop';
+const CURADORIA_IMAGE_URL = '/flats/carua-ceramica.jpg';
 
 export function Curadoria() {
   const t = useTranslations('curadoria');

@@ -94,11 +94,23 @@
     "sectionLabel": "Amenities",
     "title": "What the house offers",
     "wifi": "Wi-Fi",
+    "wifiDesc": "High-speed Wi-Fi throughout the flat",
     "cafe": "Coffee",
+    "cafeDesc": "Nespresso machine with curated local coffee pods",
     "ar": "Air conditioning",
+    "arDesc": "Silent and efficient split AC in all rooms",
     "varanda": "Balcony",
+    "varandaDesc": "Private balcony overlooking the resort gardens",
     "piscina": "Pool",
-    "beachTennis": "Beach Tennis"
+    "piscinaDesc": "Full access to Makai's water complex and lazy river",
+    "beachTennis": "Beach Tennis",
+    "beachTennisDesc": "Beach tennis courts included with your stay",
+    "tv": "Smart TV",
+    "tvDesc": "Smart TV with streaming platforms",
+    "cozinha": "Kitchen",
+    "cozinhaDesc": "Equipped kitchen with handcrafted Caruaru crockery",
+    "estacionamento": "Parking",
+    "estacionamentoDesc": "Private covered parking with 24-hour concierge"
   },
   "gallery": {
     "sectionLabel": "The house",
@@ -109,7 +121,7 @@
     "item4": "Natural pools of Porto de Galinhas",
     "item5": "Late afternoon, Muro Alto",
     "item6": "The returning tide",
-    "photoCredit": "Flat photos: provisional (Unsplash), awaiting photoshoot."
+    "photoCredit": "Photos: Makai Acqua Resort and Porto de Galinhas, Pernambuco."
   },
   "location": {
     "sectionLabel": "Location",
@@ -156,7 +168,7 @@
     "emailLabel": "Contact email",
     "brandGuideLabel": "Brand identity guides",
     "copyright": "© 2026 Tramar Muro Alto",
-    "photoCredit": "Flat photos: provisional, awaiting photoshoot"
+    "photoCredit": "Flat interior photos: provisional, awaiting photoshoot (Jun/2026)"
   },
   "langToggle": {
     "label": "Switch language to Portuguese",

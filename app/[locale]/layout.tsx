@@ -53,7 +53,7 @@ export async function generateMetadata({
       type: 'website',
       images: [
         {
-          url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=630&fit=crop&q=85',
+          url: '${baseUrl}/images/hero-muro-alto.jpg',
           width: 1200,
           height: 630,
           alt: 'Tramar Muro Alto',
@@ -64,7 +64,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: ['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=630&fit=crop&q=85'],
+      images: ['${baseUrl}/images/hero-muro-alto.jpg'],
     },
     robots: {
       index: true,
